@@ -1,14 +1,8 @@
-/* 
- * File:   RobotLib.h
- * Author: GT60
- *
- * Created on 18 ????? 2018 ?., 17:18
- */
+#ifndef XC_HEADER_TEMPLATE_H
+#define	XC_HEADER_TEMPLATE_H
 
-#ifndef ROBOTLIB_H
-#define	ROBOTLIB_H
+#include <xc.h> 
 
 
-
-#endif	/* ROBOTLIB_H */
+#endif	/* XC_HEADER_TEMPLATE_H */
 

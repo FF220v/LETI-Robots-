@@ -4,10 +4,10 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>RobotLib</name>
-            <creation-uuid>51dea40f-aaae-4f7f-958b-cf30cf34d980</creation-uuid>
+            <creation-uuid>d021759a-389d-425b-accf-561e221a9d64</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
-            <cpp-extensions>cpp</cpp-extensions>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
             <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
