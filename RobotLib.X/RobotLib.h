@@ -102,6 +102,8 @@
 #define _AN5 5
 #define _AN6 6
 #define _AN7 7
+#define _AN11 9
+#define _AN12 11
 
 #include <xc.h>
 
@@ -112,14 +114,16 @@ void pinMode(char pin,char mode);
 void digitalWrite(char pin, char state);
 char digitalRead(char pin);
 
-//Analog pins function 
-int analogRead(char analogPin); 
+//Function for reading analog values 
+int analogRead(char pin); 
 
-
+//Handling interrupts 
 void attachInterrupt();
 void detachInterrupt();
 
+//Timer functions for counting time since start 
 unsigned long int micros();
 unsigned long int millis();
-
+void delay_ms();
+void delayMicroseconds();
 #endif	/* ROBOTLIB */

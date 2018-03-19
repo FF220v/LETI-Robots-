@@ -1,15 +1,25 @@
 
 #include "RobotLib.h"
 #include <xc.h>
+
 void init(){
+    //Configuring motor outputs and inputs 0-7
     for(char i = 0; i<=7; i++)
         pinMode(i, INPUT);
-    for(char i = 19; i<=22; i++)
+    for(char i = 19; i<=22; i++){
         pinMode(i, OUTPUT);
+        digitalWrite(i, LOW);
+    }
+    
+    //Configuring ADC
+    ADCON1bits.PCFG=0b1111; //Disabling analog inputs
+    ADCON1bits.VCFG=0b00; // selecting supply vss 
+    ADCON2bits.ACQT=0b111; 
+    ADCON2bits.ADCS=0b110;// frequency = Fosc/64 
+    ADCON2bits.ADFM=0;//left shift 
 }
 
-void pinMode(char pin,char mode)
-{
+void pinMode(char pin,char mode){
     switch(pin)
     {
         case 0:
@@ -177,8 +187,7 @@ void pinMode(char pin,char mode)
     }
 }
 
-void digitalWrite(char pin, char mode)
-{
+void digitalWrite(char pin, char mode){
 switch(pin)
     {
         case 0:
@@ -375,8 +384,57 @@ switch(pin)
     }
 }
 
-int analogRead(char pin)
-{
-
+int analogRead(char pin){
+    ADCON1bits.PCFG=0b0000; //Enabling analog inputs
+    ADCON0bits.ADON=1; //turn ADS on
+    
+    //Choosing chanel (pin)
+    switch(pin){
+        case 0:
+            ADCON0bits.CHS=0; 
+        break;
+            
+        case 1:
+            ADCON0bits.CHS=1;
+        break;
+        
+        case 2:
+            ADCON0bits.CHS=2;
+        break;
+        
+        case 3:
+            ADCON0bits.CHS=3;
+        break;
+        
+        case 4:
+            ADCON0bits.CHS=4;
+        break;
+        
+        case 5:
+            ADCON0bits.CHS=5;
+        break;
+        
+        case 6:
+            ADCON0bits.CHS=6;
+        break;
+        
+        case 7:
+            ADCON0bits.CHS=7;
+        break;
+        
+        case 9: //AN11
+            ADCON0bits.CHS=11;
+        break;
+        
+        case 11: //AN12 
+            ADCON0bits.CHS=12;
+        break;
+    }
+    
+    ADCON0bits.GO_DONE=1; // start reading
+    while(ADCON0bits.GO_DONE); //waiting until reading done  
+    ADCON1bits.PCFG=0b1111; //Disabling analog inputs
+    ADCON0bits.ADON=0; //turn ADS off 
+    return (ADRESH<<2)+(ADRESL>>6); //returning result
 }
 
