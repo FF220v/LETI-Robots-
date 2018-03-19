@@ -1,13 +1,11 @@
-/*
- * File:   main.c
- * Author: GT60
- *
- * Created on 18 ????? 2018 ?., 17:51
- */
+#include "../RobotLib.X/RobotLib.h"
+void main(void) 
+{
+    init();
+    //Put initial code here
 
-
-#include <xc.h>
-#include "RobotLib.h"
-void main(void) {
-    return;
+    while(1){
+    //Put code to repeat continiuosly here
+        
+    } 
 }
