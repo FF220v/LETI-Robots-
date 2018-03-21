@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"102 ../RobotLib.X/RobotLib.h
+"116 ../RobotLib.X/RobotLib.h
 [v _init `(v ~T0 @X0 0 ef ]
-"7868 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f4525.h
-[v _TRISB3 `Vb ~T0 @X0 0 e@31899 ]
+"140
+[v _lcd_print_string `(v ~T0 @X0 0 ef1`*uc ]
 "6 ../RobotLib.X/RobotLib.h
 [p x OSC=HSPLL ]
 "7
@@ -2782,15 +2782,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;RobotLib.h: 102: void init();
-[; ;RobotLib.h: 105: void pinMode(char pin,char mode);
-[; ;RobotLib.h: 106: void digitalWrite(char pin, char state);
-[; ;RobotLib.h: 107: char digitalRead();
-[; ;RobotLib.h: 110: int analogRead(char analogPin);
-[; ;RobotLib.h: 113: void attachInterrupt();
-[; ;RobotLib.h: 114: void detachInterrupt();
-[; ;RobotLib.h: 116: unsigned long int micros();
-[; ;RobotLib.h: 117: unsigned long int millis();
+[; ;RobotLib.h: 116: void init();
+[; ;RobotLib.h: 119: void initOutputs();
+[; ;RobotLib.h: 120: void pinMode(char pin,char mode);
+[; ;RobotLib.h: 121: void digitalWrite(char pin, char state);
+[; ;RobotLib.h: 122: char digitalRead(char pin);
+[; ;RobotLib.h: 125: int analogRead(char pin);
+[; ;RobotLib.h: 126: void initADC();
+[; ;RobotLib.h: 129: void attachInterrupt();
+[; ;RobotLib.h: 130: void detachInterrupt();
+[; ;RobotLib.h: 133: void initLCD();
+[; ;RobotLib.h: 134: void lcd_clear();
+[; ;RobotLib.h: 135: void lcd_setCursor(char x,char y);
+[; ;RobotLib.h: 136: void lcd_print_int(int entity);
+[; ;RobotLib.h: 137: void lcd_print_char(char entity);
+[; ;RobotLib.h: 138: void lcd_print_long(long int entity);
+[; ;RobotLib.h: 139: void lcd_print_float(float entity);
+[; ;RobotLib.h: 140: void lcd_print_string(char *entity);
+[; ;RobotLib.h: 153: unsigned long int micros();
+[; ;RobotLib.h: 154: unsigned long int millis();
+[; ;RobotLib.h: 155: void delay_ms();
+[; ;RobotLib.h: 156: void delayMicroseconds();
 [v $root$_main `(v ~T0 @X0 0 e ]
 "2 main.c
 [v _main `(v ~T0 @X0 1 ef ]
@@ -2803,21 +2815,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 4: init();
 "4
 [e ( _init ..  ]
-[; ;main.c: 5: while(1){
-"5
+[; ;main.c: 7: while(1){
+"7
 [e :U 271 ]
 {
-[; ;main.c: 6: TRISB3=0;
-"6
-[e = _TRISB3 -> -> 0 `i `b ]
-"7
+[; ;main.c: 9: lcd_print_string("12345");
+"9
+[e ( _lcd_print_string (1 -> :s 1C `*uc ]
+"10
 }
 [e :U 270 ]
-"5
+"7
 [e $U 271  ]
 [e :U 272 ]
-[; ;main.c: 7: }
-[; ;main.c: 8: }
-"8
+[; ;main.c: 10: }
+[; ;main.c: 11: }
+"11
 [e :UE 269 ]
 }
+[a 1C 49 50 51 52 53 0 ]
+

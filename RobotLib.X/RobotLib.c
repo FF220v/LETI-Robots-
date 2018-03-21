@@ -3,21 +3,121 @@
 #include <xc.h>
 
 void init(){
+    initOutputs();
+    initADC();
+    initLCD();
+}
+
+void lcdPulse(){
+    LCD_E=1;
+    __delay_us(LCD_PULSE);
+    LCD_E=0;
+    __delay_us(LCD_PULSE);
+}
+
+void lcdCmd(char cmd){
+    LCD_RS = 0;
+    LCD_DATA = (LCD_DATA&0x0f)|(cmd&0xf0);
+    lcdPulse();
+    LCD_DATA = (LCD_DATA&0x0f)|((cmd<<4)&0xf0);
+    lcdPulse();
+    __delay_ms(1);
+}
+
+void initLCD(){
+//Configuring LCD
+    TRISD &= 0x03;
+    LCD_DATA &= 0b00001111;
+    LCD_E = 0;
+    LCD_RS = 0;
+    for(char i = 0; i<3; i++){
+    __delay_ms(1);
+    LCD_DATA = (LCD_DATA&0x0f)|0x30;
+    lcdPulse();
+    }
+    LCD_DATA = (LCD_DATA&0x0f)|0x20;
+    lcdPulse();
+    __delay_ms(1);
+    lcdCmd(0x28);
+    lcdCmd(0x01);
+    lcdCmd(0x06);
+    lcdCmd(0x0C);
+    lcdCmd(0x02);
+    lcdCmd(0x01);
+}
+
+void lcd_setCursor(unsigned char x,unsigned char y){
+    lcdCmd(0x02);
+    lcdCmd((unsigned char)0x80+x+(unsigned char)0x40*y);   
+}
+
+void lcd_clear(){
+    lcdCmd(0x01);
+}
+
+void lcd_print_char(char entity){
+    LCD_RS = 1;
+    LCD_DATA = (LCD_DATA&0x0f)|(entity & 0xf0);
+    lcdPulse();
+    LCD_DATA = (LCD_DATA&0x0f)|((entity<<4)&0xf0);
+    lcdPulse();
+}
+
+void lcd_print_string(char *entity){
+ while(*entity) // ?????????, ????? ?? ????????? 0
+ {
+ lcd_print_char(*entity); // ????????? ?????? ?? LCD
+ entity++; // ????????? ????? ?? 1
+ }
+} 
+
+void intToStr(char* buff, long int value){
+    char workBuff[16];
+    long int valueBuff = value;
+    if(value == 0){
+        buff [0] = 0;
+        return;
+    }
+    char i = 15;
+    while(valueBuff!=0){
+        char num = valueBuff%10; 
+        workBuff[i] =  num+0x30;
+        valueBuff = (valueBuff - num)/10;
+        i--;
+    }
+    if(value<0)
+        workBuff[i] = '-';
+    else i++;
+    
+    char j=0;
+    for(;i<=15;i++){
+        buff[j]=workBuff[i];
+        j++;
+    } 
+}
+
+void lcd_print_int(int entity){
+   char buff[16];
+   intToStr(buff, entity);
+   lcd_print_string(buff);
+}
+
+void lcd_print_long(long int entity){
+   char buff[16];
+   intToStr(buff, entity);
+   lcd_print_string(buff);
+}
+
+void lcd_print_float(float entity);
+
+void initOutputs(){
     //Configuring motor outputs and inputs 0-7
     for(char i = 0; i<=7; i++)
         pinMode(i, INPUT);
     for(char i = 19; i<=22; i++){
         pinMode(i, OUTPUT);
         digitalWrite(i, LOW);
-    }
-    
-    //Configuring ADC
-    ADCON1bits.PCFG=0b1111; //Disabling analog inputs
-    ADCON1bits.VCFG=0b00; // selecting supply vss 
-    ADCON2bits.ACQT=0b111; 
-    ADCON2bits.ADCS=0b110;// frequency = Fosc/64 
-    ADCON2bits.ADFM=0;//left shift 
-}
+    }}
 
 void pinMode(char pin,char mode){
     switch(pin)
@@ -382,6 +482,16 @@ switch(pin)
     case 21: return PORTBbits.RB1;
     case 22: return PORTBbits.RB2;
     }
+return '0';
+}
+       
+void initADC(){
+//Configuring ADC
+    ADCON1bits.PCFG=0b1111; //Disabling analog inputs
+    ADCON1bits.VCFG=0b00; // selecting supply vss 
+    ADCON2bits.ACQT=0b111; 
+    ADCON2bits.ADCS=0b110;// frequency = Fosc/64 
+    ADCON2bits.ADFM=0;//left shift
 }
 
 int analogRead(char pin){
@@ -434,7 +544,7 @@ int analogRead(char pin){
     ADCON0bits.GO_DONE=1; // start reading
     while(ADCON0bits.GO_DONE); //waiting until reading done  
     ADCON1bits.PCFG=0b1111; //Disabling analog inputs
-    ADCON0bits.ADON=0; //turn ADS off 
+    ADCON0bits.ADON=0; //turn ADC off 
     return (ADRESH<<2)+(ADRESL>>6); //returning result
 }
 

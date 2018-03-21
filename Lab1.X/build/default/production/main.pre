@@ -3800,29 +3800,47 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 102 "../RobotLib.X/RobotLib.h"
+# 116 "../RobotLib.X/RobotLib.h"
 void init();
 
 
+void initOutputs();
 void pinMode(char pin,char mode);
 void digitalWrite(char pin, char state);
-char digitalRead();
+char digitalRead(char pin);
 
 
-int analogRead(char analogPin);
+int analogRead(char pin);
+void initADC();
 
 
 void attachInterrupt();
 void detachInterrupt();
 
+
+void initLCD();
+void lcd_clear();
+void lcd_setCursor(char x,char y);
+void lcd_print_int(int entity);
+void lcd_print_char(char entity);
+void lcd_print_long(long int entity);
+void lcd_print_float(float entity);
+void lcd_print_string(char *entity);
+
+# 153
 unsigned long int micros();
 unsigned long int millis();
+void delay_ms();
+void delayMicroseconds();
 
 # 2 "main.c"
 void main(void)
 {
 init();
+
+
 while(1){
-TRISB3=0;
+
+lcd_print_string("12345");
 }
 }

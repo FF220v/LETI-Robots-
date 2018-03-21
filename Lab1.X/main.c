@@ -6,6 +6,6 @@ void main(void)
 
     while(1){
     //Put code to repeat continiuosly here
-        
+        lcd_print_string("12345");
     } 
 }

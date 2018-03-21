@@ -105,21 +105,49 @@
 #define _AN11 9
 #define _AN12 11
 
+//defining LCD constants
+#define LCD_E PORTDbits.RD3
+#define LCD_RS PORTDbits.RD2
+#define LCD_PULSE 50
+#define LCD_DATA LATD
+
 #include <xc.h>
 
 void init();
 
 //Digital pins controls
+void initOutputs();
 void pinMode(char pin,char mode);
 void digitalWrite(char pin, char state);
 char digitalRead(char pin);
 
 //Function for reading analog values 
 int analogRead(char pin); 
+void initADC();
 
 //Handling interrupts 
 void attachInterrupt();
 void detachInterrupt();
+
+//LCD Functions
+void initLCD();
+void lcd_clear();
+void lcd_setCursor(char x,char y);
+void lcd_print_int(int entity);
+void lcd_print_char(char entity);
+void lcd_print_long(long int entity);
+void lcd_print_float(float entity);
+void lcd_print_string(char *entity);
+
+//Overloading-like construction
+//#define lcd_print(X)        \
+    _Generic((X),           \
+    int: lcd_print_int,     \
+    char: lcd_print_char,   \
+    float: lcd_print_float, \
+    long int: lcd_print_long\
+    char*: lcd_print_string \
+    )(X)
 
 //Timer functions for counting time since start 
 unsigned long int micros();
