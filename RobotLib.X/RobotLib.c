@@ -1,13 +1,16 @@
-
 #include "RobotLib.h"
 #include <xc.h>
+#include <pic18f4525.h>
+
 
 void init(){
     initOutputs();
     initADC();
+    initInterrupts();
     initLCD();
 }
 
+//LCD Fcns
 void lcdPulse(){
     LCD_E=1;
     __delay_us(LCD_PULSE);
@@ -71,54 +74,44 @@ void lcd_print_string(char *entity){
  }
 } 
 
-void intToStr(char* buff, long int value){
-    char workBuff[16];
-    long int valueBuff = value;
+void lcd_print_int(int entity){
+    
+    long int value = entity;
+    if(entity<0)
+        value*=(-1);
     if(value == 0){
-        buff [0] = 0;
+        lcd_print_char('0');
         return;
     }
-    char i = 15;
-    while(valueBuff!=0){
-        char num = valueBuff%10; 
-        workBuff[i] =  num+0x30;
-        valueBuff = (valueBuff - num)/10;
-        i--;
-    }
-    if(value<0)
-        workBuff[i] = '-';
-    else i++;
-    
-    char j=0;
-    for(;i<=15;i++){
-        buff[j]=workBuff[i];
-        j++;
-    } 
-}
-
-void lcd_print_int(int entity){
+   int i=0;
    char buff[16];
-   intToStr(buff, entity);
-   lcd_print_string(buff);
-}
-
-void lcd_print_long(long int entity){
-   char buff[16];
-   intToStr(buff, entity);
-   lcd_print_string(buff);
+   while(value!=0){
+        char num = value%10; 
+        buff[i] =  num+0x30;
+        value = (value - num)/10;
+        i++;
+   }
+   i--;
+   if(entity<0)
+       lcd_print_char('-');
+   
+   for(;i>=0; i--)
+   lcd_print_char(buff[i]);
 }
 
 void lcd_print_float(float entity);
 
 void initOutputs(){
     //Configuring motor outputs and inputs 0-7
-    for(char i = 0; i<=7; i++)
+    for(char i = 0; i<=11; i++)
         pinMode(i, INPUT);
     for(char i = 19; i<=22; i++){
         pinMode(i, OUTPUT);
         digitalWrite(i, LOW);
-    }}
+    }
+}
 
+//digital output fcns
 void pinMode(char pin,char mode){
     switch(pin)
     {
@@ -484,7 +477,8 @@ switch(pin)
     }
 return '0';
 }
-       
+
+//ADC fcns
 void initADC(){
 //Configuring ADC
     ADCON1bits.PCFG=0b1111; //Disabling analog inputs
@@ -547,4 +541,77 @@ int analogRead(char pin){
     ADCON0bits.ADON=0; //turn ADC off 
     return (ADRESH<<2)+(ADRESL>>6); //returning result
 }
+
+//timer fcns
+void init_timer(){
+
+}
+
+unsigned long int millis(){
+    return milliSeconds;
+}
+
+unsigned long int micros(){
+    return microSeconds;
+}
+
+//interrupts handling fcns
+
+void high_isr(void){
+    if(1){
+    
+    }
+    if(INTCONbits.INT0IF){
+        int0func();
+        INTCONbits.INT0IF = 0;
+    } 
+}
+void low_isr(void){
+    if(1){
+    
+    }
+    if(INTCONbits.INT0IF){
+        int0func ();
+        INTCONbits.INT0IF = 0;
+    } 
+}
+void attachInterrupt(char num, char mode, void (*func)()){
+    switch (num){
+        case 0:
+            int0func = func; //setting interrupt function 
+            switch(mode){
+                case RISING:
+                    INTCON2bits.INTEDG0 = 1; //choosing direction of interrupts
+                    break;
+                    
+                case FALLING:
+                    INTCON2bits.INTEDG0 = 0;
+                    break;
+            }
+            INTCONbits.INT0IF = 0; //disabling interrupt flag 
+            INTCONbits.INT0IE = 1; //alowing interrupts 
+            
+        break;
+    }
+        
+}
+void detachInterrupt(char num){
+    switch(num){
+        case 0:
+        INTCONbits.INT0IF = 0;
+        INTCONbits.INT0IE = 0;
+        break;
+    }
+} 
+void initInterrupts(){
+    RCONbits.IPEN=1; //Allow 2-level interurpts
+    INTCONbits.GIEH = 1; //Allow high - level interrupts
+    INTCONbits.GIEL = 1; //Allow low - level interrupts 
+    INTCONbits.INT0IE = 0;//turning off interrupt flags
+    INTCON3bits.INT2IE = 0;
+    INTCON3bits.INT1IE = 0;
+}
+
+
+
 

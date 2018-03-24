@@ -1,69 +1,22 @@
 Version 3.2 HI-TECH Software Intermediate Code
+[v F2944 `(v ~T0 @X0 0 tf ]
+[v F2946 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
-"116 ../RobotLib.X/RobotLib.h
+"125 ../RobotLib.X/RobotLib.h
 [v _init `(v ~T0 @X0 0 ef ]
-"140
+[v F2952 `(v ~T0 @X0 0 tf ]
+"141
+[v _attachInterrupt `(v ~T0 @X0 0 ef3`uc`uc`*F2952 ]
+"147
+[v _lcd_setCursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"148
+[v _lcd_print_int `(v ~T0 @X0 0 ef1`i ]
+"134
+[v _analogRead `(i ~T0 @X0 0 ef1`uc ]
+"129
+[v _pinMode `(v ~T0 @X0 0 ef2`uc`uc ]
+"151
 [v _lcd_print_string `(v ~T0 @X0 0 ef1`*uc ]
-"6 ../RobotLib.X/RobotLib.h
-[p x OSC=HSPLL ]
-"7
-[p x FCMEN=OFF ]
-"8
-[p x IESO=OFF ]
-"11
-[p x PWRT=OFF ]
-"12
-[p x BOREN=ON ]
-"13
-[p x BORV=3 ]
-"16
-[p x WDT=ON ]
-"17
-[p x WDTPS=32768 ]
-"20
-[p x CCP2MX=PORTC ]
-"21
-[p x PBADEN=OFF ]
-"22
-[p x LPT1OSC=OFF ]
-"23
-[p x MCLRE=ON ]
-"26
-[p x STVREN=ON ]
-"27
-[p x LVP=OFF ]
-"28
-[p x XINST=OFF ]
-"31
-[p x CP0=OFF ]
-"32
-[p x CP1=OFF ]
-"33
-[p x CP2=OFF ]
-"36
-[p x CPB=OFF ]
-"37
-[p x CPD=OFF ]
-"40
-[p x WRT0=OFF ]
-"41
-[p x WRT1=OFF ]
-"42
-[p x WRT2=OFF ]
-"45
-[p x WRTC=OFF ]
-"46
-[p x WRTB=OFF ]
-"47
-[p x WRTD=OFF ]
-"50
-[p x EBTR0=OFF ]
-"51
-[p x EBTR1=OFF ]
-"52
-[p x EBTR2=OFF ]
-"55
-[p x EBTRB=OFF ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -2782,56 +2735,163 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 164: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
-[; ;RobotLib.h: 116: void init();
-[; ;RobotLib.h: 119: void initOutputs();
-[; ;RobotLib.h: 120: void pinMode(char pin,char mode);
-[; ;RobotLib.h: 121: void digitalWrite(char pin, char state);
-[; ;RobotLib.h: 122: char digitalRead(char pin);
-[; ;RobotLib.h: 125: int analogRead(char pin);
-[; ;RobotLib.h: 126: void initADC();
-[; ;RobotLib.h: 129: void attachInterrupt();
-[; ;RobotLib.h: 130: void detachInterrupt();
-[; ;RobotLib.h: 133: void initLCD();
-[; ;RobotLib.h: 134: void lcd_clear();
-[; ;RobotLib.h: 135: void lcd_setCursor(char x,char y);
-[; ;RobotLib.h: 136: void lcd_print_int(int entity);
-[; ;RobotLib.h: 137: void lcd_print_char(char entity);
-[; ;RobotLib.h: 138: void lcd_print_long(long int entity);
-[; ;RobotLib.h: 139: void lcd_print_float(float entity);
-[; ;RobotLib.h: 140: void lcd_print_string(char *entity);
-[; ;RobotLib.h: 153: unsigned long int micros();
-[; ;RobotLib.h: 154: unsigned long int millis();
-[; ;RobotLib.h: 155: void delay_ms();
-[; ;RobotLib.h: 156: void delayMicroseconds();
-[v $root$_main `(v ~T0 @X0 0 e ]
-"2 main.c
-[v _main `(v ~T0 @X0 1 ef ]
-"3
-{
-[; ;main.c: 2: void main(void)
-[; ;main.c: 3: {
-[e :U _main ]
-[f ]
-[; ;main.c: 4: init();
-"4
-[e ( _init ..  ]
-[; ;main.c: 7: while(1){
+"6 ../RobotLib.X/RobotLib.h
+[p x OSC=HSPLL ]
 "7
-[e :U 271 ]
-{
-[; ;main.c: 9: lcd_print_string("12345");
-"9
-[e ( _lcd_print_string (1 -> :s 1C `*uc ]
-"10
-}
-[e :U 270 ]
-"7
-[e $U 271  ]
-[e :U 272 ]
-[; ;main.c: 10: }
-[; ;main.c: 11: }
+[p x FCMEN=OFF ]
+"8
+[p x IESO=OFF ]
 "11
+[p x PWRT=OFF ]
+"12
+[p x BOREN=ON ]
+"13
+[p x BORV=3 ]
+"16
+[p x WDT=ON ]
+"17
+[p x WDTPS=32768 ]
+"20
+[p x CCP2MX=PORTC ]
+"21
+[p x PBADEN=OFF ]
+"22
+[p x LPT1OSC=OFF ]
+"23
+[p x MCLRE=ON ]
+"26
+[p x STVREN=ON ]
+"27
+[p x LVP=OFF ]
+"28
+[p x XINST=OFF ]
+"31
+[p x CP0=OFF ]
+"32
+[p x CP1=OFF ]
+"33
+[p x CP2=OFF ]
+"36
+[p x CPB=OFF ]
+"37
+[p x CPD=OFF ]
+"40
+[p x WRT0=OFF ]
+"41
+[p x WRT1=OFF ]
+"42
+[p x WRT2=OFF ]
+"45
+[p x WRTC=OFF ]
+"46
+[p x WRTB=OFF ]
+"47
+[p x WRTD=OFF ]
+"50
+[p x EBTR0=OFF ]
+"51
+[p x EBTR1=OFF ]
+"52
+[p x EBTR2=OFF ]
+"55
+[p x EBTRB=OFF ]
+[; ;RobotLib.h: 119: void high_isr(void);
+[; ;RobotLib.h: 122: void low_isr(void);
+[; ;RobotLib.h: 125: void init();
+[; ;RobotLib.h: 128: void initOutputs();
+[; ;RobotLib.h: 129: void pinMode(char pin,char mode);
+[; ;RobotLib.h: 130: void digitalWrite(char pin, char state);
+[; ;RobotLib.h: 131: char digitalRead(char pin);
+[; ;RobotLib.h: 134: int analogRead(char pin);
+[; ;RobotLib.h: 135: void initADC();
+"138
+[v _int0func `*F2944 ~T0 @X0 1 e ]
+[; ;RobotLib.h: 138: void (*int0func)();
+"139
+[v _timerFunc `*F2946 ~T0 @X0 1 e ]
+[; ;RobotLib.h: 139: void (*timerFunc)();
+[; ;RobotLib.h: 140: void initInterrupts();
+[; ;RobotLib.h: 141: void attachInterrupt(char num, char mode, void (*func)());
+[; ;RobotLib.h: 142: void detachInterrupt(char num);
+[; ;RobotLib.h: 145: void initLCD();
+[; ;RobotLib.h: 146: void lcd_clear();
+[; ;RobotLib.h: 147: void lcd_setCursor(char x,char y);
+[; ;RobotLib.h: 148: void lcd_print_int(int entity);
+[; ;RobotLib.h: 149: void lcd_print_char(char entity);
+[; ;RobotLib.h: 150: void lcd_print_float(float entity);
+[; ;RobotLib.h: 151: void lcd_print_string(char *entity);
+"163
+[v _microSeconds `ul ~T0 @X0 1 e ]
+[i _microSeconds
+-> -> -> 0 `i `l `ul
+]
+[; ;RobotLib.h: 163: unsigned long int microSeconds = 0;
+"164
+[v _milliSeconds `ul ~T0 @X0 1 e ]
+[i _milliSeconds
+-> -> -> 0 `i `l `ul
+]
+[; ;RobotLib.h: 164: unsigned long int milliSeconds = 0;
+[; ;RobotLib.h: 165: void init_timer();
+[; ;RobotLib.h: 166: unsigned long int micros();
+[; ;RobotLib.h: 167: unsigned long int millis();
+[; ;RobotLib.h: 169: void delay_ms();
+[; ;RobotLib.h: 170: void delayMicroseconds();
+"5 main.c
+[v _func `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 5: void func(){}
+[e :U _func ]
+[f ]
 [e :UE 269 ]
 }
-[a 1C 49 50 51 52 53 0 ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"6
+[v _main `(v ~T0 @X0 1 ef ]
+"8
+{
+[; ;main.c: 6: void main(void)
+[; ;main.c: 8: {
+[e :U _main ]
+[f ]
+[; ;main.c: 9: init();
+"9
+[e ( _init ..  ]
+[; ;main.c: 10: attachInterrupt(0,0,func);
+"10
+[e ( _attachInterrupt (3 , , -> -> 0 `i `uc -> -> 0 `i `uc &U _func ]
+[; ;main.c: 12: lcd_setCursor(0,1);
+"12
+[e ( _lcd_setCursor (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 13: lcd_print_int(analogRead(7));
+"13
+[e ( _lcd_print_int (1 ( _analogRead (1 -> -> 7 `i `uc ]
+[; ;main.c: 14: pinMode(18,0);
+"14
+[e ( _pinMode (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 17: while(1){
+"17
+[e :U 272 ]
+{
+[; ;main.c: 18: lcd_setCursor(0,1);
+"18
+[e ( _lcd_setCursor (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 19: lcd_print_int(analogRead(7));
+"19
+[e ( _lcd_print_int (1 ( _analogRead (1 -> -> 7 `i `uc ]
+[; ;main.c: 20: lcd_print_string("    ");
+"20
+[e ( _lcd_print_string (1 -> :s 1C `*uc ]
+"21
+}
+[e :U 271 ]
+"17
+[e $U 272  ]
+[e :U 273 ]
+[; ;main.c: 21: }
+[; ;main.c: 22: }
+"22
+[e :UE 270 ]
+}
+[a 1C 32 32 32 32 0 ]
 

@@ -112,6 +112,15 @@
 #define LCD_DATA LATD
 
 #include <xc.h>
+#include <pic18f4525.h>
+
+//interrupt functions
+#pragma interrupt high_isr
+void  high_isr(void);
+
+#pragma interruptlow low_isr
+void low_isr(void);
+
 
 void init();
 
@@ -125,9 +134,12 @@ char digitalRead(char pin);
 int analogRead(char pin); 
 void initADC();
 
-//Handling interrupts 
-void attachInterrupt();
-void detachInterrupt();
+//Handling interrupts
+void (*int0func)();
+void (*timerFunc)();
+void initInterrupts();
+void attachInterrupt(char num, char mode, void (*func)());
+void detachInterrupt(char num);
 
 //LCD Functions
 void initLCD();
@@ -135,23 +147,27 @@ void lcd_clear();
 void lcd_setCursor(char x,char y);
 void lcd_print_int(int entity);
 void lcd_print_char(char entity);
-void lcd_print_long(long int entity);
 void lcd_print_float(float entity);
 void lcd_print_string(char *entity);
 
 //Overloading-like construction
-//#define lcd_print(X)        \
+//#define lcd_print(X)      \
     _Generic((X),           \
     int: lcd_print_int,     \
     char: lcd_print_char,   \
     float: lcd_print_float, \
-    long int: lcd_print_long\
     char*: lcd_print_string \
     )(X)
 
 //Timer functions for counting time since start 
+unsigned long int microSeconds = 0;
+unsigned long int milliSeconds = 0;
+void init_timer();
 unsigned long int micros();
 unsigned long int millis();
+
 void delay_ms();
 void delayMicroseconds();
+
+
 #endif	/* ROBOTLIB */
