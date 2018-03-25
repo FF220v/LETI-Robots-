@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.45 build -152302408 
-                                                                                               Sat Mar 24 18:46:35 2018
+                                                                                               Sun Mar 25 13:27:12 2018
 
 Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
      1                           	processor	18F4525
@@ -80,21 +80,21 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
     66 ;; Function _func is unused but had its address taken
     67  0000                     _INTCON3bits	set	4080
     68  0000                     _RCONbits	set	4048
-    69  0000                     _INTCON2bits	set	4081
-    70  0000                     _ADRESL	set	4035
-    71  0000                     _ADRESH	set	4036
-    72  0000                     _ADCON0bits	set	4034
-    73  0000                     _ADCON2bits	set	4032
-    74  0000                     _ADCON1bits	set	4033
-    75  0000                     _LATDbits	set	3980
-    76  0000                     _LATBbits	set	3978
-    77  0000                     _LATCbits	set	3979
-    78  0000                     _LATEbits	set	3981
-    79  0000                     _LATAbits	set	3977
-    80  0000                     _TRISD	set	3989
-    81  0000                     _LATD	set	3980
-    82  0000                     _PORTDbits	set	3971
-    83  0000                     _INTCONbits	set	4082
+    69  0000                     _INTCONbits	set	4082
+    70  0000                     _INTCON2bits	set	4081
+    71  0000                     _ADRESL	set	4035
+    72  0000                     _ADRESH	set	4036
+    73  0000                     _ADCON0bits	set	4034
+    74  0000                     _ADCON2bits	set	4032
+    75  0000                     _ADCON1bits	set	4033
+    76  0000                     _LATDbits	set	3980
+    77  0000                     _LATBbits	set	3978
+    78  0000                     _LATCbits	set	3979
+    79  0000                     _LATEbits	set	3981
+    80  0000                     _LATAbits	set	3977
+    81  0000                     _TRISD	set	3989
+    82  0000                     _LATD	set	3980
+    83  0000                     _PORTDbits	set	3971
     84  0000                     _TRISB2	set	31898
     85  0000                     _TRISB1	set	31897
     86  0000                     _TRISD1	set	31913
@@ -235,7 +235,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    221                           	opt stack 0
    222  000004                     lcd_setCursor@x:
    223                           	opt stack 0
-   224  000004                     initOutputs@i_1047:
+   224  000004                     initOutputs@i_1066:
    225                           	opt stack 0
    226  000004                     attachInterrupt@num:
    227                           	opt stack 0
@@ -422,7 +422,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    403                           
    404 ;; *************** function _lcd_setCursor *****************
    405 ;; Defined at:
-   406 ;;		line 69 in file "RobotLib.c"
+   406 ;;		line 52 in file "RobotLib.c"
    407 ;; Parameters:    Size  Location     Type
    408 ;;  x               1    wreg     unsigned char 
    409 ;;  y               1    2[COMRAM] unsigned char 
@@ -466,11 +466,11 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    442                           ;lcd_setCursor@x stored from wreg
    443  0019A2  6E04               	movwf	lcd_setCursor@x,c
    444                           
-   445                           ;RobotLib.c: 70: lcdCmd(0x02);
+   445                           ;RobotLib.c: 53: lcdCmd(0x02);
    446  0019A4  0E02               	movlw	2
    447  0019A6  EC39  F00C         	call	_lcdCmd
    448                           
-   449                           ;RobotLib.c: 71: lcdCmd((unsigned char)0x80+x+(unsigned char)0x40*y);
+   449                           ;RobotLib.c: 54: lcdCmd((unsigned char)0x80+x+(unsigned char)0x40*y);
    450  0019AA  5003               	movf	lcd_setCursor@y,w,c
    451  0019AC  0D40               	mullw	64
    452  0019AE  50F3               	movf	prodl,w,c
@@ -487,7 +487,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    463                           
    464 ;; *************** function _lcd_print_string *****************
    465 ;; Defined at:
-   466 ;;		line 86 in file "RobotLib.c"
+   466 ;;		line 69 in file "RobotLib.c"
    467 ;; Parameters:    Size  Location     Type
    468 ;;  entity          2    2[COMRAM] PTR unsigned char 
    469 ;;		 -> STR_1(5), 
@@ -527,13 +527,13 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    498  00195A                     _lcd_print_string:
    499                           	opt stack 28
    500                           
-   501                           ;RobotLib.c: 87: while(*entity)
+   501                           ;RobotLib.c: 70: while(*entity)
    502                           
    503                           ;incstack = 0
-   504  00195A  D00A               	goto	l179
+   504  00195A  D00A               	goto	l171
    505  00195C                     
-   506                           ;RobotLib.c: 88: {
-   507                           ;RobotLib.c: 89: lcd_print_char(*entity);
+   506                           ;RobotLib.c: 71: {
+   507                           ;RobotLib.c: 72: lcd_print_char(*entity);
    508  00195C  C003  FFF6         	movff	lcd_print_string@entity,tblptrl
    509  001960  C004  FFF7         	movff	lcd_print_string@entity+1,tblptrh
    510  001964                     	if	0	;tblptru may be non-zero
@@ -544,10 +544,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    515  001966  50F5               	movf	tablat,w,c
    516  001968  EC79  F00C         	call	_lcd_print_char
    517                           
-   518                           ;RobotLib.c: 90: entity++;
+   518                           ;RobotLib.c: 73: entity++;
    519  00196C  4A03               	infsnz	lcd_print_string@entity,f,c
    520  00196E  2A04               	incf	lcd_print_string@entity+1,f,c
-   521  001970                     l179:
+   521  001970                     l171:
    522  001970  C003  FFF6         	movff	lcd_print_string@entity,tblptrl
    523  001974  C004  FFF7         	movff	lcd_print_string@entity+1,tblptrh
    524  001978                     	if	0	;tblptru may be non-zero
@@ -559,7 +559,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    530  00197C  0900               	iorlw	0
    531  00197E  B4D8               	btfsc	status,2,c
    532  001980  0012               	return	
-   533  001982  D7EC               	goto	l180
+   533  001982  D7EC               	goto	l172
    534  001984                     __end_of_lcd_print_string:
    535                           	opt stack 0
    536                           tblptru	equ	0xFF8
@@ -573,7 +573,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    544                           
    545 ;; *************** function _lcd_print_int *****************
    546 ;; Defined at:
-   547 ;;		line 94 in file "RobotLib.c"
+   547 ;;		line 77 in file "RobotLib.c"
    548 ;; Parameters:    Size  Location     Type
    549 ;;  entity          2   14[COMRAM] int 
    550 ;; Auto vars:     Size  Location     Type
@@ -618,7 +618,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    584  0013B0                     _lcd_print_int:
    585                           	opt stack 28
    586                           
-   587                           ;RobotLib.c: 96: long int value = entity;
+   587                           ;RobotLib.c: 79: long int value = entity;
    588                           
    589                           ;incstack = 0
    590  0013B0  C00F  F028         	movff	lcd_print_int@entity,lcd_print_int@value
@@ -629,11 +629,11 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    595  0013BE  6E2A               	movwf	lcd_print_int@value+2,c
    596  0013C0  6E2B               	movwf	lcd_print_int@value+3,c
    597                           
-   598                           ;RobotLib.c: 97: if(entity<0)
+   598                           ;RobotLib.c: 80: if(entity<0)
    599  0013C2  AE10               	btfss	lcd_print_int@entity+1,7,c
-   600  0013C4  D01A               	goto	l185
+   600  0013C4  D01A               	goto	l177
    601                           
-   602                           ;RobotLib.c: 98: value*=(-1);
+   602                           ;RobotLib.c: 81: value*=(-1);
    603  0013C6  C028  F001         	movff	lcd_print_int@value,___lmul@multiplier
    604  0013CA  C029  F002         	movff	lcd_print_int@value+1,___lmul@multiplier+1
    605  0013CE  C02A  F003         	movff	lcd_print_int@value+2,___lmul@multiplier+2
@@ -651,36 +651,36 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    617  0013EE  C002  F029         	movff	?___lmul+1,lcd_print_int@value+1
    618  0013F2  C003  F02A         	movff	?___lmul+2,lcd_print_int@value+2
    619  0013F6  C004  F02B         	movff	?___lmul+3,lcd_print_int@value+3
-   620  0013FA                     l185:
+   620  0013FA                     l177:
    621                           
-   622                           ;RobotLib.c: 99: if(value == 0){
+   622                           ;RobotLib.c: 82: if(value == 0){
    623  0013FA  5028               	movf	lcd_print_int@value,w,c
    624  0013FC  1029               	iorwf	lcd_print_int@value+1,w,c
    625  0013FE  102A               	iorwf	lcd_print_int@value+2,w,c
    626  001400  102B               	iorwf	lcd_print_int@value+3,w,c
    627  001402  A4D8               	btfss	status,2,c
-   628  001404  D004               	goto	l186
+   628  001404  D004               	goto	l178
    629                           
-   630                           ;RobotLib.c: 100: lcd_print_char('0');
+   630                           ;RobotLib.c: 83: lcd_print_char('0');
    631  001406  0E30               	movlw	48
    632  001408  EC79  F00C         	call	_lcd_print_char
    633                           
-   634                           ;RobotLib.c: 101: return;
+   634                           ;RobotLib.c: 84: return;
    635  00140C  0012               	return	
-   636  00140E                     l186:
+   636  00140E                     l178:
    637                           
-   638                           ;RobotLib.c: 102: }
-   639                           ;RobotLib.c: 103: int i=0;
+   638                           ;RobotLib.c: 85: }
+   639                           ;RobotLib.c: 86: int i=0;
    640  00140E  0E00               	movlw	0
    641  001410  6E27               	movwf	lcd_print_int@i+1,c
    642  001412  0E00               	movlw	0
    643  001414  6E26               	movwf	lcd_print_int@i,c
    644                           
-   645                           ;RobotLib.c: 104: char buff[16];
-   646                           ;RobotLib.c: 105: while(value!=0){
-   647  001416  D04B               	goto	l188
+   645                           ;RobotLib.c: 87: char buff[16];
+   646                           ;RobotLib.c: 88: while(value!=0){
+   647  001416  D04B               	goto	l180
    648  001418                     
-   649                           ;RobotLib.c: 106: char num = value%10;
+   649                           ;RobotLib.c: 89: char num = value%10;
    650  001418  C028  F001         	movff	lcd_print_int@value,___almod@dividend
    651  00141C  C029  F002         	movff	lcd_print_int@value+1,___almod@dividend+1
    652  001420  C02A  F003         	movff	lcd_print_int@value+2,___almod@dividend+2
@@ -697,7 +697,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    663  00143C  5001               	movf	?___almod,w,c
    664  00143E  6E25               	movwf	lcd_print_int@num,c
    665                           
-   666                           ;RobotLib.c: 107: buff[i] = num+0x30;
+   666                           ;RobotLib.c: 90: buff[i] = num+0x30;
    667  001440  0E15               	movlw	low lcd_print_int@buff
    668  001442  2426               	addwf	lcd_print_int@i,w,c
    669  001444  6ED9               	movwf	fsr2l,c
@@ -708,7 +708,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    674  00144E  0F30               	addlw	48
    675  001450  6EDF               	movwf	indf2,c
    676                           
-   677                           ;RobotLib.c: 108: value = (value - num)/10;
+   677                           ;RobotLib.c: 91: value = (value - num)/10;
    678  001452  C025  F011         	movff	lcd_print_int@num,??_lcd_print_int
    679  001456  6A12               	clrf	(??_lcd_print_int+1)& (0+255),c
    680  001458  6A13               	clrf	(??_lcd_print_int+2)& (0+255),c
@@ -748,37 +748,37 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    714  0014A2  C003  F02A         	movff	?___aldiv+2,lcd_print_int@value+2
    715  0014A6  C004  F02B         	movff	?___aldiv+3,lcd_print_int@value+3
    716                           
-   717                           ;RobotLib.c: 109: i++;
+   717                           ;RobotLib.c: 92: i++;
    718  0014AA  4A26               	infsnz	lcd_print_int@i,f,c
    719  0014AC  2A27               	incf	lcd_print_int@i+1,f,c
-   720  0014AE                     l188:
+   720  0014AE                     l180:
    721  0014AE  5028               	movf	lcd_print_int@value,w,c
    722  0014B0  1029               	iorwf	lcd_print_int@value+1,w,c
    723  0014B2  102A               	iorwf	lcd_print_int@value+2,w,c
    724  0014B4  102B               	iorwf	lcd_print_int@value+3,w,c
    725  0014B6  A4D8               	btfss	status,2,c
-   726  0014B8  D7AF               	goto	l189
+   726  0014B8  D7AF               	goto	l181
    727                           
-   728                           ;RobotLib.c: 110: }
-   729                           ;RobotLib.c: 111: i--;
+   728                           ;RobotLib.c: 93: }
+   729                           ;RobotLib.c: 94: i--;
    730  0014BA  0626               	decf	lcd_print_int@i,f,c
    731  0014BC  A0D8               	btfss	status,0,c
    732  0014BE  0627               	decf	lcd_print_int@i+1,f,c
    733                           
-   734                           ;RobotLib.c: 112: if(entity<0)
+   734                           ;RobotLib.c: 95: if(entity<0)
    735  0014C0  AE10               	btfss	lcd_print_int@entity+1,7,c
-   736  0014C2  D003               	goto	l191
+   736  0014C2  D003               	goto	l183
    737                           
-   738                           ;RobotLib.c: 113: lcd_print_char('-');
+   738                           ;RobotLib.c: 96: lcd_print_char('-');
    739  0014C4  0E2D               	movlw	45
    740  0014C6  EC79  F00C         	call	_lcd_print_char
-   741  0014CA                     l191:
+   741  0014CA                     l183:
    742                           
-   743                           ;RobotLib.c: 115: for(;i>=0; i--)
+   743                           ;RobotLib.c: 98: for(;i>=0; i--)
    744  0014CA  BE27               	btfsc	lcd_print_int@i+1,7,c
    745  0014CC  0012               	return	
    746                           
-   747                           ;RobotLib.c: 116: lcd_print_char(buff[i]);
+   747                           ;RobotLib.c: 99: lcd_print_char(buff[i]);
    748  0014CE  0E15               	movlw	low lcd_print_int@buff
    749  0014D0  2426               	addwf	lcd_print_int@i,w,c
    750  0014D2  6ED9               	movwf	fsr2l,c
@@ -790,7 +790,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    756  0014E0  0626               	decf	lcd_print_int@i,f,c
    757  0014E2  A0D8               	btfss	status,0,c
    758  0014E4  0627               	decf	lcd_print_int@i+1,f,c
-   759  0014E6  D7F1               	goto	l191
+   759  0014E6  D7F1               	goto	l183
    760  0014E8                     __end_of_lcd_print_int:
    761                           	opt stack 0
    762                           tblptru	equ	0xFF8
@@ -807,7 +807,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    773                           
    774 ;; *************** function _lcd_print_char *****************
    775 ;; Defined at:
-   776 ;;		line 78 in file "RobotLib.c"
+   776 ;;		line 61 in file "RobotLib.c"
    777 ;; Parameters:    Size  Location     Type
    778 ;;  entity          1    wreg     unsigned char 
    779 ;; Auto vars:     Size  Location     Type
@@ -851,10 +851,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    812                           ;lcd_print_char@entity stored from wreg
    813  0018F2  6E02               	movwf	lcd_print_char@entity,c
    814                           
-   815                           ;RobotLib.c: 79: PORTDbits.RD2 = 1;
+   815                           ;RobotLib.c: 62: PORTDbits.RD2 = 1;
    816  0018F4  8483               	bsf	3971,2,c	;volatile
    817                           
-   818                           ;RobotLib.c: 80: LATD = (LATD&0x0f)|(entity & 0xf0);
+   818                           ;RobotLib.c: 63: LATD = (LATD&0x0f)|(entity & 0xf0);
    819  0018F6  C002  F001         	movff	lcd_print_char@entity,??_lcd_print_char
    820  0018FA  0EF0               	movlw	240
    821  0018FC  1601               	andwf	??_lcd_print_char,f,c
@@ -863,10 +863,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    824  001902  1001               	iorwf	??_lcd_print_char,w,c
    825  001904  6E8C               	movwf	3980,c	;volatile
    826                           
-   827                           ;RobotLib.c: 81: lcdPulse();
+   827                           ;RobotLib.c: 64: lcdPulse();
    828  001906  ECE8  F00C         	call	_lcdPulse	;wreg free
    829                           
-   830                           ;RobotLib.c: 82: LATD = (LATD&0x0f)|((entity<<4)&0xf0);
+   830                           ;RobotLib.c: 65: LATD = (LATD&0x0f)|((entity<<4)&0xf0);
    831  00190A  C002  F001         	movff	lcd_print_char@entity,??_lcd_print_char
    832  00190E  3A01               	swapf	??_lcd_print_char,f,c
    833  001910  0EF0               	movlw	240
@@ -878,7 +878,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
    839  00191C  1001               	iorwf	??_lcd_print_char,w,c
    840  00191E  6E8C               	movwf	3980,c	;volatile
    841                           
-   842                           ;RobotLib.c: 83: lcdPulse();
+   842                           ;RobotLib.c: 66: lcdPulse();
    843  001920  ECE8  F00C         	call	_lcdPulse	;wreg free
    844  001924  0012               	return		;funcret
    845  001926                     __end_of_lcd_print_char:
@@ -1302,7 +1302,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1248                           
   1249 ;; *************** function _init *****************
   1250 ;; Defined at:
-  1251 ;;		line 23 in file "RobotLib.c"
+  1251 ;;		line 6 in file "RobotLib.c"
   1252 ;; Parameters:    Size  Location     Type
   1253 ;;		None
   1254 ;; Auto vars:     Size  Location     Type
@@ -1344,18 +1344,18 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1285  0019E6                     _init:
   1286                           	opt stack 27
   1287                           
-  1288                           ;RobotLib.c: 24: initOutputs();
+  1288                           ;RobotLib.c: 7: initOutputs();
   1289                           
   1290                           ;incstack = 0
   1291  0019E6  EC5A  F00C         	call	_initOutputs	;wreg free
   1292                           
-  1293                           ;RobotLib.c: 25: initADC();
+  1293                           ;RobotLib.c: 8: initADC();
   1294  0019EA  ECC2  F00C         	call	_initADC	;wreg free
   1295                           
-  1296                           ;RobotLib.c: 26: initInterrupts();
+  1296                           ;RobotLib.c: 9: initInterrupts();
   1297  0019EE  ECFC  F00C         	call	_initInterrupts	;wreg free
   1298                           
-  1299                           ;RobotLib.c: 27: initLCD();
+  1299                           ;RobotLib.c: 10: initLCD();
   1300  0019F2  ECA0  F00B         	call	_initLCD	;wreg free
   1301  0019F6  0012               	return		;funcret
   1302  0019F8                     __end_of_init:
@@ -1374,7 +1374,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1315                           
   1316 ;; *************** function _initOutputs *****************
   1317 ;; Defined at:
-  1318 ;;		line 121 in file "RobotLib.c"
+  1318 ;;		line 104 in file "RobotLib.c"
   1319 ;; Parameters:    Size  Location     Type
   1320 ;;		None
   1321 ;; Auto vars:     Size  Location     Type
@@ -1415,7 +1415,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1351  0018B4                     _initOutputs:
   1352                           	opt stack 28
   1353                           
-  1354                           ;RobotLib.c: 123: for(char i = 0; i<=11; i++)
+  1354                           ;RobotLib.c: 106: for(char i = 0; i<=11; i++)
   1355                           
   1356                           ;incstack = 0
   1357  0018B4  0E00               	movlw	0
@@ -1423,11 +1423,11 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1359  0018B8                     l1727:
   1360  0018B8  0E0B               	movlw	11
   1361  0018BA  6403               	cpfsgt	initOutputs@i,c
-  1362  0018BC  D001               	goto	l196
+  1362  0018BC  D001               	goto	l188
   1363  0018BE  D007               	goto	u1230
-  1364  0018C0                     l196:
+  1364  0018C0                     l188:
   1365                           
-  1366                           ;RobotLib.c: 124: pinMode(i, 1);
+  1366                           ;RobotLib.c: 107: pinMode(i, 1);
   1367  0018C0  0E01               	movlw	1
   1368  0018C2  6E01               	movwf	pinMode@mode,c
   1369  0018C4  5003               	movf	initOutputs@i,w,c
@@ -1436,28 +1436,28 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1372  0018CC  D7F5               	goto	l1727
   1373  0018CE                     u1230:
   1374                           
-  1375                           ;RobotLib.c: 125: for(char i = 19; i<=22; i++){
+  1375                           ;RobotLib.c: 108: for(char i = 19; i<=22; i++){
   1376  0018CE  0E13               	movlw	19
-  1377  0018D0  6E04               	movwf	initOutputs@i_1047,c
+  1377  0018D0  6E04               	movwf	initOutputs@i_1066,c
   1378  0018D2                     l1739:
   1379  0018D2  0E16               	movlw	22
-  1380  0018D4  6404               	cpfsgt	initOutputs@i_1047,c
-  1381  0018D6  D001               	goto	l198
+  1380  0018D4  6404               	cpfsgt	initOutputs@i_1066,c
+  1381  0018D6  D001               	goto	l190
   1382  0018D8  0012               	return	
-  1383  0018DA                     l198:
+  1383  0018DA                     l190:
   1384                           
-  1385                           ;RobotLib.c: 126: pinMode(i, 0);
+  1385                           ;RobotLib.c: 109: pinMode(i, 0);
   1386  0018DA  0E00               	movlw	0
   1387  0018DC  6E01               	movwf	pinMode@mode,c
-  1388  0018DE  5004               	movf	initOutputs@i_1047,w,c
+  1388  0018DE  5004               	movf	initOutputs@i_1066,w,c
   1389  0018E0  EC04  F008         	call	_pinMode
   1390                           
-  1391                           ;RobotLib.c: 127: digitalWrite(i, 0);
+  1391                           ;RobotLib.c: 110: digitalWrite(i, 0);
   1392  0018E4  0E00               	movlw	0
   1393  0018E6  6E01               	movwf	digitalWrite@mode,c
-  1394  0018E8  5004               	movf	initOutputs@i_1047,w,c
+  1394  0018E8  5004               	movf	initOutputs@i_1066,w,c
   1395  0018EA  ECEE  F008         	call	_digitalWrite
-  1396  0018EE  2A04               	incf	initOutputs@i_1047,f,c
+  1396  0018EE  2A04               	incf	initOutputs@i_1066,f,c
   1397  0018F0  D7F0               	goto	l1739
   1398  0018F2                     __end_of_initOutputs:
   1399                           	opt stack 0
@@ -1475,7 +1475,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1411                           
   1412 ;; *************** function _pinMode *****************
   1413 ;; Defined at:
-  1414 ;;		line 132 in file "RobotLib.c"
+  1414 ;;		line 115 in file "RobotLib.c"
   1415 ;; Parameters:    Size  Location     Type
   1416 ;;  pin             1    wreg     unsigned char 
   1417 ;;  mode            1    0[COMRAM] unsigned char 
@@ -1519,402 +1519,402 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1450                           ;pinMode@pin stored from wreg
   1451  001008  6E02               	movwf	pinMode@pin,c
   1452                           
-  1453                           ;RobotLib.c: 133: switch(pin)
-  1454  00100A  D0A1               	goto	l203
+  1453                           ;RobotLib.c: 116: switch(pin)
+  1454  00100A  D0A1               	goto	l195
   1455  00100C                     
-  1456                           ;RobotLib.c: 136: if(mode)
+  1456                           ;RobotLib.c: 119: if(mode)
   1457  00100C  5001               	movf	pinMode@mode,w,c
   1458  00100E  B4D8               	btfsc	status,2,c
-  1459  001010  D002               	goto	l205
+  1459  001010  D002               	goto	l197
   1460                           
-  1461                           ;RobotLib.c: 137: TRISA0 = 1;
+  1461                           ;RobotLib.c: 120: TRISA0 = 1;
   1462  001012  8092               	bsf	3986,0,c	;volatile
   1463  001014  0012               	return	
-  1464  001016                     l205:
+  1464  001016                     l197:
   1465                           
-  1466                           ;RobotLib.c: 138: else
-  1467                           ;RobotLib.c: 139: TRISA0 = 0;
+  1466                           ;RobotLib.c: 121: else
+  1467                           ;RobotLib.c: 122: TRISA0 = 0;
   1468  001016  9092               	bcf	3986,0,c	;volatile
   1469                           
-  1470                           ;RobotLib.c: 140: break;
+  1470                           ;RobotLib.c: 123: break;
   1471  001018  0012               	return	
   1472  00101A                     
-  1473                           ;RobotLib.c: 143: if(mode)
+  1473                           ;RobotLib.c: 126: if(mode)
   1474  00101A  5001               	movf	pinMode@mode,w,c
   1475  00101C  B4D8               	btfsc	status,2,c
-  1476  00101E  D002               	goto	l209
+  1476  00101E  D002               	goto	l201
   1477                           
-  1478                           ;RobotLib.c: 144: TRISA1 = 1;
+  1478                           ;RobotLib.c: 127: TRISA1 = 1;
   1479  001020  8292               	bsf	3986,1,c	;volatile
   1480  001022  0012               	return	
-  1481  001024                     l209:
+  1481  001024                     l201:
   1482                           
-  1483                           ;RobotLib.c: 145: else
-  1484                           ;RobotLib.c: 146: TRISA1 = 0;
+  1483                           ;RobotLib.c: 128: else
+  1484                           ;RobotLib.c: 129: TRISA1 = 0;
   1485  001024  9292               	bcf	3986,1,c	;volatile
   1486                           
-  1487                           ;RobotLib.c: 147: break;
+  1487                           ;RobotLib.c: 130: break;
   1488  001026  0012               	return	
   1489  001028                     
-  1490                           ;RobotLib.c: 150: if(mode)
+  1490                           ;RobotLib.c: 133: if(mode)
   1491  001028  5001               	movf	pinMode@mode,w,c
   1492  00102A  B4D8               	btfsc	status,2,c
-  1493  00102C  D002               	goto	l212
+  1493  00102C  D002               	goto	l204
   1494                           
-  1495                           ;RobotLib.c: 151: TRISA2 = 1;
+  1495                           ;RobotLib.c: 134: TRISA2 = 1;
   1496  00102E  8492               	bsf	3986,2,c	;volatile
   1497  001030  0012               	return	
-  1498  001032                     l212:
+  1498  001032                     l204:
   1499                           
-  1500                           ;RobotLib.c: 152: else
-  1501                           ;RobotLib.c: 153: TRISA2 = 0;
+  1500                           ;RobotLib.c: 135: else
+  1501                           ;RobotLib.c: 136: TRISA2 = 0;
   1502  001032  9492               	bcf	3986,2,c	;volatile
   1503                           
-  1504                           ;RobotLib.c: 154: break;
+  1504                           ;RobotLib.c: 137: break;
   1505  001034  0012               	return	
   1506  001036                     
-  1507                           ;RobotLib.c: 157: if(mode)
+  1507                           ;RobotLib.c: 140: if(mode)
   1508  001036  5001               	movf	pinMode@mode,w,c
   1509  001038  B4D8               	btfsc	status,2,c
-  1510  00103A  D002               	goto	l215
+  1510  00103A  D002               	goto	l207
   1511                           
-  1512                           ;RobotLib.c: 158: TRISA3 = 1;
+  1512                           ;RobotLib.c: 141: TRISA3 = 1;
   1513  00103C  8692               	bsf	3986,3,c	;volatile
   1514  00103E  0012               	return	
-  1515  001040                     l215:
+  1515  001040                     l207:
   1516                           
-  1517                           ;RobotLib.c: 159: else
-  1518                           ;RobotLib.c: 160: TRISA3 = 0;
+  1517                           ;RobotLib.c: 142: else
+  1518                           ;RobotLib.c: 143: TRISA3 = 0;
   1519  001040  9692               	bcf	3986,3,c	;volatile
   1520                           
-  1521                           ;RobotLib.c: 161: break;
+  1521                           ;RobotLib.c: 144: break;
   1522  001042  0012               	return	
   1523  001044                     
-  1524                           ;RobotLib.c: 164: if(mode)
+  1524                           ;RobotLib.c: 147: if(mode)
   1525  001044  5001               	movf	pinMode@mode,w,c
   1526  001046  B4D8               	btfsc	status,2,c
-  1527  001048  D002               	goto	l218
+  1527  001048  D002               	goto	l210
   1528                           
-  1529                           ;RobotLib.c: 165: TRISA5 = 1;
+  1529                           ;RobotLib.c: 148: TRISA5 = 1;
   1530  00104A  8A92               	bsf	3986,5,c	;volatile
   1531  00104C  0012               	return	
-  1532  00104E                     l218:
+  1532  00104E                     l210:
   1533                           
-  1534                           ;RobotLib.c: 166: else
-  1535                           ;RobotLib.c: 167: TRISA5 = 0;
+  1534                           ;RobotLib.c: 149: else
+  1535                           ;RobotLib.c: 150: TRISA5 = 0;
   1536  00104E  9A92               	bcf	3986,5,c	;volatile
   1537                           
-  1538                           ;RobotLib.c: 168: break;
+  1538                           ;RobotLib.c: 151: break;
   1539  001050  0012               	return	
   1540  001052                     
-  1541                           ;RobotLib.c: 171: if(mode)
+  1541                           ;RobotLib.c: 154: if(mode)
   1542  001052  5001               	movf	pinMode@mode,w,c
   1543  001054  B4D8               	btfsc	status,2,c
-  1544  001056  D002               	goto	l221
+  1544  001056  D002               	goto	l213
   1545                           
-  1546                           ;RobotLib.c: 172: TRISE0 = 1;
+  1546                           ;RobotLib.c: 155: TRISE0 = 1;
   1547  001058  8096               	bsf	3990,0,c	;volatile
   1548  00105A  0012               	return	
-  1549  00105C                     l221:
+  1549  00105C                     l213:
   1550                           
-  1551                           ;RobotLib.c: 173: else
-  1552                           ;RobotLib.c: 174: TRISE0 = 0;
+  1551                           ;RobotLib.c: 156: else
+  1552                           ;RobotLib.c: 157: TRISE0 = 0;
   1553  00105C  9096               	bcf	3990,0,c	;volatile
   1554                           
-  1555                           ;RobotLib.c: 175: break;
+  1555                           ;RobotLib.c: 158: break;
   1556  00105E  0012               	return	
   1557  001060                     
-  1558                           ;RobotLib.c: 178: if(mode)
+  1558                           ;RobotLib.c: 161: if(mode)
   1559  001060  5001               	movf	pinMode@mode,w,c
   1560  001062  B4D8               	btfsc	status,2,c
-  1561  001064  D002               	goto	l224
+  1561  001064  D002               	goto	l216
   1562                           
-  1563                           ;RobotLib.c: 179: TRISE1 = 1;
+  1563                           ;RobotLib.c: 162: TRISE1 = 1;
   1564  001066  8296               	bsf	3990,1,c	;volatile
   1565  001068  0012               	return	
-  1566  00106A                     l224:
+  1566  00106A                     l216:
   1567                           
-  1568                           ;RobotLib.c: 180: else
-  1569                           ;RobotLib.c: 181: TRISE1 = 0;
+  1568                           ;RobotLib.c: 163: else
+  1569                           ;RobotLib.c: 164: TRISE1 = 0;
   1570  00106A  9296               	bcf	3990,1,c	;volatile
   1571                           
-  1572                           ;RobotLib.c: 182: break;
+  1572                           ;RobotLib.c: 165: break;
   1573  00106C  0012               	return	
   1574  00106E                     
-  1575                           ;RobotLib.c: 185: if(mode)
+  1575                           ;RobotLib.c: 168: if(mode)
   1576  00106E  5001               	movf	pinMode@mode,w,c
   1577  001070  B4D8               	btfsc	status,2,c
-  1578  001072  D002               	goto	l227
+  1578  001072  D002               	goto	l219
   1579                           
-  1580                           ;RobotLib.c: 186: TRISE2 = 1;
+  1580                           ;RobotLib.c: 169: TRISE2 = 1;
   1581  001074  8496               	bsf	3990,2,c	;volatile
   1582  001076  0012               	return	
-  1583  001078                     l227:
+  1583  001078                     l219:
   1584                           
-  1585                           ;RobotLib.c: 187: else
-  1586                           ;RobotLib.c: 188: TRISE2 = 0;
+  1585                           ;RobotLib.c: 170: else
+  1586                           ;RobotLib.c: 171: TRISE2 = 0;
   1587  001078  9496               	bcf	3990,2,c	;volatile
   1588                           
-  1589                           ;RobotLib.c: 189: break;
+  1589                           ;RobotLib.c: 172: break;
   1590  00107A  0012               	return	
   1591  00107C                     
-  1592                           ;RobotLib.c: 192: if(mode)
+  1592                           ;RobotLib.c: 175: if(mode)
   1593  00107C  5001               	movf	pinMode@mode,w,c
   1594  00107E  B4D8               	btfsc	status,2,c
-  1595  001080  D002               	goto	l230
+  1595  001080  D002               	goto	l222
   1596                           
-  1597                           ;RobotLib.c: 193: TRISC5 = 1;
+  1597                           ;RobotLib.c: 176: TRISC5 = 1;
   1598  001082  8A94               	bsf	3988,5,c	;volatile
   1599  001084  0012               	return	
-  1600  001086                     l230:
+  1600  001086                     l222:
   1601                           
-  1602                           ;RobotLib.c: 194: else
-  1603                           ;RobotLib.c: 195: TRISC5 = 0;
+  1602                           ;RobotLib.c: 177: else
+  1603                           ;RobotLib.c: 178: TRISC5 = 0;
   1604  001086  9A94               	bcf	3988,5,c	;volatile
   1605                           
-  1606                           ;RobotLib.c: 196: break;
+  1606                           ;RobotLib.c: 179: break;
   1607  001088  0012               	return	
   1608  00108A                     
-  1609                           ;RobotLib.c: 199: if(mode)
+  1609                           ;RobotLib.c: 182: if(mode)
   1610  00108A  5001               	movf	pinMode@mode,w,c
   1611  00108C  B4D8               	btfsc	status,2,c
-  1612  00108E  D002               	goto	l233
+  1612  00108E  D002               	goto	l225
   1613                           
-  1614                           ;RobotLib.c: 200: TRISB4 = 1;
+  1614                           ;RobotLib.c: 183: TRISB4 = 1;
   1615  001090  8893               	bsf	3987,4,c	;volatile
   1616  001092  0012               	return	
-  1617  001094                     l233:
+  1617  001094                     l225:
   1618                           
-  1619                           ;RobotLib.c: 201: else
-  1620                           ;RobotLib.c: 202: TRISB4 = 0;
+  1619                           ;RobotLib.c: 184: else
+  1620                           ;RobotLib.c: 185: TRISB4 = 0;
   1621  001094  9893               	bcf	3987,4,c	;volatile
   1622                           
-  1623                           ;RobotLib.c: 203: break;
+  1623                           ;RobotLib.c: 186: break;
   1624  001096  0012               	return	
   1625  001098                     
-  1626                           ;RobotLib.c: 206: if(mode)
+  1626                           ;RobotLib.c: 189: if(mode)
   1627  001098  5001               	movf	pinMode@mode,w,c
   1628  00109A  B4D8               	btfsc	status,2,c
-  1629  00109C  D002               	goto	l236
+  1629  00109C  D002               	goto	l228
   1630                           
-  1631                           ;RobotLib.c: 207: TRISB5 = 1;
+  1631                           ;RobotLib.c: 190: TRISB5 = 1;
   1632  00109E  8A93               	bsf	3987,5,c	;volatile
   1633  0010A0  0012               	return	
-  1634  0010A2                     l236:
+  1634  0010A2                     l228:
   1635                           
-  1636                           ;RobotLib.c: 208: else
-  1637                           ;RobotLib.c: 209: TRISB5 = 0;
+  1636                           ;RobotLib.c: 191: else
+  1637                           ;RobotLib.c: 192: TRISB5 = 0;
   1638  0010A2  9A93               	bcf	3987,5,c	;volatile
   1639                           
-  1640                           ;RobotLib.c: 210: break;
+  1640                           ;RobotLib.c: 193: break;
   1641  0010A4  0012               	return	
   1642  0010A6                     
-  1643                           ;RobotLib.c: 213: if(mode)
+  1643                           ;RobotLib.c: 196: if(mode)
   1644  0010A6  5001               	movf	pinMode@mode,w,c
   1645  0010A8  B4D8               	btfsc	status,2,c
-  1646  0010AA  D002               	goto	l239
+  1646  0010AA  D002               	goto	l231
   1647                           
-  1648                           ;RobotLib.c: 214: TRISB0 = 1;
+  1648                           ;RobotLib.c: 197: TRISB0 = 1;
   1649  0010AC  8093               	bsf	3987,0,c	;volatile
   1650  0010AE  0012               	return	
-  1651  0010B0                     l239:
+  1651  0010B0                     l231:
   1652                           
-  1653                           ;RobotLib.c: 215: else
-  1654                           ;RobotLib.c: 216: TRISB0 = 0;
+  1653                           ;RobotLib.c: 198: else
+  1654                           ;RobotLib.c: 199: TRISB0 = 0;
   1655  0010B0  9093               	bcf	3987,0,c	;volatile
   1656                           
-  1657                           ;RobotLib.c: 217: break;
+  1657                           ;RobotLib.c: 200: break;
   1658  0010B2  0012               	return	
   1659  0010B4                     
-  1660                           ;RobotLib.c: 220: if(mode)
+  1660                           ;RobotLib.c: 203: if(mode)
   1661  0010B4  5001               	movf	pinMode@mode,w,c
   1662  0010B6  B4D8               	btfsc	status,2,c
-  1663  0010B8  D002               	goto	l242
+  1663  0010B8  D002               	goto	l234
   1664                           
-  1665                           ;RobotLib.c: 221: TRISC7 = 1;
+  1665                           ;RobotLib.c: 204: TRISC7 = 1;
   1666  0010BA  8E94               	bsf	3988,7,c	;volatile
   1667  0010BC  0012               	return	
-  1668  0010BE                     l242:
+  1668  0010BE                     l234:
   1669                           
-  1670                           ;RobotLib.c: 222: else
-  1671                           ;RobotLib.c: 223: TRISC7 = 0;
+  1670                           ;RobotLib.c: 205: else
+  1671                           ;RobotLib.c: 206: TRISC7 = 0;
   1672  0010BE  9E94               	bcf	3988,7,c	;volatile
   1673                           
-  1674                           ;RobotLib.c: 224: break;
+  1674                           ;RobotLib.c: 207: break;
   1675  0010C0  0012               	return	
   1676  0010C2                     
-  1677                           ;RobotLib.c: 227: if(mode)
+  1677                           ;RobotLib.c: 210: if(mode)
   1678  0010C2  5001               	movf	pinMode@mode,w,c
   1679  0010C4  B4D8               	btfsc	status,2,c
-  1680  0010C6  D002               	goto	l245
+  1680  0010C6  D002               	goto	l237
   1681                           
-  1682                           ;RobotLib.c: 228: TRISC6 = 1;
+  1682                           ;RobotLib.c: 211: TRISC6 = 1;
   1683  0010C8  8C94               	bsf	3988,6,c	;volatile
   1684  0010CA  0012               	return	
-  1685  0010CC                     l245:
+  1685  0010CC                     l237:
   1686                           
-  1687                           ;RobotLib.c: 229: else
-  1688                           ;RobotLib.c: 230: TRISC6 = 0;
+  1687                           ;RobotLib.c: 212: else
+  1688                           ;RobotLib.c: 213: TRISC6 = 0;
   1689  0010CC  9C94               	bcf	3988,6,c	;volatile
   1690                           
-  1691                           ;RobotLib.c: 231: break;
+  1691                           ;RobotLib.c: 214: break;
   1692  0010CE  0012               	return	
   1693  0010D0                     
-  1694                           ;RobotLib.c: 234: if(mode)
+  1694                           ;RobotLib.c: 217: if(mode)
   1695  0010D0  5001               	movf	pinMode@mode,w,c
   1696  0010D2  B4D8               	btfsc	status,2,c
-  1697  0010D4  D002               	goto	l248
+  1697  0010D4  D002               	goto	l240
   1698                           
-  1699                           ;RobotLib.c: 235: TRISC4 = 1;
+  1699                           ;RobotLib.c: 218: TRISC4 = 1;
   1700  0010D6  8894               	bsf	3988,4,c	;volatile
   1701  0010D8  0012               	return	
-  1702  0010DA                     l248:
+  1702  0010DA                     l240:
   1703                           
-  1704                           ;RobotLib.c: 236: else
-  1705                           ;RobotLib.c: 237: TRISC4 = 0;
+  1704                           ;RobotLib.c: 219: else
+  1705                           ;RobotLib.c: 220: TRISC4 = 0;
   1706  0010DA  9894               	bcf	3988,4,c	;volatile
   1707                           
-  1708                           ;RobotLib.c: 238: break;
+  1708                           ;RobotLib.c: 221: break;
   1709  0010DC  0012               	return	
   1710  0010DE                     
-  1711                           ;RobotLib.c: 241: if(mode)
+  1711                           ;RobotLib.c: 224: if(mode)
   1712  0010DE  5001               	movf	pinMode@mode,w,c
   1713  0010E0  B4D8               	btfsc	status,2,c
-  1714  0010E2  D002               	goto	l251
+  1714  0010E2  D002               	goto	l243
   1715                           
-  1716                           ;RobotLib.c: 242: TRISC3 = 1;
+  1716                           ;RobotLib.c: 225: TRISC3 = 1;
   1717  0010E4  8694               	bsf	3988,3,c	;volatile
   1718  0010E6  0012               	return	
-  1719  0010E8                     l251:
+  1719  0010E8                     l243:
   1720                           
-  1721                           ;RobotLib.c: 243: else
-  1722                           ;RobotLib.c: 244: TRISC3 = 0;
+  1721                           ;RobotLib.c: 226: else
+  1722                           ;RobotLib.c: 227: TRISC3 = 0;
   1723  0010E8  9694               	bcf	3988,3,c	;volatile
   1724                           
-  1725                           ;RobotLib.c: 245: break;
+  1725                           ;RobotLib.c: 228: break;
   1726  0010EA  0012               	return	
   1727  0010EC                     
-  1728                           ;RobotLib.c: 248: if(mode)
+  1728                           ;RobotLib.c: 231: if(mode)
   1729  0010EC  5001               	movf	pinMode@mode,w,c
   1730  0010EE  B4D8               	btfsc	status,2,c
-  1731  0010F0  D002               	goto	l254
+  1731  0010F0  D002               	goto	l246
   1732                           
-  1733                           ;RobotLib.c: 249: TRISA4 = 1;
+  1733                           ;RobotLib.c: 232: TRISA4 = 1;
   1734  0010F2  8892               	bsf	3986,4,c	;volatile
   1735  0010F4  0012               	return	
-  1736  0010F6                     l254:
+  1736  0010F6                     l246:
   1737                           
-  1738                           ;RobotLib.c: 250: else
-  1739                           ;RobotLib.c: 251: TRISA4 = 0;
+  1738                           ;RobotLib.c: 233: else
+  1739                           ;RobotLib.c: 234: TRISA4 = 0;
   1740  0010F6  9892               	bcf	3986,4,c	;volatile
   1741                           
-  1742                           ;RobotLib.c: 252: break;
+  1742                           ;RobotLib.c: 235: break;
   1743  0010F8  0012               	return	
   1744  0010FA                     
-  1745                           ;RobotLib.c: 255: if(mode)
+  1745                           ;RobotLib.c: 238: if(mode)
   1746  0010FA  5001               	movf	pinMode@mode,w,c
   1747  0010FC  B4D8               	btfsc	status,2,c
-  1748  0010FE  D002               	goto	l257
+  1748  0010FE  D002               	goto	l249
   1749                           
-  1750                           ;RobotLib.c: 256: TRISC0 = 1;
+  1750                           ;RobotLib.c: 239: TRISC0 = 1;
   1751  001100  8094               	bsf	3988,0,c	;volatile
   1752  001102  0012               	return	
-  1753  001104                     l257:
+  1753  001104                     l249:
   1754                           
-  1755                           ;RobotLib.c: 257: else
-  1756                           ;RobotLib.c: 258: TRISC0 = 0;
+  1755                           ;RobotLib.c: 240: else
+  1756                           ;RobotLib.c: 241: TRISC0 = 0;
   1757  001104  9094               	bcf	3988,0,c	;volatile
   1758                           
-  1759                           ;RobotLib.c: 259: break;
+  1759                           ;RobotLib.c: 242: break;
   1760  001106  0012               	return	
   1761  001108                     
-  1762                           ;RobotLib.c: 262: if(mode)
+  1762                           ;RobotLib.c: 245: if(mode)
   1763  001108  5001               	movf	pinMode@mode,w,c
   1764  00110A  B4D8               	btfsc	status,2,c
-  1765  00110C  D002               	goto	l260
+  1765  00110C  D002               	goto	l252
   1766                           
-  1767                           ;RobotLib.c: 263: TRISB3 = 1;
+  1767                           ;RobotLib.c: 246: TRISB3 = 1;
   1768  00110E  8693               	bsf	3987,3,c	;volatile
   1769  001110  0012               	return	
-  1770  001112                     l260:
+  1770  001112                     l252:
   1771                           
-  1772                           ;RobotLib.c: 264: else
-  1773                           ;RobotLib.c: 265: TRISB3 = 0;
+  1772                           ;RobotLib.c: 247: else
+  1773                           ;RobotLib.c: 248: TRISB3 = 0;
   1774  001112  9693               	bcf	3987,3,c	;volatile
   1775                           
-  1776                           ;RobotLib.c: 266: break;
+  1776                           ;RobotLib.c: 249: break;
   1777  001114  0012               	return	
   1778  001116                     
-  1779                           ;RobotLib.c: 269: if(mode)
+  1779                           ;RobotLib.c: 252: if(mode)
   1780  001116  5001               	movf	pinMode@mode,w,c
   1781  001118  B4D8               	btfsc	status,2,c
-  1782  00111A  D002               	goto	l263
+  1782  00111A  D002               	goto	l255
   1783                           
-  1784                           ;RobotLib.c: 270: TRISD0 = 1;
+  1784                           ;RobotLib.c: 253: TRISD0 = 1;
   1785  00111C  8095               	bsf	3989,0,c	;volatile
   1786  00111E  0012               	return	
-  1787  001120                     l263:
+  1787  001120                     l255:
   1788                           
-  1789                           ;RobotLib.c: 271: else
-  1790                           ;RobotLib.c: 272: TRISD0 = 0;
+  1789                           ;RobotLib.c: 254: else
+  1790                           ;RobotLib.c: 255: TRISD0 = 0;
   1791  001120  9095               	bcf	3989,0,c	;volatile
   1792                           
-  1793                           ;RobotLib.c: 273: break;
+  1793                           ;RobotLib.c: 256: break;
   1794  001122  0012               	return	
   1795  001124                     
-  1796                           ;RobotLib.c: 276: if(mode)
+  1796                           ;RobotLib.c: 259: if(mode)
   1797  001124  5001               	movf	pinMode@mode,w,c
   1798  001126  B4D8               	btfsc	status,2,c
-  1799  001128  D002               	goto	l266
+  1799  001128  D002               	goto	l258
   1800                           
-  1801                           ;RobotLib.c: 277: TRISD1 = 1;
+  1801                           ;RobotLib.c: 260: TRISD1 = 1;
   1802  00112A  8295               	bsf	3989,1,c	;volatile
   1803  00112C  0012               	return	
-  1804  00112E                     l266:
+  1804  00112E                     l258:
   1805                           
-  1806                           ;RobotLib.c: 278: else
-  1807                           ;RobotLib.c: 279: TRISD1 = 0;
+  1806                           ;RobotLib.c: 261: else
+  1807                           ;RobotLib.c: 262: TRISD1 = 0;
   1808  00112E  9295               	bcf	3989,1,c	;volatile
   1809                           
-  1810                           ;RobotLib.c: 280: break;
+  1810                           ;RobotLib.c: 263: break;
   1811  001130  0012               	return	
   1812  001132                     
-  1813                           ;RobotLib.c: 284: if(mode)
+  1813                           ;RobotLib.c: 267: if(mode)
   1814  001132  5001               	movf	pinMode@mode,w,c
   1815  001134  B4D8               	btfsc	status,2,c
-  1816  001136  D002               	goto	l269
+  1816  001136  D002               	goto	l261
   1817                           
-  1818                           ;RobotLib.c: 285: TRISB1 = 1;
+  1818                           ;RobotLib.c: 268: TRISB1 = 1;
   1819  001138  8293               	bsf	3987,1,c	;volatile
   1820  00113A  0012               	return	
-  1821  00113C                     l269:
+  1821  00113C                     l261:
   1822                           
-  1823                           ;RobotLib.c: 286: else
-  1824                           ;RobotLib.c: 287: TRISB1 = 0;
+  1823                           ;RobotLib.c: 269: else
+  1824                           ;RobotLib.c: 270: TRISB1 = 0;
   1825  00113C  9293               	bcf	3987,1,c	;volatile
   1826                           
-  1827                           ;RobotLib.c: 288: break;
+  1827                           ;RobotLib.c: 271: break;
   1828  00113E  0012               	return	
   1829  001140                     
-  1830                           ;RobotLib.c: 291: if(mode)
+  1830                           ;RobotLib.c: 274: if(mode)
   1831  001140  5001               	movf	pinMode@mode,w,c
   1832  001142  B4D8               	btfsc	status,2,c
-  1833  001144  D002               	goto	l272
+  1833  001144  D002               	goto	l264
   1834                           
-  1835                           ;RobotLib.c: 292: TRISB2 = 1;
+  1835                           ;RobotLib.c: 275: TRISB2 = 1;
   1836  001146  8493               	bsf	3987,2,c	;volatile
   1837  001148  0012               	return	
-  1838  00114A                     l272:
+  1838  00114A                     l264:
   1839                           
-  1840                           ;RobotLib.c: 293: else
-  1841                           ;RobotLib.c: 294: TRISB2 = 0;
+  1840                           ;RobotLib.c: 276: else
+  1841                           ;RobotLib.c: 277: TRISB2 = 0;
   1842  00114A  9493               	bcf	3987,2,c	;volatile
   1843                           
-  1844                           ;RobotLib.c: 297: }
+  1844                           ;RobotLib.c: 280: }
   1845                           
-  1846                           ;RobotLib.c: 295: break;
+  1846                           ;RobotLib.c: 278: break;
   1847  00114C  0012               	return	
-  1848  00114E                     l203:
+  1848  00114E                     l195:
   1849  00114E  5002               	movf	pinMode@pin,w,c
   1850                           
   1851                           ; Switch size 1, requested type "space"
@@ -1925,74 +1925,74 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1856                           ;	Chosen strategy is simple_byte
   1857  001150  0A00               	xorlw	0	; case 0
   1858  001152  B4D8               	btfsc	status,2,c
-  1859  001154  D75B               	goto	l204
+  1859  001154  D75B               	goto	l196
   1860  001156  0A01               	xorlw	1	; case 1
   1861  001158  B4D8               	btfsc	status,2,c
-  1862  00115A  D75F               	goto	l208
+  1862  00115A  D75F               	goto	l200
   1863  00115C  0A03               	xorlw	3	; case 2
   1864  00115E  B4D8               	btfsc	status,2,c
-  1865  001160  D763               	goto	l211
+  1865  001160  D763               	goto	l203
   1866  001162  0A01               	xorlw	1	; case 3
   1867  001164  B4D8               	btfsc	status,2,c
-  1868  001166  D767               	goto	l214
+  1868  001166  D767               	goto	l206
   1869  001168  0A07               	xorlw	7	; case 4
   1870  00116A  B4D8               	btfsc	status,2,c
-  1871  00116C  D76B               	goto	l217
+  1871  00116C  D76B               	goto	l209
   1872  00116E  0A01               	xorlw	1	; case 5
   1873  001170  B4D8               	btfsc	status,2,c
-  1874  001172  D76F               	goto	l220
+  1874  001172  D76F               	goto	l212
   1875  001174  0A03               	xorlw	3	; case 6
   1876  001176  B4D8               	btfsc	status,2,c
-  1877  001178  D773               	goto	l223
+  1877  001178  D773               	goto	l215
   1878  00117A  0A01               	xorlw	1	; case 7
   1879  00117C  B4D8               	btfsc	status,2,c
-  1880  00117E  D777               	goto	l226
+  1880  00117E  D777               	goto	l218
   1881  001180  0A0F               	xorlw	15	; case 8
   1882  001182  B4D8               	btfsc	status,2,c
-  1883  001184  D77B               	goto	l229
+  1883  001184  D77B               	goto	l221
   1884  001186  0A01               	xorlw	1	; case 9
   1885  001188  B4D8               	btfsc	status,2,c
-  1886  00118A  D77F               	goto	l232
+  1886  00118A  D77F               	goto	l224
   1887  00118C  0A03               	xorlw	3	; case 10
   1888  00118E  B4D8               	btfsc	status,2,c
-  1889  001190  D783               	goto	l235
+  1889  001190  D783               	goto	l227
   1890  001192  0A01               	xorlw	1	; case 11
   1891  001194  B4D8               	btfsc	status,2,c
-  1892  001196  D787               	goto	l238
+  1892  001196  D787               	goto	l230
   1893  001198  0A07               	xorlw	7	; case 12
   1894  00119A  B4D8               	btfsc	status,2,c
-  1895  00119C  D78B               	goto	l241
+  1895  00119C  D78B               	goto	l233
   1896  00119E  0A01               	xorlw	1	; case 13
   1897  0011A0  B4D8               	btfsc	status,2,c
-  1898  0011A2  D78F               	goto	l244
+  1898  0011A2  D78F               	goto	l236
   1899  0011A4  0A03               	xorlw	3	; case 14
   1900  0011A6  B4D8               	btfsc	status,2,c
-  1901  0011A8  D793               	goto	l247
+  1901  0011A8  D793               	goto	l239
   1902  0011AA  0A01               	xorlw	1	; case 15
   1903  0011AC  B4D8               	btfsc	status,2,c
-  1904  0011AE  D797               	goto	l250
+  1904  0011AE  D797               	goto	l242
   1905  0011B0  0A1F               	xorlw	31	; case 16
   1906  0011B2  B4D8               	btfsc	status,2,c
-  1907  0011B4  D79B               	goto	l253
+  1907  0011B4  D79B               	goto	l245
   1908  0011B6  0A01               	xorlw	1	; case 17
   1909  0011B8  B4D8               	btfsc	status,2,c
-  1910  0011BA  D79F               	goto	l256
+  1910  0011BA  D79F               	goto	l248
   1911  0011BC  0A03               	xorlw	3	; case 18
   1912  0011BE  B4D8               	btfsc	status,2,c
-  1913  0011C0  D7A3               	goto	l259
+  1913  0011C0  D7A3               	goto	l251
   1914  0011C2  0A01               	xorlw	1	; case 19
   1915  0011C4  B4D8               	btfsc	status,2,c
-  1916  0011C6  D7A7               	goto	l262
+  1916  0011C6  D7A7               	goto	l254
   1917  0011C8  0A07               	xorlw	7	; case 20
   1918  0011CA  B4D8               	btfsc	status,2,c
-  1919  0011CC  D7AB               	goto	l265
+  1919  0011CC  D7AB               	goto	l257
   1920  0011CE  0A01               	xorlw	1	; case 21
   1921  0011D0  B4D8               	btfsc	status,2,c
-  1922  0011D2  D7AF               	goto	l268
+  1922  0011D2  D7AF               	goto	l260
   1923  0011D4  0A03               	xorlw	3	; case 22
   1924  0011D6  A4D8               	btfss	status,2,c
   1925  0011D8  0012               	return	
-  1926  0011DA  D7B2               	goto	l271
+  1926  0011DA  D7B2               	goto	l263
   1927  0011DC                     __end_of_pinMode:
   1928                           	opt stack 0
   1929                           tblptru	equ	0xFF8
@@ -2009,7 +2009,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1940                           
   1941 ;; *************** function _digitalWrite *****************
   1942 ;; Defined at:
-  1943 ;;		line 300 in file "RobotLib.c"
+  1943 ;;		line 283 in file "RobotLib.c"
   1944 ;; Parameters:    Size  Location     Type
   1945 ;;  pin             1    wreg     unsigned char 
   1946 ;;  mode            1    0[COMRAM] unsigned char 
@@ -2052,402 +2052,402 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   1978                           ;digitalWrite@pin stored from wreg
   1979  0011DC  6E02               	movwf	digitalWrite@pin,c
   1980                           
-  1981                           ;RobotLib.c: 301: switch(pin)
-  1982  0011DE  D0A1               	goto	l277
+  1981                           ;RobotLib.c: 284: switch(pin)
+  1982  0011DE  D0A1               	goto	l269
   1983  0011E0                     
-  1984                           ;RobotLib.c: 304: if(mode)
+  1984                           ;RobotLib.c: 287: if(mode)
   1985  0011E0  5001               	movf	digitalWrite@mode,w,c
   1986  0011E2  B4D8               	btfsc	status,2,c
-  1987  0011E4  D002               	goto	l279
+  1987  0011E4  D002               	goto	l271
   1988                           
-  1989                           ;RobotLib.c: 305: LATAbits.LATA0 = 1;
+  1989                           ;RobotLib.c: 288: LATAbits.LATA0 = 1;
   1990  0011E6  8089               	bsf	3977,0,c	;volatile
   1991  0011E8  0012               	return	
-  1992  0011EA                     l279:
+  1992  0011EA                     l271:
   1993                           
-  1994                           ;RobotLib.c: 306: else
-  1995                           ;RobotLib.c: 307: LATAbits.LATA0 = 0;
+  1994                           ;RobotLib.c: 289: else
+  1995                           ;RobotLib.c: 290: LATAbits.LATA0 = 0;
   1996  0011EA  9089               	bcf	3977,0,c	;volatile
   1997                           
-  1998                           ;RobotLib.c: 308: break;
+  1998                           ;RobotLib.c: 291: break;
   1999  0011EC  0012               	return	
   2000  0011EE                     
-  2001                           ;RobotLib.c: 311: if(mode)
+  2001                           ;RobotLib.c: 294: if(mode)
   2002  0011EE  5001               	movf	digitalWrite@mode,w,c
   2003  0011F0  B4D8               	btfsc	status,2,c
-  2004  0011F2  D002               	goto	l283
+  2004  0011F2  D002               	goto	l275
   2005                           
-  2006                           ;RobotLib.c: 312: LATAbits.LATA1 = 1;
+  2006                           ;RobotLib.c: 295: LATAbits.LATA1 = 1;
   2007  0011F4  8289               	bsf	3977,1,c	;volatile
   2008  0011F6  0012               	return	
-  2009  0011F8                     l283:
+  2009  0011F8                     l275:
   2010                           
-  2011                           ;RobotLib.c: 313: else
-  2012                           ;RobotLib.c: 314: LATAbits.LATA1 = 0;
+  2011                           ;RobotLib.c: 296: else
+  2012                           ;RobotLib.c: 297: LATAbits.LATA1 = 0;
   2013  0011F8  9289               	bcf	3977,1,c	;volatile
   2014                           
-  2015                           ;RobotLib.c: 315: break;
+  2015                           ;RobotLib.c: 298: break;
   2016  0011FA  0012               	return	
   2017  0011FC                     
-  2018                           ;RobotLib.c: 318: if(mode)
+  2018                           ;RobotLib.c: 301: if(mode)
   2019  0011FC  5001               	movf	digitalWrite@mode,w,c
   2020  0011FE  B4D8               	btfsc	status,2,c
-  2021  001200  D002               	goto	l286
+  2021  001200  D002               	goto	l278
   2022                           
-  2023                           ;RobotLib.c: 319: LATAbits.LATA2 = 1;
+  2023                           ;RobotLib.c: 302: LATAbits.LATA2 = 1;
   2024  001202  8489               	bsf	3977,2,c	;volatile
   2025  001204  0012               	return	
-  2026  001206                     l286:
+  2026  001206                     l278:
   2027                           
-  2028                           ;RobotLib.c: 320: else
-  2029                           ;RobotLib.c: 321: LATAbits.LATA2 = 0;
+  2028                           ;RobotLib.c: 303: else
+  2029                           ;RobotLib.c: 304: LATAbits.LATA2 = 0;
   2030  001206  9489               	bcf	3977,2,c	;volatile
   2031                           
-  2032                           ;RobotLib.c: 322: break;
+  2032                           ;RobotLib.c: 305: break;
   2033  001208  0012               	return	
   2034  00120A                     
-  2035                           ;RobotLib.c: 325: if(mode)
+  2035                           ;RobotLib.c: 308: if(mode)
   2036  00120A  5001               	movf	digitalWrite@mode,w,c
   2037  00120C  B4D8               	btfsc	status,2,c
-  2038  00120E  D002               	goto	l289
+  2038  00120E  D002               	goto	l281
   2039                           
-  2040                           ;RobotLib.c: 326: LATAbits.LATA3 = 1;
+  2040                           ;RobotLib.c: 309: LATAbits.LATA3 = 1;
   2041  001210  8689               	bsf	3977,3,c	;volatile
   2042  001212  0012               	return	
-  2043  001214                     l289:
+  2043  001214                     l281:
   2044                           
-  2045                           ;RobotLib.c: 327: else
-  2046                           ;RobotLib.c: 328: LATAbits.LATA3 = 0;
+  2045                           ;RobotLib.c: 310: else
+  2046                           ;RobotLib.c: 311: LATAbits.LATA3 = 0;
   2047  001214  9689               	bcf	3977,3,c	;volatile
   2048                           
-  2049                           ;RobotLib.c: 329: break;
+  2049                           ;RobotLib.c: 312: break;
   2050  001216  0012               	return	
   2051  001218                     
-  2052                           ;RobotLib.c: 332: if(mode)
+  2052                           ;RobotLib.c: 315: if(mode)
   2053  001218  5001               	movf	digitalWrite@mode,w,c
   2054  00121A  B4D8               	btfsc	status,2,c
-  2055  00121C  D002               	goto	l292
+  2055  00121C  D002               	goto	l284
   2056                           
-  2057                           ;RobotLib.c: 333: LATAbits.LATA5 = 1;
+  2057                           ;RobotLib.c: 316: LATAbits.LATA5 = 1;
   2058  00121E  8A89               	bsf	3977,5,c	;volatile
   2059  001220  0012               	return	
-  2060  001222                     l292:
+  2060  001222                     l284:
   2061                           
-  2062                           ;RobotLib.c: 334: else
-  2063                           ;RobotLib.c: 335: LATAbits.LATA5 = 0;
+  2062                           ;RobotLib.c: 317: else
+  2063                           ;RobotLib.c: 318: LATAbits.LATA5 = 0;
   2064  001222  9A89               	bcf	3977,5,c	;volatile
   2065                           
-  2066                           ;RobotLib.c: 336: break;
+  2066                           ;RobotLib.c: 319: break;
   2067  001224  0012               	return	
   2068  001226                     
-  2069                           ;RobotLib.c: 339: if(mode)
+  2069                           ;RobotLib.c: 322: if(mode)
   2070  001226  5001               	movf	digitalWrite@mode,w,c
   2071  001228  B4D8               	btfsc	status,2,c
-  2072  00122A  D002               	goto	l295
+  2072  00122A  D002               	goto	l287
   2073                           
-  2074                           ;RobotLib.c: 340: LATEbits.LATE0 = 1;
+  2074                           ;RobotLib.c: 323: LATEbits.LATE0 = 1;
   2075  00122C  808D               	bsf	3981,0,c	;volatile
   2076  00122E  0012               	return	
-  2077  001230                     l295:
+  2077  001230                     l287:
   2078                           
-  2079                           ;RobotLib.c: 341: else
-  2080                           ;RobotLib.c: 342: LATEbits.LATE0 = 0;
+  2079                           ;RobotLib.c: 324: else
+  2080                           ;RobotLib.c: 325: LATEbits.LATE0 = 0;
   2081  001230  908D               	bcf	3981,0,c	;volatile
   2082                           
-  2083                           ;RobotLib.c: 343: break;
+  2083                           ;RobotLib.c: 326: break;
   2084  001232  0012               	return	
   2085  001234                     
-  2086                           ;RobotLib.c: 346: if(mode)
+  2086                           ;RobotLib.c: 329: if(mode)
   2087  001234  5001               	movf	digitalWrite@mode,w,c
   2088  001236  B4D8               	btfsc	status,2,c
-  2089  001238  D002               	goto	l298
+  2089  001238  D002               	goto	l290
   2090                           
-  2091                           ;RobotLib.c: 347: LATEbits.LATE1 = 1;
+  2091                           ;RobotLib.c: 330: LATEbits.LATE1 = 1;
   2092  00123A  828D               	bsf	3981,1,c	;volatile
   2093  00123C  0012               	return	
-  2094  00123E                     l298:
+  2094  00123E                     l290:
   2095                           
-  2096                           ;RobotLib.c: 348: else
-  2097                           ;RobotLib.c: 349: LATEbits.LATE1 = 0;
+  2096                           ;RobotLib.c: 331: else
+  2097                           ;RobotLib.c: 332: LATEbits.LATE1 = 0;
   2098  00123E  928D               	bcf	3981,1,c	;volatile
   2099                           
-  2100                           ;RobotLib.c: 350: break;
+  2100                           ;RobotLib.c: 333: break;
   2101  001240  0012               	return	
   2102  001242                     
-  2103                           ;RobotLib.c: 353: if(mode)
+  2103                           ;RobotLib.c: 336: if(mode)
   2104  001242  5001               	movf	digitalWrite@mode,w,c
   2105  001244  B4D8               	btfsc	status,2,c
-  2106  001246  D002               	goto	l301
+  2106  001246  D002               	goto	l293
   2107                           
-  2108                           ;RobotLib.c: 354: LATEbits.LATE2 = 1;
+  2108                           ;RobotLib.c: 337: LATEbits.LATE2 = 1;
   2109  001248  848D               	bsf	3981,2,c	;volatile
   2110  00124A  0012               	return	
-  2111  00124C                     l301:
+  2111  00124C                     l293:
   2112                           
-  2113                           ;RobotLib.c: 355: else
-  2114                           ;RobotLib.c: 356: LATEbits.LATE2 = 0;
+  2113                           ;RobotLib.c: 338: else
+  2114                           ;RobotLib.c: 339: LATEbits.LATE2 = 0;
   2115  00124C  948D               	bcf	3981,2,c	;volatile
   2116                           
-  2117                           ;RobotLib.c: 357: break;
+  2117                           ;RobotLib.c: 340: break;
   2118  00124E  0012               	return	
   2119  001250                     
-  2120                           ;RobotLib.c: 360: if(mode)
+  2120                           ;RobotLib.c: 343: if(mode)
   2121  001250  5001               	movf	digitalWrite@mode,w,c
   2122  001252  B4D8               	btfsc	status,2,c
-  2123  001254  D002               	goto	l304
+  2123  001254  D002               	goto	l296
   2124                           
-  2125                           ;RobotLib.c: 361: LATCbits.LATC5 = 1;
+  2125                           ;RobotLib.c: 344: LATCbits.LATC5 = 1;
   2126  001256  8A8B               	bsf	3979,5,c	;volatile
   2127  001258  0012               	return	
-  2128  00125A                     l304:
+  2128  00125A                     l296:
   2129                           
-  2130                           ;RobotLib.c: 362: else
-  2131                           ;RobotLib.c: 363: LATCbits.LATC5 = 0;
+  2130                           ;RobotLib.c: 345: else
+  2131                           ;RobotLib.c: 346: LATCbits.LATC5 = 0;
   2132  00125A  9A8B               	bcf	3979,5,c	;volatile
   2133                           
-  2134                           ;RobotLib.c: 364: break;
+  2134                           ;RobotLib.c: 347: break;
   2135  00125C  0012               	return	
   2136  00125E                     
-  2137                           ;RobotLib.c: 367: if(mode)
+  2137                           ;RobotLib.c: 350: if(mode)
   2138  00125E  5001               	movf	digitalWrite@mode,w,c
   2139  001260  B4D8               	btfsc	status,2,c
-  2140  001262  D002               	goto	l307
+  2140  001262  D002               	goto	l299
   2141                           
-  2142                           ;RobotLib.c: 368: LATBbits.LATB4 = 1;
+  2142                           ;RobotLib.c: 351: LATBbits.LATB4 = 1;
   2143  001264  888A               	bsf	3978,4,c	;volatile
   2144  001266  0012               	return	
-  2145  001268                     l307:
+  2145  001268                     l299:
   2146                           
-  2147                           ;RobotLib.c: 369: else
-  2148                           ;RobotLib.c: 370: LATBbits.LATB4 = 0;
+  2147                           ;RobotLib.c: 352: else
+  2148                           ;RobotLib.c: 353: LATBbits.LATB4 = 0;
   2149  001268  988A               	bcf	3978,4,c	;volatile
   2150                           
-  2151                           ;RobotLib.c: 371: break;
+  2151                           ;RobotLib.c: 354: break;
   2152  00126A  0012               	return	
   2153  00126C                     
-  2154                           ;RobotLib.c: 374: if(mode)
+  2154                           ;RobotLib.c: 357: if(mode)
   2155  00126C  5001               	movf	digitalWrite@mode,w,c
   2156  00126E  B4D8               	btfsc	status,2,c
-  2157  001270  D002               	goto	l310
+  2157  001270  D002               	goto	l302
   2158                           
-  2159                           ;RobotLib.c: 375: LATBbits.LATB5 = 1;
+  2159                           ;RobotLib.c: 358: LATBbits.LATB5 = 1;
   2160  001272  8A8A               	bsf	3978,5,c	;volatile
   2161  001274  0012               	return	
-  2162  001276                     l310:
+  2162  001276                     l302:
   2163                           
-  2164                           ;RobotLib.c: 376: else
-  2165                           ;RobotLib.c: 377: LATBbits.LATB5 = 0;
+  2164                           ;RobotLib.c: 359: else
+  2165                           ;RobotLib.c: 360: LATBbits.LATB5 = 0;
   2166  001276  9A8A               	bcf	3978,5,c	;volatile
   2167                           
-  2168                           ;RobotLib.c: 378: break;
+  2168                           ;RobotLib.c: 361: break;
   2169  001278  0012               	return	
   2170  00127A                     
-  2171                           ;RobotLib.c: 381: if(mode)
+  2171                           ;RobotLib.c: 364: if(mode)
   2172  00127A  5001               	movf	digitalWrite@mode,w,c
   2173  00127C  B4D8               	btfsc	status,2,c
-  2174  00127E  D002               	goto	l313
+  2174  00127E  D002               	goto	l305
   2175                           
-  2176                           ;RobotLib.c: 382: LATBbits.LATB0 = 1;
+  2176                           ;RobotLib.c: 365: LATBbits.LATB0 = 1;
   2177  001280  808A               	bsf	3978,0,c	;volatile
   2178  001282  0012               	return	
-  2179  001284                     l313:
+  2179  001284                     l305:
   2180                           
-  2181                           ;RobotLib.c: 383: else
-  2182                           ;RobotLib.c: 384: LATBbits.LATB0 = 0;
+  2181                           ;RobotLib.c: 366: else
+  2182                           ;RobotLib.c: 367: LATBbits.LATB0 = 0;
   2183  001284  908A               	bcf	3978,0,c	;volatile
   2184                           
-  2185                           ;RobotLib.c: 385: break;
+  2185                           ;RobotLib.c: 368: break;
   2186  001286  0012               	return	
   2187  001288                     
-  2188                           ;RobotLib.c: 388: if(mode)
+  2188                           ;RobotLib.c: 371: if(mode)
   2189  001288  5001               	movf	digitalWrite@mode,w,c
   2190  00128A  B4D8               	btfsc	status,2,c
-  2191  00128C  D002               	goto	l316
+  2191  00128C  D002               	goto	l308
   2192                           
-  2193                           ;RobotLib.c: 389: LATCbits.LATC7 = 1;
+  2193                           ;RobotLib.c: 372: LATCbits.LATC7 = 1;
   2194  00128E  8E8B               	bsf	3979,7,c	;volatile
   2195  001290  0012               	return	
-  2196  001292                     l316:
+  2196  001292                     l308:
   2197                           
-  2198                           ;RobotLib.c: 390: else
-  2199                           ;RobotLib.c: 391: LATCbits.LATC7 = 0;
+  2198                           ;RobotLib.c: 373: else
+  2199                           ;RobotLib.c: 374: LATCbits.LATC7 = 0;
   2200  001292  9E8B               	bcf	3979,7,c	;volatile
   2201                           
-  2202                           ;RobotLib.c: 392: break;
+  2202                           ;RobotLib.c: 375: break;
   2203  001294  0012               	return	
   2204  001296                     
-  2205                           ;RobotLib.c: 395: if(mode)
+  2205                           ;RobotLib.c: 378: if(mode)
   2206  001296  5001               	movf	digitalWrite@mode,w,c
   2207  001298  B4D8               	btfsc	status,2,c
-  2208  00129A  D002               	goto	l319
+  2208  00129A  D002               	goto	l311
   2209                           
-  2210                           ;RobotLib.c: 396: LATCbits.LATC6 = 1;
+  2210                           ;RobotLib.c: 379: LATCbits.LATC6 = 1;
   2211  00129C  8C8B               	bsf	3979,6,c	;volatile
   2212  00129E  0012               	return	
-  2213  0012A0                     l319:
+  2213  0012A0                     l311:
   2214                           
-  2215                           ;RobotLib.c: 397: else
-  2216                           ;RobotLib.c: 398: LATCbits.LATC6 = 0;
+  2215                           ;RobotLib.c: 380: else
+  2216                           ;RobotLib.c: 381: LATCbits.LATC6 = 0;
   2217  0012A0  9C8B               	bcf	3979,6,c	;volatile
   2218                           
-  2219                           ;RobotLib.c: 399: break;
+  2219                           ;RobotLib.c: 382: break;
   2220  0012A2  0012               	return	
   2221  0012A4                     
-  2222                           ;RobotLib.c: 402: if(mode)
+  2222                           ;RobotLib.c: 385: if(mode)
   2223  0012A4  5001               	movf	digitalWrite@mode,w,c
   2224  0012A6  B4D8               	btfsc	status,2,c
-  2225  0012A8  D002               	goto	l322
+  2225  0012A8  D002               	goto	l314
   2226                           
-  2227                           ;RobotLib.c: 403: LATCbits.LATC4 = 1;
+  2227                           ;RobotLib.c: 386: LATCbits.LATC4 = 1;
   2228  0012AA  888B               	bsf	3979,4,c	;volatile
   2229  0012AC  0012               	return	
-  2230  0012AE                     l322:
+  2230  0012AE                     l314:
   2231                           
-  2232                           ;RobotLib.c: 404: else
-  2233                           ;RobotLib.c: 405: LATCbits.LATC4 = 0;
+  2232                           ;RobotLib.c: 387: else
+  2233                           ;RobotLib.c: 388: LATCbits.LATC4 = 0;
   2234  0012AE  988B               	bcf	3979,4,c	;volatile
   2235                           
-  2236                           ;RobotLib.c: 406: break;
+  2236                           ;RobotLib.c: 389: break;
   2237  0012B0  0012               	return	
   2238  0012B2                     
-  2239                           ;RobotLib.c: 409: if(mode)
+  2239                           ;RobotLib.c: 392: if(mode)
   2240  0012B2  5001               	movf	digitalWrite@mode,w,c
   2241  0012B4  B4D8               	btfsc	status,2,c
-  2242  0012B6  D002               	goto	l325
+  2242  0012B6  D002               	goto	l317
   2243                           
-  2244                           ;RobotLib.c: 410: LATCbits.LATC3 = 1;
+  2244                           ;RobotLib.c: 393: LATCbits.LATC3 = 1;
   2245  0012B8  868B               	bsf	3979,3,c	;volatile
   2246  0012BA  0012               	return	
-  2247  0012BC                     l325:
+  2247  0012BC                     l317:
   2248                           
-  2249                           ;RobotLib.c: 411: else
-  2250                           ;RobotLib.c: 412: LATCbits.LATC3 = 0;
+  2249                           ;RobotLib.c: 394: else
+  2250                           ;RobotLib.c: 395: LATCbits.LATC3 = 0;
   2251  0012BC  968B               	bcf	3979,3,c	;volatile
   2252                           
-  2253                           ;RobotLib.c: 413: break;
+  2253                           ;RobotLib.c: 396: break;
   2254  0012BE  0012               	return	
   2255  0012C0                     
-  2256                           ;RobotLib.c: 416: if(mode)
+  2256                           ;RobotLib.c: 399: if(mode)
   2257  0012C0  5001               	movf	digitalWrite@mode,w,c
   2258  0012C2  B4D8               	btfsc	status,2,c
-  2259  0012C4  D002               	goto	l328
+  2259  0012C4  D002               	goto	l320
   2260                           
-  2261                           ;RobotLib.c: 417: LATAbits.LATA4 = 1;
+  2261                           ;RobotLib.c: 400: LATAbits.LATA4 = 1;
   2262  0012C6  8889               	bsf	3977,4,c	;volatile
   2263  0012C8  0012               	return	
-  2264  0012CA                     l328:
+  2264  0012CA                     l320:
   2265                           
-  2266                           ;RobotLib.c: 418: else
-  2267                           ;RobotLib.c: 419: LATAbits.LATA4 = 0;
+  2266                           ;RobotLib.c: 401: else
+  2267                           ;RobotLib.c: 402: LATAbits.LATA4 = 0;
   2268  0012CA  9889               	bcf	3977,4,c	;volatile
   2269                           
-  2270                           ;RobotLib.c: 420: break;
+  2270                           ;RobotLib.c: 403: break;
   2271  0012CC  0012               	return	
   2272  0012CE                     
-  2273                           ;RobotLib.c: 423: if(mode)
+  2273                           ;RobotLib.c: 406: if(mode)
   2274  0012CE  5001               	movf	digitalWrite@mode,w,c
   2275  0012D0  B4D8               	btfsc	status,2,c
-  2276  0012D2  D002               	goto	l331
+  2276  0012D2  D002               	goto	l323
   2277                           
-  2278                           ;RobotLib.c: 424: LATCbits.LATC0 = 1;
+  2278                           ;RobotLib.c: 407: LATCbits.LATC0 = 1;
   2279  0012D4  808B               	bsf	3979,0,c	;volatile
   2280  0012D6  0012               	return	
-  2281  0012D8                     l331:
+  2281  0012D8                     l323:
   2282                           
-  2283                           ;RobotLib.c: 425: else
-  2284                           ;RobotLib.c: 426: LATCbits.LATC0 = 0;
+  2283                           ;RobotLib.c: 408: else
+  2284                           ;RobotLib.c: 409: LATCbits.LATC0 = 0;
   2285  0012D8  908B               	bcf	3979,0,c	;volatile
   2286                           
-  2287                           ;RobotLib.c: 427: break;
+  2287                           ;RobotLib.c: 410: break;
   2288  0012DA  0012               	return	
   2289  0012DC                     
-  2290                           ;RobotLib.c: 430: if(mode)
+  2290                           ;RobotLib.c: 413: if(mode)
   2291  0012DC  5001               	movf	digitalWrite@mode,w,c
   2292  0012DE  B4D8               	btfsc	status,2,c
-  2293  0012E0  D002               	goto	l334
+  2293  0012E0  D002               	goto	l326
   2294                           
-  2295                           ;RobotLib.c: 431: LATBbits.LATB3 = 1;
+  2295                           ;RobotLib.c: 414: LATBbits.LATB3 = 1;
   2296  0012E2  868A               	bsf	3978,3,c	;volatile
   2297  0012E4  0012               	return	
-  2298  0012E6                     l334:
+  2298  0012E6                     l326:
   2299                           
-  2300                           ;RobotLib.c: 432: else
-  2301                           ;RobotLib.c: 433: LATBbits.LATB3 = 0;
+  2300                           ;RobotLib.c: 415: else
+  2301                           ;RobotLib.c: 416: LATBbits.LATB3 = 0;
   2302  0012E6  968A               	bcf	3978,3,c	;volatile
   2303                           
-  2304                           ;RobotLib.c: 434: break;
+  2304                           ;RobotLib.c: 417: break;
   2305  0012E8  0012               	return	
   2306  0012EA                     
-  2307                           ;RobotLib.c: 437: if(mode)
+  2307                           ;RobotLib.c: 420: if(mode)
   2308  0012EA  5001               	movf	digitalWrite@mode,w,c
   2309  0012EC  B4D8               	btfsc	status,2,c
-  2310  0012EE  D002               	goto	l337
+  2310  0012EE  D002               	goto	l329
   2311                           
-  2312                           ;RobotLib.c: 438: LATDbits.LATD0 = 1;
+  2312                           ;RobotLib.c: 421: LATDbits.LATD0 = 1;
   2313  0012F0  808C               	bsf	3980,0,c	;volatile
   2314  0012F2  0012               	return	
-  2315  0012F4                     l337:
+  2315  0012F4                     l329:
   2316                           
-  2317                           ;RobotLib.c: 439: else
-  2318                           ;RobotLib.c: 440: LATDbits.LATD0 = 0;
+  2317                           ;RobotLib.c: 422: else
+  2318                           ;RobotLib.c: 423: LATDbits.LATD0 = 0;
   2319  0012F4  908C               	bcf	3980,0,c	;volatile
   2320                           
-  2321                           ;RobotLib.c: 441: break;
+  2321                           ;RobotLib.c: 424: break;
   2322  0012F6  0012               	return	
   2323  0012F8                     
-  2324                           ;RobotLib.c: 444: if(mode)
+  2324                           ;RobotLib.c: 427: if(mode)
   2325  0012F8  5001               	movf	digitalWrite@mode,w,c
   2326  0012FA  B4D8               	btfsc	status,2,c
-  2327  0012FC  D002               	goto	l340
+  2327  0012FC  D002               	goto	l332
   2328                           
-  2329                           ;RobotLib.c: 445: LATDbits.LATD1 = 1;
+  2329                           ;RobotLib.c: 428: LATDbits.LATD1 = 1;
   2330  0012FE  828C               	bsf	3980,1,c	;volatile
   2331  001300  0012               	return	
-  2332  001302                     l340:
+  2332  001302                     l332:
   2333                           
-  2334                           ;RobotLib.c: 446: else
-  2335                           ;RobotLib.c: 447: LATDbits.LATD1 = 0;
+  2334                           ;RobotLib.c: 429: else
+  2335                           ;RobotLib.c: 430: LATDbits.LATD1 = 0;
   2336  001302  928C               	bcf	3980,1,c	;volatile
   2337                           
-  2338                           ;RobotLib.c: 448: break;
+  2338                           ;RobotLib.c: 431: break;
   2339  001304  0012               	return	
   2340  001306                     
-  2341                           ;RobotLib.c: 452: if(mode)
+  2341                           ;RobotLib.c: 435: if(mode)
   2342  001306  5001               	movf	digitalWrite@mode,w,c
   2343  001308  B4D8               	btfsc	status,2,c
-  2344  00130A  D002               	goto	l343
+  2344  00130A  D002               	goto	l335
   2345                           
-  2346                           ;RobotLib.c: 453: LATBbits.LATB1 = 1;
+  2346                           ;RobotLib.c: 436: LATBbits.LATB1 = 1;
   2347  00130C  828A               	bsf	3978,1,c	;volatile
   2348  00130E  0012               	return	
-  2349  001310                     l343:
+  2349  001310                     l335:
   2350                           
-  2351                           ;RobotLib.c: 454: else
-  2352                           ;RobotLib.c: 455: LATBbits.LATB1 = 0;
+  2351                           ;RobotLib.c: 437: else
+  2352                           ;RobotLib.c: 438: LATBbits.LATB1 = 0;
   2353  001310  928A               	bcf	3978,1,c	;volatile
   2354                           
-  2355                           ;RobotLib.c: 456: break;
+  2355                           ;RobotLib.c: 439: break;
   2356  001312  0012               	return	
   2357  001314                     
-  2358                           ;RobotLib.c: 459: if(mode)
+  2358                           ;RobotLib.c: 442: if(mode)
   2359  001314  5001               	movf	digitalWrite@mode,w,c
   2360  001316  B4D8               	btfsc	status,2,c
-  2361  001318  D002               	goto	l346
+  2361  001318  D002               	goto	l338
   2362                           
-  2363                           ;RobotLib.c: 460: LATBbits.LATB2 = 1;
+  2363                           ;RobotLib.c: 443: LATBbits.LATB2 = 1;
   2364  00131A  848A               	bsf	3978,2,c	;volatile
   2365  00131C  0012               	return	
-  2366  00131E                     l346:
+  2366  00131E                     l338:
   2367                           
-  2368                           ;RobotLib.c: 461: else
-  2369                           ;RobotLib.c: 462: LATBbits.LATB2 = 0;
+  2368                           ;RobotLib.c: 444: else
+  2369                           ;RobotLib.c: 445: LATBbits.LATB2 = 0;
   2370  00131E  948A               	bcf	3978,2,c	;volatile
   2371                           
-  2372                           ;RobotLib.c: 465: }
+  2372                           ;RobotLib.c: 448: }
   2373                           
-  2374                           ;RobotLib.c: 463: break;
+  2374                           ;RobotLib.c: 446: break;
   2375  001320  0012               	return	
-  2376  001322                     l277:
+  2376  001322                     l269:
   2377  001322  5002               	movf	digitalWrite@pin,w,c
   2378                           
   2379                           ; Switch size 1, requested type "space"
@@ -2458,74 +2458,74 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2384                           ;	Chosen strategy is simple_byte
   2385  001324  0A00               	xorlw	0	; case 0
   2386  001326  B4D8               	btfsc	status,2,c
-  2387  001328  D75B               	goto	l278
+  2387  001328  D75B               	goto	l270
   2388  00132A  0A01               	xorlw	1	; case 1
   2389  00132C  B4D8               	btfsc	status,2,c
-  2390  00132E  D75F               	goto	l282
+  2390  00132E  D75F               	goto	l274
   2391  001330  0A03               	xorlw	3	; case 2
   2392  001332  B4D8               	btfsc	status,2,c
-  2393  001334  D763               	goto	l285
+  2393  001334  D763               	goto	l277
   2394  001336  0A01               	xorlw	1	; case 3
   2395  001338  B4D8               	btfsc	status,2,c
-  2396  00133A  D767               	goto	l288
+  2396  00133A  D767               	goto	l280
   2397  00133C  0A07               	xorlw	7	; case 4
   2398  00133E  B4D8               	btfsc	status,2,c
-  2399  001340  D76B               	goto	l291
+  2399  001340  D76B               	goto	l283
   2400  001342  0A01               	xorlw	1	; case 5
   2401  001344  B4D8               	btfsc	status,2,c
-  2402  001346  D76F               	goto	l294
+  2402  001346  D76F               	goto	l286
   2403  001348  0A03               	xorlw	3	; case 6
   2404  00134A  B4D8               	btfsc	status,2,c
-  2405  00134C  D773               	goto	l297
+  2405  00134C  D773               	goto	l289
   2406  00134E  0A01               	xorlw	1	; case 7
   2407  001350  B4D8               	btfsc	status,2,c
-  2408  001352  D777               	goto	l300
+  2408  001352  D777               	goto	l292
   2409  001354  0A0F               	xorlw	15	; case 8
   2410  001356  B4D8               	btfsc	status,2,c
-  2411  001358  D77B               	goto	l303
+  2411  001358  D77B               	goto	l295
   2412  00135A  0A01               	xorlw	1	; case 9
   2413  00135C  B4D8               	btfsc	status,2,c
-  2414  00135E  D77F               	goto	l306
+  2414  00135E  D77F               	goto	l298
   2415  001360  0A03               	xorlw	3	; case 10
   2416  001362  B4D8               	btfsc	status,2,c
-  2417  001364  D783               	goto	l309
+  2417  001364  D783               	goto	l301
   2418  001366  0A01               	xorlw	1	; case 11
   2419  001368  B4D8               	btfsc	status,2,c
-  2420  00136A  D787               	goto	l312
+  2420  00136A  D787               	goto	l304
   2421  00136C  0A07               	xorlw	7	; case 12
   2422  00136E  B4D8               	btfsc	status,2,c
-  2423  001370  D78B               	goto	l315
+  2423  001370  D78B               	goto	l307
   2424  001372  0A01               	xorlw	1	; case 13
   2425  001374  B4D8               	btfsc	status,2,c
-  2426  001376  D78F               	goto	l318
+  2426  001376  D78F               	goto	l310
   2427  001378  0A03               	xorlw	3	; case 14
   2428  00137A  B4D8               	btfsc	status,2,c
-  2429  00137C  D793               	goto	l321
+  2429  00137C  D793               	goto	l313
   2430  00137E  0A01               	xorlw	1	; case 15
   2431  001380  B4D8               	btfsc	status,2,c
-  2432  001382  D797               	goto	l324
+  2432  001382  D797               	goto	l316
   2433  001384  0A1F               	xorlw	31	; case 16
   2434  001386  B4D8               	btfsc	status,2,c
-  2435  001388  D79B               	goto	l327
+  2435  001388  D79B               	goto	l319
   2436  00138A  0A01               	xorlw	1	; case 17
   2437  00138C  B4D8               	btfsc	status,2,c
-  2438  00138E  D79F               	goto	l330
+  2438  00138E  D79F               	goto	l322
   2439  001390  0A03               	xorlw	3	; case 18
   2440  001392  B4D8               	btfsc	status,2,c
-  2441  001394  D7A3               	goto	l333
+  2441  001394  D7A3               	goto	l325
   2442  001396  0A01               	xorlw	1	; case 19
   2443  001398  B4D8               	btfsc	status,2,c
-  2444  00139A  D7A7               	goto	l336
+  2444  00139A  D7A7               	goto	l328
   2445  00139C  0A07               	xorlw	7	; case 20
   2446  00139E  B4D8               	btfsc	status,2,c
-  2447  0013A0  D7AB               	goto	l339
+  2447  0013A0  D7AB               	goto	l331
   2448  0013A2  0A01               	xorlw	1	; case 21
   2449  0013A4  B4D8               	btfsc	status,2,c
-  2450  0013A6  D7AF               	goto	l342
+  2450  0013A6  D7AF               	goto	l334
   2451  0013A8  0A03               	xorlw	3	; case 22
   2452  0013AA  A4D8               	btfss	status,2,c
   2453  0013AC  0012               	return	
-  2454  0013AE  D7B2               	goto	l345
+  2454  0013AE  D7B2               	goto	l337
   2455  0013B0                     __end_of_digitalWrite:
   2456                           	opt stack 0
   2457                           tblptru	equ	0xFF8
@@ -2542,7 +2542,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2468                           
   2469 ;; *************** function _initLCD *****************
   2470 ;; Defined at:
-  2471 ;;		line 47 in file "RobotLib.c"
+  2471 ;;		line 30 in file "RobotLib.c"
   2472 ;; Parameters:    Size  Location     Type
   2473 ;;		None
   2474 ;; Auto vars:     Size  Location     Type
@@ -2582,33 +2582,33 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2503  001740                     _initLCD:
   2504                           	opt stack 27
   2505                           
-  2506                           ;RobotLib.c: 49: TRISD &= 0x03;
+  2506                           ;RobotLib.c: 32: TRISD &= 0x03;
   2507                           
   2508                           ;incstack = 0
   2509  001740  0E03               	movlw	3
   2510  001742  1695               	andwf	3989,f,c	;volatile
   2511                           
-  2512                           ;RobotLib.c: 50: LATD &= 0b00001111;
+  2512                           ;RobotLib.c: 33: LATD &= 0b00001111;
   2513  001744  0E0F               	movlw	15
   2514  001746  168C               	andwf	3980,f,c	;volatile
   2515                           
-  2516                           ;RobotLib.c: 51: PORTDbits.RD3 = 0;
+  2516                           ;RobotLib.c: 34: PORTDbits.RD3 = 0;
   2517  001748  9683               	bcf	3971,3,c	;volatile
   2518                           
-  2519                           ;RobotLib.c: 52: PORTDbits.RD2 = 0;
+  2519                           ;RobotLib.c: 35: PORTDbits.RD2 = 0;
   2520  00174A  9483               	bcf	3971,2,c	;volatile
   2521                           
-  2522                           ;RobotLib.c: 53: for(char i = 0; i<3; i++){
+  2522                           ;RobotLib.c: 36: for(char i = 0; i<3; i++){
   2523  00174C  0E00               	movlw	0
   2524  00174E  6E04               	movwf	initLCD@i,c
   2525  001750                     l1301:
   2526  001750  0E02               	movlw	2
   2527  001752  6404               	cpfsgt	initLCD@i,c
-  2528  001754  D001               	goto	l165
+  2528  001754  D001               	goto	l157
   2529  001756  D00F               	goto	u520
-  2530  001758                     l165:
+  2530  001758                     l157:
   2531                           
-  2532                           ;RobotLib.c: 54: _delay((unsigned long)((1)*(40000000/4000.0)));
+  2532                           ;RobotLib.c: 37: _delay((unsigned long)((1)*(40000000/4000.0)));
   2533  001758  0E0D               	movlw	13
   2534  00175A  6E03               	movwf	??_initLCD& (0+255),c
   2535  00175C  0EFC               	movlw	252
@@ -2618,29 +2618,29 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2539  001762  2E03               	decfsz	??_initLCD& (0+255),f,c
   2540  001764  D7FC               	bra	u1497
   2541                           
-  2542                           ;RobotLib.c: 55: LATD = (LATD&0x0f)|0x30;
+  2542                           ;RobotLib.c: 38: LATD = (LATD&0x0f)|0x30;
   2543  001766  508C               	movf	3980,w,c	;volatile
   2544  001768  0B0F               	andlw	15
   2545  00176A  0930               	iorlw	48
   2546  00176C  6E8C               	movwf	3980,c	;volatile
   2547                           
-  2548                           ;RobotLib.c: 56: lcdPulse();
+  2548                           ;RobotLib.c: 39: lcdPulse();
   2549  00176E  ECE8  F00C         	call	_lcdPulse	;wreg free
   2550  001772  2A04               	incf	initLCD@i,f,c
   2551  001774  D7ED               	goto	l1301
   2552  001776                     u520:
   2553                           
-  2554                           ;RobotLib.c: 57: }
-  2555                           ;RobotLib.c: 58: LATD = (LATD&0x0f)|0x20;
+  2554                           ;RobotLib.c: 40: }
+  2555                           ;RobotLib.c: 41: LATD = (LATD&0x0f)|0x20;
   2556  001776  508C               	movf	3980,w,c	;volatile
   2557  001778  0B0F               	andlw	15
   2558  00177A  0920               	iorlw	32
   2559  00177C  6E8C               	movwf	3980,c	;volatile
   2560                           
-  2561                           ;RobotLib.c: 59: lcdPulse();
+  2561                           ;RobotLib.c: 42: lcdPulse();
   2562  00177E  ECE8  F00C         	call	_lcdPulse	;wreg free
   2563                           
-  2564                           ;RobotLib.c: 60: _delay((unsigned long)((1)*(40000000/4000.0)));
+  2564                           ;RobotLib.c: 43: _delay((unsigned long)((1)*(40000000/4000.0)));
   2565  001782  0E0D               	movlw	13
   2566  001784  6E03               	movwf	??_initLCD& (0+255),c
   2567  001786  0EFC               	movlw	252
@@ -2650,27 +2650,27 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2571  00178C  2E03               	decfsz	??_initLCD& (0+255),f,c
   2572  00178E  D7FC               	bra	u1507
   2573                           
-  2574                           ;RobotLib.c: 61: lcdCmd(0x28);
+  2574                           ;RobotLib.c: 44: lcdCmd(0x28);
   2575  001790  0E28               	movlw	40
   2576  001792  EC39  F00C         	call	_lcdCmd
   2577                           
-  2578                           ;RobotLib.c: 62: lcdCmd(0x01);
+  2578                           ;RobotLib.c: 45: lcdCmd(0x01);
   2579  001796  0E01               	movlw	1
   2580  001798  EC39  F00C         	call	_lcdCmd
   2581                           
-  2582                           ;RobotLib.c: 63: lcdCmd(0x06);
+  2582                           ;RobotLib.c: 46: lcdCmd(0x06);
   2583  00179C  0E06               	movlw	6
   2584  00179E  EC39  F00C         	call	_lcdCmd
   2585                           
-  2586                           ;RobotLib.c: 64: lcdCmd(0x0C);
+  2586                           ;RobotLib.c: 47: lcdCmd(0x0C);
   2587  0017A2  0E0C               	movlw	12
   2588  0017A4  EC39  F00C         	call	_lcdCmd
   2589                           
-  2590                           ;RobotLib.c: 65: lcdCmd(0x02);
+  2590                           ;RobotLib.c: 48: lcdCmd(0x02);
   2591  0017A8  0E02               	movlw	2
   2592  0017AA  EC39  F00C         	call	_lcdCmd
   2593                           
-  2594                           ;RobotLib.c: 66: lcdCmd(0x01);
+  2594                           ;RobotLib.c: 49: lcdCmd(0x01);
   2595  0017AE  0E01               	movlw	1
   2596  0017B0  EC39  F00C         	call	_lcdCmd
   2597  0017B4  0012               	return		;funcret
@@ -2690,7 +2690,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2611                           
   2612 ;; *************** function _lcdCmd *****************
   2613 ;; Defined at:
-  2614 ;;		line 38 in file "RobotLib.c"
+  2614 ;;		line 21 in file "RobotLib.c"
   2615 ;; Parameters:    Size  Location     Type
   2616 ;;  cmd             1    wreg     unsigned char 
   2617 ;; Auto vars:     Size  Location     Type
@@ -2734,10 +2734,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2650                           ;lcdCmd@cmd stored from wreg
   2651  001872  6E02               	movwf	lcdCmd@cmd,c
   2652                           
-  2653                           ;RobotLib.c: 39: PORTDbits.RD2 = 0;
+  2653                           ;RobotLib.c: 22: PORTDbits.RD2 = 0;
   2654  001874  9483               	bcf	3971,2,c	;volatile
   2655                           
-  2656                           ;RobotLib.c: 40: LATD = (LATD&0x0f)|(cmd&0xf0);
+  2656                           ;RobotLib.c: 23: LATD = (LATD&0x0f)|(cmd&0xf0);
   2657  001876  C002  F001         	movff	lcdCmd@cmd,??_lcdCmd
   2658  00187A  0EF0               	movlw	240
   2659  00187C  1601               	andwf	??_lcdCmd,f,c
@@ -2746,10 +2746,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2662  001882  1001               	iorwf	??_lcdCmd,w,c
   2663  001884  6E8C               	movwf	3980,c	;volatile
   2664                           
-  2665                           ;RobotLib.c: 41: lcdPulse();
+  2665                           ;RobotLib.c: 24: lcdPulse();
   2666  001886  ECE8  F00C         	call	_lcdPulse	;wreg free
   2667                           
-  2668                           ;RobotLib.c: 42: LATD = (LATD&0x0f)|((cmd<<4)&0xf0);
+  2668                           ;RobotLib.c: 25: LATD = (LATD&0x0f)|((cmd<<4)&0xf0);
   2669  00188A  C002  F001         	movff	lcdCmd@cmd,??_lcdCmd
   2670  00188E  3A01               	swapf	??_lcdCmd,f,c
   2671  001890  0EF0               	movlw	240
@@ -2761,10 +2761,10 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2677  00189C  1001               	iorwf	??_lcdCmd,w,c
   2678  00189E  6E8C               	movwf	3980,c	;volatile
   2679                           
-  2680                           ;RobotLib.c: 43: lcdPulse();
+  2680                           ;RobotLib.c: 26: lcdPulse();
   2681  0018A0  ECE8  F00C         	call	_lcdPulse	;wreg free
   2682                           
-  2683                           ;RobotLib.c: 44: _delay((unsigned long)((1)*(40000000/4000.0)));
+  2683                           ;RobotLib.c: 27: _delay((unsigned long)((1)*(40000000/4000.0)));
   2684  0018A4  0E0D               	movlw	13
   2685  0018A6  6E01               	movwf	??_lcdCmd& (0+255),c
   2686  0018A8  0EFC               	movlw	252
@@ -2790,7 +2790,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2706                           
   2707 ;; *************** function _lcdPulse *****************
   2708 ;; Defined at:
-  2709 ;;		line 31 in file "RobotLib.c"
+  2709 ;;		line 14 in file "RobotLib.c"
   2710 ;; Parameters:    Size  Location     Type
   2711 ;;		None
   2712 ;; Auto vars:     Size  Location     Type
@@ -2830,22 +2830,22 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2741  0019D0                     _lcdPulse:
   2742                           	opt stack 28
   2743                           
-  2744                           ;RobotLib.c: 32: PORTDbits.RD3=1;
+  2744                           ;RobotLib.c: 15: PORTDbits.RD3=1;
   2745                           
   2746                           ;incstack = 0
   2747  0019D0  8683               	bsf	3971,3,c	;volatile
   2748                           
-  2749                           ;RobotLib.c: 33: _delay((unsigned long)((50)*(40000000/4000000.0)));
+  2749                           ;RobotLib.c: 16: _delay((unsigned long)((50)*(40000000/4000000.0)));
   2750  0019D2  0EA6               	movlw	166
   2751  0019D4                     u1527:
   2752  0019D4  2EE8               	decfsz	wreg,f,c
   2753  0019D6  D7FE               	bra	u1527
   2754  0019D8  D000               	nop2	
   2755                           
-  2756                           ;RobotLib.c: 34: PORTDbits.RD3=0;
+  2756                           ;RobotLib.c: 17: PORTDbits.RD3=0;
   2757  0019DA  9683               	bcf	3971,3,c	;volatile
   2758                           
-  2759                           ;RobotLib.c: 35: _delay((unsigned long)((50)*(40000000/4000000.0)));
+  2759                           ;RobotLib.c: 18: _delay((unsigned long)((50)*(40000000/4000000.0)));
   2760  0019DC  0EA6               	movlw	166
   2761  0019DE                     u1537:
   2762  0019DE  2EE8               	decfsz	wreg,f,c
@@ -2868,7 +2868,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2779                           
   2780 ;; *************** function _initInterrupts *****************
   2781 ;; Defined at:
-  2782 ;;		line 604 in file "RobotLib.c"
+  2782 ;;		line 605 in file "RobotLib.c"
   2783 ;; Parameters:    Size  Location     Type
   2784 ;;		None
   2785 ;; Auto vars:     Size  Location     Type
@@ -2906,24 +2906,24 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2812  0019F8                     _initInterrupts:
   2813                           	opt stack 29
   2814                           
-  2815                           ;RobotLib.c: 605: RCONbits.IPEN=1;
+  2815                           ;RobotLib.c: 606: RCONbits.IPEN=1;
   2816                           
   2817                           ;incstack = 0
   2818  0019F8  8ED0               	bsf	4048,7,c	;volatile
   2819                           
-  2820                           ;RobotLib.c: 606: INTCONbits.GIEH = 1;
+  2820                           ;RobotLib.c: 607: INTCONbits.GIEH = 1;
   2821  0019FA  8EF2               	bsf	intcon,7,c	;volatile
   2822                           
-  2823                           ;RobotLib.c: 607: INTCONbits.GIEL = 1;
+  2823                           ;RobotLib.c: 608: INTCONbits.GIEL = 1;
   2824  0019FC  8CF2               	bsf	intcon,6,c	;volatile
   2825                           
-  2826                           ;RobotLib.c: 608: INTCONbits.INT0IE = 0;
+  2826                           ;RobotLib.c: 610: INTCONbits.INT0IE = 0;
   2827  0019FE  98F2               	bcf	intcon,4,c	;volatile
   2828                           
-  2829                           ;RobotLib.c: 609: INTCON3bits.INT2IE = 0;
+  2829                           ;RobotLib.c: 611: INTCON3bits.INT2IE = 0;
   2830  001A00  98F0               	bcf	intcon3,4,c	;volatile
   2831                           
-  2832                           ;RobotLib.c: 610: INTCON3bits.INT1IE = 0;
+  2832                           ;RobotLib.c: 612: INTCON3bits.INT1IE = 0;
   2833  001A02  96F0               	bcf	intcon3,3,c	;volatile
   2834  001A04  0012               	return		;funcret
   2835  001A06                     __end_of_initInterrupts:
@@ -2944,7 +2944,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2850                           
   2851 ;; *************** function _initADC *****************
   2852 ;; Defined at:
-  2853 ;;		line 499 in file "RobotLib.c"
+  2853 ;;		line 482 in file "RobotLib.c"
   2854 ;; Parameters:    Size  Location     Type
   2855 ;;		None
   2856 ;; Auto vars:     Size  Location     Type
@@ -2982,7 +2982,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2883  001984                     _initADC:
   2884                           	opt stack 29
   2885                           
-  2886                           ;RobotLib.c: 501: ADCON1bits.PCFG=0b1111;
+  2886                           ;RobotLib.c: 484: ADCON1bits.PCFG=0b1111;
   2887                           
   2888                           ;incstack = 0
   2889  001984  80C1               	bsf	4033,0,c	;volatile
@@ -2990,22 +2990,22 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2891  001988  84C1               	bsf	4033,2,c	;volatile
   2892  00198A  86C1               	bsf	4033,3,c	;volatile
   2893                           
-  2894                           ;RobotLib.c: 502: ADCON1bits.VCFG=0b00;
+  2894                           ;RobotLib.c: 485: ADCON1bits.VCFG=0b00;
   2895  00198C  0ECF               	movlw	-49
   2896  00198E  16C1               	andwf	4033,f,c	;volatile
   2897                           
-  2898                           ;RobotLib.c: 503: ADCON2bits.ACQT=0b111;
+  2898                           ;RobotLib.c: 486: ADCON2bits.ACQT=0b111;
   2899  001990  86C0               	bsf	4032,3,c	;volatile
   2900  001992  88C0               	bsf	4032,4,c	;volatile
   2901  001994  8AC0               	bsf	4032,5,c	;volatile
   2902                           
-  2903                           ;RobotLib.c: 504: ADCON2bits.ADCS=0b110;
+  2903                           ;RobotLib.c: 487: ADCON2bits.ADCS=0b110;
   2904  001996  50C0               	movf	4032,w,c	;volatile
   2905  001998  0BF8               	andlw	-8
   2906  00199A  0906               	iorlw	6
   2907  00199C  6EC0               	movwf	4032,c	;volatile
   2908                           
-  2909                           ;RobotLib.c: 505: ADCON2bits.ADFM=0;
+  2909                           ;RobotLib.c: 488: ADCON2bits.ADFM=0;
   2910  00199E  9EC0               	bcf	4032,7,c	;volatile
   2911  0019A0  0012               	return		;funcret
   2912  0019A2                     __end_of_initADC:
@@ -3026,7 +3026,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2927                           
   2928 ;; *************** function _attachInterrupt *****************
   2929 ;; Defined at:
-  2930 ;;		line 576 in file "RobotLib.c"
+  2930 ;;		line 578 in file "RobotLib.c"
   2931 ;; Parameters:    Size  Location     Type
   2932 ;;  num             1    wreg     unsigned char 
   2933 ;;  mode            1    0[COMRAM] unsigned char 
@@ -3071,31 +3071,31 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   2967                           ;attachInterrupt@num stored from wreg
   2968  001926  6E04               	movwf	attachInterrupt@num,c
   2969                           
-  2970                           ;RobotLib.c: 577: switch (num){
+  2970                           ;RobotLib.c: 579: switch (num){
   2971  001928  D013               	goto	l409
   2972  00192A                     l410:
   2973                           
-  2974                           ;RobotLib.c: 579: int0func = func;
+  2974                           ;RobotLib.c: 581: int0func = func;
   2975  00192A  C002  F036         	movff	attachInterrupt@func,_int0func
   2976  00192E  C003  F037         	movff	attachInterrupt@func+1,_int0func+1
   2977                           
-  2978                           ;RobotLib.c: 580: switch(mode){
+  2978                           ;RobotLib.c: 582: switch(mode){
   2979  001932  D004               	goto	l411
   2980  001934                     l412:
   2981                           
-  2982                           ;RobotLib.c: 582: INTCON2bits.INTEDG0 = 1;
+  2982                           ;RobotLib.c: 584: INTCON2bits.INTEDG0 = 1;
   2983  001934  8CF1               	bsf	intcon2,6,c	;volatile
   2984                           
-  2985                           ;RobotLib.c: 583: break;
+  2985                           ;RobotLib.c: 585: break;
   2986  001936  D009               	goto	l413
   2987  001938                     l414:
   2988                           
-  2989                           ;RobotLib.c: 586: INTCON2bits.INTEDG0 = 0;
+  2989                           ;RobotLib.c: 588: INTCON2bits.INTEDG0 = 0;
   2990  001938  9CF1               	bcf	intcon2,6,c	;volatile
   2991                           
-  2992                           ;RobotLib.c: 588: }
+  2992                           ;RobotLib.c: 590: }
   2993                           
-  2994                           ;RobotLib.c: 587: break;
+  2994                           ;RobotLib.c: 589: break;
   2995  00193A  D007               	goto	l413
   2996  00193C                     l411:
   2997  00193C  5001               	movf	attachInterrupt@mode,w,c
@@ -3114,15 +3114,15 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3010  001948  D7F7               	goto	l414
   3011  00194A                     l413:
   3012                           
-  3013                           ;RobotLib.c: 589: INTCONbits.INT0IF = 0;
+  3013                           ;RobotLib.c: 591: INTCONbits.INT0IF = 0;
   3014  00194A  92F2               	bcf	intcon,1,c	;volatile
   3015                           
-  3016                           ;RobotLib.c: 590: INTCONbits.INT0IE = 1;
+  3016                           ;RobotLib.c: 592: INTCONbits.INT0IE = 1;
   3017  00194C  88F2               	bsf	intcon,4,c	;volatile
   3018                           
-  3019                           ;RobotLib.c: 593: }
+  3019                           ;RobotLib.c: 595: }
   3020                           
-  3021                           ;RobotLib.c: 592: break;
+  3021                           ;RobotLib.c: 594: break;
   3022  00194E  0012               	return	
   3023  001950                     l409:
   3024  001950  5004               	movf	attachInterrupt@num,w,c
@@ -3156,7 +3156,7 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3052                           
   3053 ;; *************** function _analogRead *****************
   3054 ;; Defined at:
-  3055 ;;		line 508 in file "RobotLib.c"
+  3055 ;;		line 491 in file "RobotLib.c"
   3056 ;; Parameters:    Size  Location     Type
   3057 ;;  pin             1    wreg     unsigned char 
   3058 ;; Auto vars:     Size  Location     Type
@@ -3198,88 +3198,88 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3089                           ;analogRead@pin stored from wreg
   3090  0014E8  6E07               	movwf	analogRead@pin,c
   3091                           
-  3092                           ;RobotLib.c: 509: ADCON1bits.PCFG=0b0000;
+  3092                           ;RobotLib.c: 492: ADCON1bits.PCFG=0b0000;
   3093  0014EA  90C1               	bcf	4033,0,c	;volatile
   3094  0014EC  92C1               	bcf	4033,1,c	;volatile
   3095  0014EE  94C1               	bcf	4033,2,c	;volatile
   3096  0014F0  96C1               	bcf	4033,3,c	;volatile
   3097                           
-  3098                           ;RobotLib.c: 510: ADCON0bits.ADON=1;
+  3098                           ;RobotLib.c: 493: ADCON0bits.ADON=1;
   3099  0014F2  80C2               	bsf	4034,0,c	;volatile
   3100                           
-  3101                           ;RobotLib.c: 513: switch(pin){
-  3102  0014F4  D02A               	goto	l382
-  3103  0014F6                     l383:
+  3101                           ;RobotLib.c: 496: switch(pin){
+  3102  0014F4  D02A               	goto	l374
+  3103  0014F6                     l375:
   3104                           
-  3105                           ;RobotLib.c: 515: ADCON0bits.CHS=0;
+  3105                           ;RobotLib.c: 498: ADCON0bits.CHS=0;
   3106  0014F6  94C2               	bcf	4034,2,c	;volatile
   3107  0014F8  96C2               	bcf	4034,3,c	;volatile
   3108  0014FA  98C2               	bcf	4034,4,c	;volatile
   3109  0014FC  9AC2               	bcf	4034,5,c	;volatile
   3110                           
-  3111                           ;RobotLib.c: 516: break;
-  3112  0014FE  D044               	goto	l384
+  3111                           ;RobotLib.c: 499: break;
+  3112  0014FE  D044               	goto	l376
   3113  001500                     
-  3114                           ;RobotLib.c: 519: ADCON0bits.CHS=1;
+  3114                           ;RobotLib.c: 502: ADCON0bits.CHS=1;
   3115  001500  50C2               	movf	4034,w,c	;volatile
   3116  001502  0BC3               	andlw	-61
   3117  001504  0904               	iorlw	4
   3118  001506  D01F               	goto	L8
   3119  001508                     
-  3120                           ;RobotLib.c: 523: ADCON0bits.CHS=2;
+  3120                           ;RobotLib.c: 506: ADCON0bits.CHS=2;
   3121  001508  50C2               	movf	4034,w,c	;volatile
   3122  00150A  0BC3               	andlw	-61
   3123  00150C  0908               	iorlw	8
   3124  00150E  D01B               	goto	L8
   3125  001510                     
-  3126                           ;RobotLib.c: 527: ADCON0bits.CHS=3;
+  3126                           ;RobotLib.c: 510: ADCON0bits.CHS=3;
   3127  001510  50C2               	movf	4034,w,c	;volatile
   3128  001512  0BC3               	andlw	-61
   3129  001514  090C               	iorlw	12
   3130  001516  D017               	goto	L8
   3131  001518                     
-  3132                           ;RobotLib.c: 531: ADCON0bits.CHS=4;
+  3132                           ;RobotLib.c: 514: ADCON0bits.CHS=4;
   3133  001518  50C2               	movf	4034,w,c	;volatile
   3134  00151A  0BC3               	andlw	-61
   3135  00151C  0910               	iorlw	16
   3136  00151E  D013               	goto	L8
   3137  001520                     
-  3138                           ;RobotLib.c: 535: ADCON0bits.CHS=5;
+  3138                           ;RobotLib.c: 518: ADCON0bits.CHS=5;
   3139  001520  50C2               	movf	4034,w,c	;volatile
   3140  001522  0BC3               	andlw	-61
   3141  001524  0914               	iorlw	20
   3142  001526  D00F               	goto	L8
   3143  001528                     
-  3144                           ;RobotLib.c: 539: ADCON0bits.CHS=6;
+  3144                           ;RobotLib.c: 522: ADCON0bits.CHS=6;
   3145  001528  50C2               	movf	4034,w,c	;volatile
   3146  00152A  0BC3               	andlw	-61
   3147  00152C  0918               	iorlw	24
   3148  00152E  D00B               	goto	L8
   3149  001530                     
-  3150                           ;RobotLib.c: 543: ADCON0bits.CHS=7;
+  3150                           ;RobotLib.c: 526: ADCON0bits.CHS=7;
   3151  001530  50C2               	movf	4034,w,c	;volatile
   3152  001532  0BC3               	andlw	-61
   3153  001534  091C               	iorlw	28
   3154  001536  D007               	goto	L8
   3155  001538                     
-  3156                           ;RobotLib.c: 547: ADCON0bits.CHS=11;
+  3156                           ;RobotLib.c: 530: ADCON0bits.CHS=11;
   3157  001538  50C2               	movf	4034,w,c	;volatile
   3158  00153A  0BC3               	andlw	-61
   3159  00153C  092C               	iorlw	44
   3160  00153E  D003               	goto	L8
   3161  001540                     
-  3162                           ;RobotLib.c: 551: ADCON0bits.CHS=12;
+  3162                           ;RobotLib.c: 534: ADCON0bits.CHS=12;
   3163  001540  50C2               	movf	4034,w,c	;volatile
   3164  001542  0BC3               	andlw	-61
   3165  001544  0930               	iorlw	48
   3166  001546                     L8:
   3167  001546  6EC2               	movwf	4034,c	;volatile
   3168                           
-  3169                           ;RobotLib.c: 553: }
+  3169                           ;RobotLib.c: 536: }
   3170                           
-  3171                           ;RobotLib.c: 552: break;
-  3172  001548  D01F               	goto	l384
-  3173  00154A                     l382:
+  3171                           ;RobotLib.c: 535: break;
+  3172  001548  D01F               	goto	l376
+  3173  00154A                     l374:
   3174  00154A  5007               	movf	analogRead@pin,w,c
   3175                           
   3176                           ; Switch size 1, requested type "space"
@@ -3290,51 +3290,51 @@ Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160
   3181                           ;	Chosen strategy is simple_byte
   3182  00154C  0A00               	xorlw	0	; case 0
   3183  00154E  B4D8               	btfsc	status,2,c
-  3184  001550  D7D2               	goto	l383
+  3184  001550  D7D2               	goto	l375
   3185  001552  0A01               	xorlw	1	; case 1
   3186  001554  B4D8               	btfsc	status,2,c
-  3187  001556  D7D4               	goto	l385
+  3187  001556  D7D4               	goto	l377
   3188  001558  0A03               	xorlw	3	; case 2
   3189  00155A  B4D8               	btfsc	status,2,c
-  3190  00155C  D7D5               	goto	l386
+  3190  00155C  D7D5               	goto	l378
   3191  00155E  0A01               	xorlw	1	; case 3
   3192  001560  B4D8               	btfsc	status,2,c
-  3193  001562  D7D6               	goto	l387
+  3193  001562  D7D6               	goto	l379
   3194  001564  0A07               	xorlw	7	; case 4
   3195  001566  B4D8               	btfsc	status,2,c
-  3196  001568  D7D7               	goto	l388
+  3196  001568  D7D7               	goto	l380
   3197  00156A  0A01               	xorlw	1	; case 5
   3198  00156C  B4D8               	btfsc	status,2,c
-  3199  00156E  D7D8               	goto	l389
+  3199  00156E  D7D8               	goto	l381
   3200  001570  0A03               	xorlw	3	; case 6
   3201  001572  B4D8               	btfsc	status,2,c
-  3202  001574  D7D9               	goto	l390
+  3202  001574  D7D9               	goto	l382
   3203  001576  0A01               	xorlw	1	; case 7
   3204  001578  B4D8               	btfsc	status,2,c
-  3205  00157A  D7DA               	goto	l391
+  3205  00157A  D7DA               	goto	l383
   3206  00157C  0A0E               	xorlw	14	; case 9
   3207  00157E  B4D8               	btfsc	status,2,c
-  3208  001580  D7DB               	goto	l392
+  3208  001580  D7DB               	goto	l384
   3209  001582  0A02               	xorlw	2	; case 11
   3210  001584  B4D8               	btfsc	status,2,c
-  3211  001586  D7DC               	goto	l393
-  3212  001588                     l384:
+  3211  001586  D7DC               	goto	l385
+  3212  001588                     l376:
   3213                           
-  3214                           ;RobotLib.c: 555: ADCON0bits.GO_DONE=1;
+  3214                           ;RobotLib.c: 538: ADCON0bits.GO_DONE=1;
   3215  001588  82C2               	bsf	4034,1,c	;volatile
   3216  00158A  B2C2               	btfsc	4034,1,c	;volatile
-  3217  00158C  D7FE               	goto	l395
+  3217  00158C  D7FE               	goto	l387
   3218                           
-  3219                           ;RobotLib.c: 557: ADCON1bits.PCFG=0b1111;
+  3219                           ;RobotLib.c: 540: ADCON1bits.PCFG=0b1111;
   3220  00158E  80C1               	bsf	4033,0,c	;volatile
   3221  001590  82C1               	bsf	4033,1,c	;volatile
   3222  001592  84C1               	bsf	4033,2,c	;volatile
   3223  001594  86C1               	bsf	4033,3,c	;volatile
   3224                           
-  3225                           ;RobotLib.c: 558: ADCON0bits.ADON=0;
+  3225                           ;RobotLib.c: 541: ADCON0bits.ADON=0;
   3226  001596  90C2               	bcf	4034,0,c	;volatile
   3227                           
-  3228                           ;RobotLib.c: 559: return (ADRESH<<2)+(ADRESL>>6);
+  3228                           ;RobotLib.c: 542: return (ADRESH<<2)+(ADRESL>>6);
   3229  001598  CFC3 F003          	movff	4035,??_analogRead	;volatile
   3230  00159C  0E06               	movlw	6
   3231  00159E  6E04               	movwf	(??_analogRead+1)& (0+255),c
@@ -3443,11 +3443,11 @@ Pointer List with Targets:
     attachInterrupt@func	PTR FTN()void  size(2) Largest target is 1
 		 -> func(), 
 
-    lcd_print_string@entity	PTR unsigned char  size(2) Largest target is 5
-		 -> STR_1(CODE[5]), 
-
     int0func	PTR FTN()void  size(2) Largest target is 1
 		 -> Absolute function(), func(), 
+
+    lcd_print_string@entity	PTR unsigned char  size(2) Largest target is 5
+		 -> STR_1(CODE[5]), 
 
 
 Critical Paths under _main in COMRAM
@@ -3688,55 +3688,55 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.45 build -152302408 
-Symbol Table                                                                                   Sat Mar 24 18:46:35 2018
+Symbol Table                                                                                   Sun Mar 25 13:27:12 2018
 
            ?_lcd_setCursor 0003                         l30 17F2                __CFG_BORV$3 000000  
              __CFG_CP0$OFF 000000               __CFG_CP1$OFF 000000               __CFG_CP2$OFF 000000  
-              __CFG_WDT$ON 000000                        l203 114E                        l211 1028  
-                      l300 1242                        l220 1052                        l212 1032  
-                      l204 100C                        l301 124C                        l221 105C  
-                      l205 1016                        l310 1276                        l230 1086  
-                      l214 1036                        l303 1250                        l223 1060  
-                      l215 1040                        l312 127A                        l304 125A  
-                      l232 108A                        l224 106A                        l208 101A  
-                      l321 12A4                        l313 1284                        l241 10B4  
-                      l233 1094                        l217 1044                        l209 1024  
-                      l410 192A                        l330 12CE                        l322 12AE  
-                      l306 125E                        l250 10DE                        l242 10BE  
-                      l226 106E                        l218 104E                        l411 193C  
-                      l331 12D8                        l315 1288                        l307 1268  
-                      l251 10E8                        l235 1098                        l227 1078  
-                      l412 1934                        l340 1302                        l324 12B2  
-                      l316 1292                        l260 1112                        l244 10C2  
-                      l236 10A2                        l180 195C                        l413 194A  
-                      l165 1758                        l333 12DC                        l325 12BC  
-                      l309 126C                        l253 10EC                        l245 10CC  
-                      l229 107C                        l501 170A                        l414 1938  
-                      l342 1306                        l334 12E6                        l318 1296  
-                      l262 1116                        l254 10F6                        l238 10A6  
-                      l502 1718                        l343 1310                        l327 12C0  
-                      l319 12A0                        l271 1140                        l263 1120  
-                      l247 10D0                        l239 10B0                        l503 172E  
-                      l191 14CA                        l336 12EA                        l328 12CA  
-                      l272 114A                        l256 10FA                        l248 10DA  
-                      l409 1950                        l345 1314                        l337 12F4  
-                      l265 1124                        l257 1104                        l185 13FA  
-                      l346 131E                        l282 11EE                        l266 112E  
-                      l186 140E                        l339 12F8                        l291 1218  
-                      l283 11F8                        l259 1108                        l179 1970  
-                      l292 1222                        l268 1132                        l196 18C0  
-                      l188 14AE                        l277 1322                        l285 11FC  
-                      l269 113C                        l437 182C                        l189 1418  
-                      l382 154A                        l390 1528                        l294 1226  
-                      l286 1206                        l278 11E0                        l198 18DA  
-                      l438 1840                        l391 1530                        l383 14F6  
-                      l295 1230                        l279 11EA                        l392 1538  
-                      l384 1588                        l288 120A                        l393 1540  
-                      l385 1500                        l297 1234                        l289 1214  
-                      l481 15E4                        l386 1508                        l298 123E  
-                      l490 1682                        l482 15FC                        l395 158A  
-                      l387 1510                        l388 1518                        l484 162A  
-                      l389 1520                        l485 161E                        l494 16B0  
+              __CFG_WDT$ON 000000                        l200 101A                        l201 1024  
+                      l210 104E                        l203 1028                        l212 1052  
+                      l204 1032                        l301 126C                        l221 107C  
+                      l213 105C                        l310 1296                        l302 1276  
+                      l230 10A6                        l222 1086                        l206 1036  
+                      l311 12A0                        l231 10B0                        l215 1060  
+                      l207 1040                        l320 12CA                        l304 127A  
+                      l240 10DA                        l224 108A                        l216 106A  
+                      l313 12A4                        l305 1284                        l233 10B4  
+                      l225 1094                        l209 1044                        l410 192A  
+                      l322 12CE                        l314 12AE                        l242 10DE  
+                      l234 10BE                        l218 106E                        l411 193C  
+                      l331 12F8                        l323 12D8                        l307 1288  
+                      l251 1108                        l243 10E8                        l227 1098  
+                      l219 1078                        l171 1970                        l412 1934  
+                      l332 1302                        l316 12B2                        l308 1292  
+                      l260 1132                        l252 1112                        l236 10C2  
+                      l228 10A2                        l180 14AE                        l172 195C  
+                      l413 194A                        l157 1758                        l325 12DC  
+                      l317 12BC                        l261 113C                        l245 10EC  
+                      l237 10CC                        l501 170A                        l181 1418  
+                      l414 1938                        l334 1306                        l326 12E6  
+                      l270 11E0                        l254 1116                        l246 10F6  
+                      l190 18DA                        l502 1718                        l335 1310  
+                      l319 12C0                        l271 11EA                        l263 1140  
+                      l255 1120                        l239 10D0                        l503 172E  
+                      l183 14CA                        l328 12EA                        l280 120A  
+                      l264 114A                        l248 10FA                        l409 1950  
+                      l337 1314                        l329 12F4                        l281 1214  
+                      l257 1124                        l249 1104                        l177 13FA  
+                      l338 131E                        l290 123E                        l274 11EE  
+                      l258 112E                        l178 140E                        l283 1218  
+                      l275 11F8                        l195 114E                        l380 1518  
+                      l292 1242                        l284 1222                        l196 100C  
+                      l188 18C0                        l381 1520                        l269 1322  
+                      l293 124C                        l277 11FC                        l197 1016  
+                      l437 182C                        l374 154A                        l382 1528  
+                      l286 1226                        l278 1206                        l438 1840  
+                      l383 1530                        l375 14F6                        l295 1250  
+                      l287 1230                        l384 1538                        l376 1588  
+                      l296 125A                        l385 1540                        l377 1500  
+                      l289 1234                        l481 15E4                        l378 1508  
+                      l298 125E                        l490 1682                        l482 15FC  
+                      l387 158A                        l379 1510                        l299 1268  
+                      l484 162A                        l485 161E                        l494 16B0  
                       l495 16C4                        l488 165E                        l489 166C  
                       l497 16E2                        l498 16D6               __CFG_CPB$OFF 000000  
                       u520 1776               __CFG_CPD$OFF 000000    __end_of_attachInterrupt 195A  
@@ -3779,7 +3779,7 @@ Symbol Table                                                                    
   __end_of__initialization 19C6            __CFG_PBADEN$OFF 000000          ?_lcd_print_string 0003  
             ___rparam_used 000001         ??_lcd_print_string 0005                pinMode@mode 0001  
            __pcstackCOMRAM 0001    __size_of_initInterrupts 000E          lcd_print_int@buff 0015  
-     __size_of_initOutputs 003E          initOutputs@i_1047 0004           ??_lcd_print_char 0001  
+     __size_of_initOutputs 003E          initOutputs@i_1066 0004           ??_lcd_print_char 0001  
     __size_of_digitalWrite 01D4             lcd_setCursor@x 0004             lcd_setCursor@y 0003  
                _analogRead 14E8                    ?___lmul 0001                    ?_lcdCmd 0001  
            ___lmul@product 0009               _digitalWrite 11DC                  ?_lcdPulse 0001  

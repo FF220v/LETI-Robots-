@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.45\dat\en_msgs.txt -cs \
   -h+dist/default/production\Lab1.X.production.sym \
   --cmf=dist/default/production\Lab1.X.production.cmf -z -Q18F4525 \
-  -oC:\Users\GT60\AppData\Local\Temp\s1ng.2 \
+  -oC:\Users\GT60\AppData\Local\Temp\sf04.2 \
   -Mdist/default/production/Lab1.X.production.map -E1 -ver=XC8 \
   -ASTACK=080h-0f7fh -pstack=STACK -ACODE=00h-0BFFFh -ACONST=00h-0BFFFh \
   -ASMALLCONST=01000h-010FFhx176 -AMEDIUMCONST=01000h-0BFFFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\GT60\AppData\Local\Temp\s1ng.obj \
+  C:\Users\GT60\AppData\Local\Temp\sf04.obj \
   dist/default/production\Lab1.X.production.obj 
 
 Object code version is 3.11
@@ -38,7 +38,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\GT60\AppData\Local\Temp\s1ng.obj
+C:\Users\GT60\AppData\Local\Temp\sf04.obj
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -567,7 +567,7 @@ digitalWrite@pin           cstackCOMRAM 000002
 end_of_initialization      cinit        0019C6
 initLCD@i                  cstackCOMRAM 000004
 initOutputs@i              cstackCOMRAM 000003
-initOutputs@i_1047         cstackCOMRAM 000004
+initOutputs@i_1066         cstackCOMRAM 000004
 intlevel0                  text         000000
 intlevel1                  text         000000
 intlevel2                  text         000000
@@ -629,7 +629,7 @@ Total ram usage:        0 bytes
 
  *************** function _lcd_setCursor *****************
  Defined at:
-		line 69 in file "RobotLib.c"
+		line 52 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   x               1    wreg     unsigned char 
   y               1    2[COMRAM] unsigned char 
@@ -660,7 +660,7 @@ Total ram usage:        2 bytes
 
  *************** function _lcd_print_string *****************
  Defined at:
-		line 86 in file "RobotLib.c"
+		line 69 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   entity          2    2[COMRAM] PTR unsigned char 
 		 -> STR_1(5), 
@@ -691,7 +691,7 @@ Total ram usage:        2 bytes
 
  *************** function _lcd_print_int *****************
  Defined at:
-		line 94 in file "RobotLib.c"
+		line 77 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   entity          2   14[COMRAM] int 
  Auto vars:     Size  Location     Type
@@ -727,7 +727,7 @@ Total ram usage:       29 bytes
 
  *************** function _lcd_print_char *****************
  Defined at:
-		line 78 in file "RobotLib.c"
+		line 61 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   entity          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -851,7 +851,7 @@ Total ram usage:       14 bytes
 
  *************** function _init *****************
  Defined at:
-		line 23 in file "RobotLib.c"
+		line 6 in file "RobotLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -884,7 +884,7 @@ Total ram usage:        0 bytes
 
  *************** function _initOutputs *****************
  Defined at:
-		line 121 in file "RobotLib.c"
+		line 104 in file "RobotLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -916,7 +916,7 @@ Total ram usage:        2 bytes
 
  *************** function _pinMode *****************
  Defined at:
-		line 132 in file "RobotLib.c"
+		line 115 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   pin             1    wreg     unsigned char 
   mode            1    0[COMRAM] unsigned char 
@@ -947,7 +947,7 @@ Total ram usage:        2 bytes
 
  *************** function _digitalWrite *****************
  Defined at:
-		line 300 in file "RobotLib.c"
+		line 283 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   pin             1    wreg     unsigned char 
   mode            1    0[COMRAM] unsigned char 
@@ -977,7 +977,7 @@ Total ram usage:        2 bytes
 
  *************** function _initLCD *****************
  Defined at:
-		line 47 in file "RobotLib.c"
+		line 30 in file "RobotLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1008,7 +1008,7 @@ Total ram usage:        2 bytes
 
  *************** function _lcdCmd *****************
  Defined at:
-		line 38 in file "RobotLib.c"
+		line 21 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   cmd             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1039,7 +1039,7 @@ Total ram usage:        2 bytes
 
  *************** function _lcdPulse *****************
  Defined at:
-		line 31 in file "RobotLib.c"
+		line 14 in file "RobotLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1070,7 +1070,7 @@ Total ram usage:        0 bytes
 
  *************** function _initInterrupts *****************
  Defined at:
-		line 604 in file "RobotLib.c"
+		line 605 in file "RobotLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1099,7 +1099,7 @@ Total ram usage:        0 bytes
 
  *************** function _initADC *****************
  Defined at:
-		line 499 in file "RobotLib.c"
+		line 482 in file "RobotLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1128,7 +1128,7 @@ Total ram usage:        0 bytes
 
  *************** function _attachInterrupt *****************
  Defined at:
-		line 576 in file "RobotLib.c"
+		line 578 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   num             1    wreg     unsigned char 
   mode            1    0[COMRAM] unsigned char 
@@ -1160,7 +1160,7 @@ Total ram usage:        4 bytes
 
  *************** function _analogRead *****************
  Defined at:
-		line 508 in file "RobotLib.c"
+		line 491 in file "RobotLib.c"
  Parameters:    Size  Location     Type
   pin             1    wreg     unsigned char 
  Auto vars:     Size  Location     Type

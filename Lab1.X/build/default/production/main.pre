@@ -3804,7 +3804,6 @@ extern __nonreentrant void _delay3(unsigned char);
 # 118
 #pragma interrupt high_isr
 void high_isr(void);
-
 #pragma interruptlow low_isr
 void low_isr(void);
 
@@ -3837,12 +3836,12 @@ void lcd_print_char(char entity);
 void lcd_print_float(float entity);
 void lcd_print_string(char *entity);
 
-# 163
-unsigned long int microSeconds = 0;
-unsigned long int milliSeconds = 0;
+# 162
+unsigned long long microSeconds = 0;
+unsigned long long milliSeconds = 0;
 void init_timer();
-unsigned long int micros();
-unsigned long int millis();
+unsigned long long micros();
+unsigned long long millis();
 
 void delay_ms();
 void delayMicroseconds();

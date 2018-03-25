@@ -1,27 +1,13 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [v F2944 `(v ~T0 @X0 0 tf ]
 [v F2946 `(v ~T0 @X0 0 tf ]
-"6491 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f4525.h
-[s S262 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S262 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"6501
-[s S263 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S263 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"6511
-[s S264 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S264 . . GIEL GIEH ]
-"6490
-[u S261 `S262 1 `S263 1 `S264 1 ]
-[n S261 . . . . ]
-"6517
-[v _INTCONbits `VS261 ~T0 @X0 0 e@4082 ]
-"128 RobotLib.h
+"127 RobotLib.h
 [v _initOutputs `(v ~T0 @X0 0 ef ]
-"135
+"134
 [v _initADC `(v ~T0 @X0 0 ef ]
-"140
+"139
 [v _initInterrupts `(v ~T0 @X0 0 ef ]
-"145
+"144
 [v _initLCD `(v ~T0 @X0 0 ef ]
 "539 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f4525.h
 [s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -48,9 +34,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 "2044
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"129 RobotLib.h
+"128 RobotLib.h
 [v _pinMode `(v ~T0 @X0 0 ef2`uc`uc ]
-"130
+"129
 [v _digitalWrite `(v ~T0 @X0 0 ef2`uc`uc ]
 "7846 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f4525.h
 [v _TRISA0 `Vb ~T0 @X0 0 e@31888 ]
@@ -312,7 +298,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 "4733
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-[v F2952 `(v ~T0 @X0 0 tf ]
 "6421
 [s S258 :7 `uc 1 :1 `uc 1 ]
 [n S258 . . NOT_RBPU ]
@@ -327,6 +312,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S257 . . . . ]
 "6440
 [v _INTCON2bits `VS257 ~T0 @X0 0 e@4081 ]
+"5973
+[s S249 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S249 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"5981
+[s S250 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S250 . T0PS0 T0PS1 T0PS2 . T016BIT ]
+"5972
+[u S248 `S249 1 `S250 1 ]
+[n S248 . . . ]
+"5989
+[v _T0CONbits `VS248 ~T0 @X0 0 e@4053 ]
+"6491
+[s S262 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S262 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"6501
+[s S263 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S263 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"6511
+[s S264 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S264 . . GIEL GIEH ]
+"6490
+[u S261 `S262 1 `S263 1 `S264 1 ]
+[n S261 . . . . ]
+"6517
+[v _INTCONbits `VS261 ~T0 @X0 0 e@4082 ]
+[v F2952 `(v ~T0 @X0 0 tf ]
 "5459
 [s S225 :1 `uc 1 ]
 [n S225 . NOT_BOR ]
@@ -3143,2032 +3154,2040 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 166: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 168: extern __nonreentrant void _delay3(unsigned char);
 [; ;RobotLib.h: 119: void high_isr(void);
-[; ;RobotLib.h: 122: void low_isr(void);
-[; ;RobotLib.h: 125: void init();
-[; ;RobotLib.h: 128: void initOutputs();
-[; ;RobotLib.h: 129: void pinMode(char pin,char mode);
-[; ;RobotLib.h: 130: void digitalWrite(char pin, char state);
-[; ;RobotLib.h: 131: char digitalRead(char pin);
-[; ;RobotLib.h: 134: int analogRead(char pin);
-[; ;RobotLib.h: 135: void initADC();
-"138 RobotLib.h
+[; ;RobotLib.h: 121: void low_isr(void);
+[; ;RobotLib.h: 124: void init();
+[; ;RobotLib.h: 127: void initOutputs();
+[; ;RobotLib.h: 128: void pinMode(char pin,char mode);
+[; ;RobotLib.h: 129: void digitalWrite(char pin, char state);
+[; ;RobotLib.h: 130: char digitalRead(char pin);
+[; ;RobotLib.h: 133: int analogRead(char pin);
+[; ;RobotLib.h: 134: void initADC();
+"137 RobotLib.h
 [v _int0func `*F2944 ~T0 @X0 1 e ]
-[; ;RobotLib.h: 138: void (*int0func)();
-"139
+[; ;RobotLib.h: 137: void (*int0func)();
+"138
 [v _timerFunc `*F2946 ~T0 @X0 1 e ]
-[; ;RobotLib.h: 139: void (*timerFunc)();
-[; ;RobotLib.h: 140: void initInterrupts();
-[; ;RobotLib.h: 141: void attachInterrupt(char num, char mode, void (*func)());
-[; ;RobotLib.h: 142: void detachInterrupt(char num);
-[; ;RobotLib.h: 145: void initLCD();
-[; ;RobotLib.h: 146: void lcd_clear();
-[; ;RobotLib.h: 147: void lcd_setCursor(char x,char y);
-[; ;RobotLib.h: 148: void lcd_print_int(int entity);
-[; ;RobotLib.h: 149: void lcd_print_char(char entity);
-[; ;RobotLib.h: 150: void lcd_print_float(float entity);
-[; ;RobotLib.h: 151: void lcd_print_string(char *entity);
-"163
+[; ;RobotLib.h: 138: void (*timerFunc)();
+[; ;RobotLib.h: 139: void initInterrupts();
+[; ;RobotLib.h: 140: void attachInterrupt(char num, char mode, void (*func)());
+[; ;RobotLib.h: 141: void detachInterrupt(char num);
+[; ;RobotLib.h: 144: void initLCD();
+[; ;RobotLib.h: 145: void lcd_clear();
+[; ;RobotLib.h: 146: void lcd_setCursor(char x,char y);
+[; ;RobotLib.h: 147: void lcd_print_int(int entity);
+[; ;RobotLib.h: 148: void lcd_print_char(char entity);
+[; ;RobotLib.h: 149: void lcd_print_float(float entity);
+[; ;RobotLib.h: 150: void lcd_print_string(char *entity);
+"162
 [v _microSeconds `ul ~T0 @X0 1 e ]
 [i _microSeconds
 -> -> -> 0 `i `l `ul
 ]
-[; ;RobotLib.h: 163: unsigned long int microSeconds = 0;
-"164
+[; ;RobotLib.h: 162: unsigned long long microSeconds = 0;
+"163
 [v _milliSeconds `ul ~T0 @X0 1 e ]
 [i _milliSeconds
 -> -> -> 0 `i `l `ul
 ]
-[; ;RobotLib.h: 164: unsigned long int milliSeconds = 0;
-[; ;RobotLib.h: 165: void init_timer();
-[; ;RobotLib.h: 166: unsigned long int micros();
-[; ;RobotLib.h: 167: unsigned long int millis();
-[; ;RobotLib.h: 169: void delay_ms();
-[; ;RobotLib.h: 170: void delayMicroseconds();
-"5 RobotLib.c
-[v _high_isr `(v ~T0 @X0 1 ef ]
+[; ;RobotLib.h: 163: unsigned long long milliSeconds = 0;
+[; ;RobotLib.h: 164: void init_timer();
+[; ;RobotLib.h: 165: unsigned long long micros();
+[; ;RobotLib.h: 166: unsigned long long millis();
+[; ;RobotLib.h: 168: void delay_ms();
+[; ;RobotLib.h: 169: void delayMicroseconds();
+"6 RobotLib.c
+[v _init `(v ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 5: void high_isr(void){
-[e :U _high_isr ]
+[; ;RobotLib.c: 6: void init(){
+[e :U _init ]
 [f ]
-[; ;RobotLib.c: 6: if(1){
-"6
-[e $ ! != -> 1 `i -> 0 `i 270  ]
-{
+[; ;RobotLib.c: 7: initOutputs();
+"7
+[e ( _initOutputs ..  ]
+[; ;RobotLib.c: 8: initADC();
 "8
-}
-[e :U 270 ]
-[; ;RobotLib.c: 8: }
-[; ;RobotLib.c: 9: if(INTCONbits.INT0IF){
+[e ( _initADC ..  ]
+[; ;RobotLib.c: 9: initInterrupts();
 "9
-[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 271  ]
-{
-[; ;RobotLib.c: 10: int0func();
+[e ( _initInterrupts ..  ]
+[; ;RobotLib.c: 10: initLCD();
 "10
-[e ( *U _int0func ..  ]
-[; ;RobotLib.c: 11: INTCONbits.INT0IF = 0;
+[e ( _initLCD ..  ]
+[; ;RobotLib.c: 11: }
 "11
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"12
-}
-[e :U 271 ]
-[; ;RobotLib.c: 12: }
-[; ;RobotLib.c: 13: }
-"13
 [e :UE 269 ]
 }
 "14
-[v _low_isr `(v ~T0 @X0 1 ef ]
-{
-[; ;RobotLib.c: 14: void low_isr(){
-[e :U _low_isr ]
-[f ]
-[; ;RobotLib.c: 15: if(1){
-"15
-[e $ ! != -> 1 `i -> 0 `i 273  ]
-{
-"17
-}
-[e :U 273 ]
-[; ;RobotLib.c: 17: }
-[; ;RobotLib.c: 18: if(INTCONbits.INT0IF){
-"18
-[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 274  ]
-{
-[; ;RobotLib.c: 19: int0func ();
-"19
-[e ( *U _int0func ..  ]
-[; ;RobotLib.c: 20: INTCONbits.INT0IF = 0;
-"20
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"21
-}
-[e :U 274 ]
-[; ;RobotLib.c: 21: }
-[; ;RobotLib.c: 22: }
-"22
-[e :UE 272 ]
-}
-"23
-[v _init `(v ~T0 @X0 1 ef ]
-{
-[; ;RobotLib.c: 23: void init(){
-[e :U _init ]
-[f ]
-[; ;RobotLib.c: 24: initOutputs();
-"24
-[e ( _initOutputs ..  ]
-[; ;RobotLib.c: 25: initADC();
-"25
-[e ( _initADC ..  ]
-[; ;RobotLib.c: 26: initInterrupts();
-"26
-[e ( _initInterrupts ..  ]
-[; ;RobotLib.c: 27: initLCD();
-"27
-[e ( _initLCD ..  ]
-[; ;RobotLib.c: 28: }
-"28
-[e :UE 275 ]
-}
-"31
 [v _lcdPulse `(v ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 31: void lcdPulse(){
+[; ;RobotLib.c: 14: void lcdPulse(){
 [e :U _lcdPulse ]
 [f ]
-[; ;RobotLib.c: 32: PORTDbits.RD3=1;
-"32
+[; ;RobotLib.c: 15: PORTDbits.RD3=1;
+"15
 [e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 33: _delay((unsigned long)((50)*(40000000/4000000.0)));
-"33
+[; ;RobotLib.c: 16: _delay((unsigned long)((50)*(40000000/4000000.0)));
+"16
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 40000000 `l `d .4000000.0 `ul ]
-[; ;RobotLib.c: 34: PORTDbits.RD3=0;
-"34
+[; ;RobotLib.c: 17: PORTDbits.RD3=0;
+"17
 [e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 35: _delay((unsigned long)((50)*(40000000/4000000.0)));
-"35
+[; ;RobotLib.c: 18: _delay((unsigned long)((50)*(40000000/4000000.0)));
+"18
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 40000000 `l `d .4000000.0 `ul ]
-[; ;RobotLib.c: 36: }
-"36
-[e :UE 276 ]
+[; ;RobotLib.c: 19: }
+"19
+[e :UE 270 ]
 }
-"38
+"21
 [v _lcdCmd `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;RobotLib.c: 38: void lcdCmd(char cmd){
+[; ;RobotLib.c: 21: void lcdCmd(char cmd){
 [e :U _lcdCmd ]
 [v _cmd `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;RobotLib.c: 39: PORTDbits.RD2 = 0;
-"39
+[; ;RobotLib.c: 22: PORTDbits.RD2 = 0;
+"22
 [e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 40: LATD = (LATD&0x0f)|(cmd&0xf0);
-"40
+[; ;RobotLib.c: 23: LATD = (LATD&0x0f)|(cmd&0xf0);
+"23
 [e = _LATD -> | & -> _LATD `i -> 15 `i & -> _cmd `i -> 240 `i `uc ]
-[; ;RobotLib.c: 41: lcdPulse();
-"41
+[; ;RobotLib.c: 24: lcdPulse();
+"24
 [e ( _lcdPulse ..  ]
-[; ;RobotLib.c: 42: LATD = (LATD&0x0f)|((cmd<<4)&0xf0);
-"42
+[; ;RobotLib.c: 25: LATD = (LATD&0x0f)|((cmd<<4)&0xf0);
+"25
 [e = _LATD -> | & -> _LATD `i -> 15 `i & << -> _cmd `i -> 4 `i -> 240 `i `uc ]
-[; ;RobotLib.c: 43: lcdPulse();
-"43
+[; ;RobotLib.c: 26: lcdPulse();
+"26
 [e ( _lcdPulse ..  ]
-[; ;RobotLib.c: 44: _delay((unsigned long)((1)*(40000000/4000.0)));
-"44
+[; ;RobotLib.c: 27: _delay((unsigned long)((1)*(40000000/4000.0)));
+"27
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
-[; ;RobotLib.c: 45: }
-"45
-[e :UE 277 ]
+[; ;RobotLib.c: 28: }
+"28
+[e :UE 271 ]
 }
-"47
+"30
 [v _initLCD `(v ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 47: void initLCD(){
+[; ;RobotLib.c: 30: void initLCD(){
 [e :U _initLCD ]
 [f ]
-[; ;RobotLib.c: 49: TRISD &= 0x03;
-"49
+[; ;RobotLib.c: 32: TRISD &= 0x03;
+"32
 [e =& _TRISD -> -> 3 `i `uc ]
-[; ;RobotLib.c: 50: LATD &= 0b00001111;
-"50
+[; ;RobotLib.c: 33: LATD &= 0b00001111;
+"33
 [e =& _LATD -> -> 15 `i `uc ]
-[; ;RobotLib.c: 51: PORTDbits.RD3 = 0;
-"51
+[; ;RobotLib.c: 34: PORTDbits.RD3 = 0;
+"34
 [e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 52: PORTDbits.RD2 = 0;
-"52
+[; ;RobotLib.c: 35: PORTDbits.RD2 = 0;
+"35
 [e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 53: for(char i = 0; i<3; i++){
-"53
+[; ;RobotLib.c: 36: for(char i = 0; i<3; i++){
+"36
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 3 `i 279  ]
-[e $U 280  ]
-[e :U 279 ]
+[e $ < -> _i `i -> 3 `i 273  ]
+[e $U 274  ]
+[e :U 273 ]
 {
-[; ;RobotLib.c: 54: _delay((unsigned long)((1)*(40000000/4000.0)));
-"54
+[; ;RobotLib.c: 37: _delay((unsigned long)((1)*(40000000/4000.0)));
+"37
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
-[; ;RobotLib.c: 55: LATD = (LATD&0x0f)|0x30;
-"55
+[; ;RobotLib.c: 38: LATD = (LATD&0x0f)|0x30;
+"38
 [e = _LATD -> | & -> _LATD `i -> 15 `i -> 48 `i `uc ]
-[; ;RobotLib.c: 56: lcdPulse();
-"56
+[; ;RobotLib.c: 39: lcdPulse();
+"39
 [e ( _lcdPulse ..  ]
-"57
+"40
 }
-"53
+"36
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 3 `i 279  ]
-[e :U 280 ]
-"57
+[e $ < -> _i `i -> 3 `i 273  ]
+[e :U 274 ]
+"40
 }
-[; ;RobotLib.c: 57: }
-[; ;RobotLib.c: 58: LATD = (LATD&0x0f)|0x20;
-"58
+[; ;RobotLib.c: 40: }
+[; ;RobotLib.c: 41: LATD = (LATD&0x0f)|0x20;
+"41
 [e = _LATD -> | & -> _LATD `i -> 15 `i -> 32 `i `uc ]
-[; ;RobotLib.c: 59: lcdPulse();
-"59
+[; ;RobotLib.c: 42: lcdPulse();
+"42
 [e ( _lcdPulse ..  ]
-[; ;RobotLib.c: 60: _delay((unsigned long)((1)*(40000000/4000.0)));
-"60
+[; ;RobotLib.c: 43: _delay((unsigned long)((1)*(40000000/4000.0)));
+"43
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 40000000 `l `d .4000.0 `ul ]
-[; ;RobotLib.c: 61: lcdCmd(0x28);
-"61
+[; ;RobotLib.c: 44: lcdCmd(0x28);
+"44
 [e ( _lcdCmd (1 -> -> 40 `i `uc ]
-[; ;RobotLib.c: 62: lcdCmd(0x01);
-"62
+[; ;RobotLib.c: 45: lcdCmd(0x01);
+"45
 [e ( _lcdCmd (1 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 63: lcdCmd(0x06);
-"63
+[; ;RobotLib.c: 46: lcdCmd(0x06);
+"46
 [e ( _lcdCmd (1 -> -> 6 `i `uc ]
-[; ;RobotLib.c: 64: lcdCmd(0x0C);
-"64
+[; ;RobotLib.c: 47: lcdCmd(0x0C);
+"47
 [e ( _lcdCmd (1 -> -> 12 `i `uc ]
-[; ;RobotLib.c: 65: lcdCmd(0x02);
-"65
+[; ;RobotLib.c: 48: lcdCmd(0x02);
+"48
 [e ( _lcdCmd (1 -> -> 2 `i `uc ]
-[; ;RobotLib.c: 66: lcdCmd(0x01);
-"66
+[; ;RobotLib.c: 49: lcdCmd(0x01);
+"49
 [e ( _lcdCmd (1 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 50: }
+"50
+[e :UE 272 ]
+}
+"52
+[v _lcd_setCursor `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;RobotLib.c: 52: void lcd_setCursor(unsigned char x,unsigned char y){
+[e :U _lcd_setCursor ]
+[v _x `uc ~T0 @X0 1 r1 ]
+[v _y `uc ~T0 @X0 1 r2 ]
+[f ]
+[; ;RobotLib.c: 53: lcdCmd(0x02);
+"53
+[e ( _lcdCmd (1 -> -> 2 `i `uc ]
+[; ;RobotLib.c: 54: lcdCmd((unsigned char)0x80+x+(unsigned char)0x40*y);
+"54
+[e ( _lcdCmd (1 -> + + -> -> -> 128 `i `uc `i -> _x `i * -> -> -> 64 `i `uc `i -> _y `i `uc ]
+[; ;RobotLib.c: 55: }
+"55
+[e :UE 276 ]
+}
+"57
+[v _lcd_clear `(v ~T0 @X0 1 ef ]
+{
+[; ;RobotLib.c: 57: void lcd_clear(){
+[e :U _lcd_clear ]
+[f ]
+[; ;RobotLib.c: 58: lcdCmd(0x01);
+"58
+[e ( _lcdCmd (1 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 59: }
+"59
+[e :UE 277 ]
+}
+"61
+[v _lcd_print_char `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;RobotLib.c: 61: void lcd_print_char(char entity){
+[e :U _lcd_print_char ]
+[v _entity `uc ~T0 @X0 1 r1 ]
+[f ]
+[; ;RobotLib.c: 62: PORTDbits.RD2 = 1;
+"62
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 63: LATD = (LATD&0x0f)|(entity & 0xf0);
+"63
+[e = _LATD -> | & -> _LATD `i -> 15 `i & -> _entity `i -> 240 `i `uc ]
+[; ;RobotLib.c: 64: lcdPulse();
+"64
+[e ( _lcdPulse ..  ]
+[; ;RobotLib.c: 65: LATD = (LATD&0x0f)|((entity<<4)&0xf0);
+"65
+[e = _LATD -> | & -> _LATD `i -> 15 `i & << -> _entity `i -> 4 `i -> 240 `i `uc ]
+[; ;RobotLib.c: 66: lcdPulse();
+"66
+[e ( _lcdPulse ..  ]
 [; ;RobotLib.c: 67: }
 "67
 [e :UE 278 ]
 }
 "69
-[v _lcd_setCursor `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[; ;RobotLib.c: 69: void lcd_setCursor(unsigned char x,unsigned char y){
-[e :U _lcd_setCursor ]
-[v _x `uc ~T0 @X0 1 r1 ]
-[v _y `uc ~T0 @X0 1 r2 ]
-[f ]
-[; ;RobotLib.c: 70: lcdCmd(0x02);
-"70
-[e ( _lcdCmd (1 -> -> 2 `i `uc ]
-[; ;RobotLib.c: 71: lcdCmd((unsigned char)0x80+x+(unsigned char)0x40*y);
-"71
-[e ( _lcdCmd (1 -> + + -> -> -> 128 `i `uc `i -> _x `i * -> -> -> 64 `i `uc `i -> _y `i `uc ]
-[; ;RobotLib.c: 72: }
-"72
-[e :UE 282 ]
-}
-"74
-[v _lcd_clear `(v ~T0 @X0 1 ef ]
-{
-[; ;RobotLib.c: 74: void lcd_clear(){
-[e :U _lcd_clear ]
-[f ]
-[; ;RobotLib.c: 75: lcdCmd(0x01);
-"75
-[e ( _lcdCmd (1 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 76: }
-"76
-[e :UE 283 ]
-}
-"78
-[v _lcd_print_char `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;RobotLib.c: 78: void lcd_print_char(char entity){
-[e :U _lcd_print_char ]
-[v _entity `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;RobotLib.c: 79: PORTDbits.RD2 = 1;
-"79
-[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 80: LATD = (LATD&0x0f)|(entity & 0xf0);
-"80
-[e = _LATD -> | & -> _LATD `i -> 15 `i & -> _entity `i -> 240 `i `uc ]
-[; ;RobotLib.c: 81: lcdPulse();
-"81
-[e ( _lcdPulse ..  ]
-[; ;RobotLib.c: 82: LATD = (LATD&0x0f)|((entity<<4)&0xf0);
-"82
-[e = _LATD -> | & -> _LATD `i -> 15 `i & << -> _entity `i -> 4 `i -> 240 `i `uc ]
-[; ;RobotLib.c: 83: lcdPulse();
-"83
-[e ( _lcdPulse ..  ]
-[; ;RobotLib.c: 84: }
-"84
-[e :UE 284 ]
-}
-"86
 [v _lcd_print_string `(v ~T0 @X0 1 ef1`*uc ]
 {
-[; ;RobotLib.c: 86: void lcd_print_string(char *entity){
+[; ;RobotLib.c: 69: void lcd_print_string(char *entity){
 [e :U _lcd_print_string ]
 [v _entity `*uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;RobotLib.c: 87: while(*entity)
-"87
-[e $U 286  ]
-[e :U 287 ]
-[; ;RobotLib.c: 88: {
-"88
+[; ;RobotLib.c: 70: while(*entity)
+"70
+[e $U 280  ]
+[e :U 281 ]
+[; ;RobotLib.c: 71: {
+"71
 {
-[; ;RobotLib.c: 89: lcd_print_char(*entity);
-"89
+[; ;RobotLib.c: 72: lcd_print_char(*entity);
+"72
 [e ( _lcd_print_char (1 *U _entity ]
-[; ;RobotLib.c: 90: entity++;
-"90
+[; ;RobotLib.c: 73: entity++;
+"73
 [e ++ _entity * -> -> 1 `i `x -> -> # *U _entity `i `x ]
-"91
+"74
 }
-[e :U 286 ]
-"87
-[e $ != -> *U _entity `i -> -> -> 0 `i `uc `i 287  ]
-[e :U 288 ]
-[; ;RobotLib.c: 91: }
-[; ;RobotLib.c: 92: }
-"92
-[e :UE 285 ]
+[e :U 280 ]
+"70
+[e $ != -> *U _entity `i -> -> -> 0 `i `uc `i 281  ]
+[e :U 282 ]
+[; ;RobotLib.c: 74: }
+[; ;RobotLib.c: 75: }
+"75
+[e :UE 279 ]
 }
-"94
+"77
 [v _lcd_print_int `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;RobotLib.c: 94: void lcd_print_int(int entity){
+[; ;RobotLib.c: 77: void lcd_print_int(int entity){
 [e :U _lcd_print_int ]
 [v _entity `i ~T0 @X0 1 r1 ]
 [f ]
-"96
+"79
 [v _value `l ~T0 @X0 1 a ]
-[; ;RobotLib.c: 96: long int value = entity;
+[; ;RobotLib.c: 79: long int value = entity;
 [e = _value -> _entity `l ]
-[; ;RobotLib.c: 97: if(entity<0)
-"97
-[e $ ! < _entity -> 0 `i 290  ]
-[; ;RobotLib.c: 98: value*=(-1);
-"98
+[; ;RobotLib.c: 80: if(entity<0)
+"80
+[e $ ! < _entity -> 0 `i 284  ]
+[; ;RobotLib.c: 81: value*=(-1);
+"81
 [e =* _value -> -U -> 1 `i `l ]
-[e :U 290 ]
-[; ;RobotLib.c: 99: if(value == 0){
-"99
-[e $ ! == _value -> -> 0 `i `l 291  ]
+[e :U 284 ]
+[; ;RobotLib.c: 82: if(value == 0){
+"82
+[e $ ! == _value -> -> 0 `i `l 285  ]
 {
-[; ;RobotLib.c: 100: lcd_print_char('0');
-"100
+[; ;RobotLib.c: 83: lcd_print_char('0');
+"83
 [e ( _lcd_print_char (1 -> -> 48 `ui `uc ]
-[; ;RobotLib.c: 101: return;
-"101
-[e $UE 289  ]
-"102
+[; ;RobotLib.c: 84: return;
+"84
+[e $UE 283  ]
+"85
 }
-[e :U 291 ]
-"103
+[e :U 285 ]
+"86
 [v _i `i ~T0 @X0 1 a ]
-[; ;RobotLib.c: 102: }
-[; ;RobotLib.c: 103: int i=0;
+[; ;RobotLib.c: 85: }
+[; ;RobotLib.c: 86: int i=0;
 [e = _i -> 0 `i ]
-"104
+"87
 [v _buff `uc ~T0 @X0 -> 16 `i a ]
-[; ;RobotLib.c: 104: char buff[16];
-[; ;RobotLib.c: 105: while(value!=0){
-"105
-[e $U 292  ]
-[e :U 293 ]
+[; ;RobotLib.c: 87: char buff[16];
+[; ;RobotLib.c: 88: while(value!=0){
+"88
+[e $U 286  ]
+[e :U 287 ]
 {
-"106
+"89
 [v _num `uc ~T0 @X0 1 a ]
-[; ;RobotLib.c: 106: char num = value%10;
+[; ;RobotLib.c: 89: char num = value%10;
 [e = _num -> % _value -> -> 10 `i `l `uc ]
-[; ;RobotLib.c: 107: buff[i] = num+0x30;
-"107
+[; ;RobotLib.c: 90: buff[i] = num+0x30;
+"90
 [e = *U + &U _buff * -> -> _i `ui `ux -> -> # *U &U _buff `ui `ux -> + -> _num `i -> 48 `i `uc ]
-[; ;RobotLib.c: 108: value = (value - num)/10;
-"108
+[; ;RobotLib.c: 91: value = (value - num)/10;
+"91
 [e = _value / - _value -> _num `l -> -> 10 `i `l ]
-[; ;RobotLib.c: 109: i++;
-"109
+[; ;RobotLib.c: 92: i++;
+"92
 [e ++ _i -> 1 `i ]
-"110
+"93
 }
-[e :U 292 ]
-"105
-[e $ != _value -> -> 0 `i `l 293  ]
-[e :U 294 ]
-[; ;RobotLib.c: 110: }
-[; ;RobotLib.c: 111: i--;
-"111
+[e :U 286 ]
+"88
+[e $ != _value -> -> 0 `i `l 287  ]
+[e :U 288 ]
+[; ;RobotLib.c: 93: }
+[; ;RobotLib.c: 94: i--;
+"94
 [e -- _i -> 1 `i ]
-[; ;RobotLib.c: 112: if(entity<0)
-"112
-[e $ ! < _entity -> 0 `i 295  ]
-[; ;RobotLib.c: 113: lcd_print_char('-');
-"113
+[; ;RobotLib.c: 95: if(entity<0)
+"95
+[e $ ! < _entity -> 0 `i 289  ]
+[; ;RobotLib.c: 96: lcd_print_char('-');
+"96
 [e ( _lcd_print_char (1 -> -> 45 `ui `uc ]
-[e :U 295 ]
-[; ;RobotLib.c: 115: for(;i>=0; i--)
-"115
+[e :U 289 ]
+[; ;RobotLib.c: 98: for(;i>=0; i--)
+"98
 {
-[e $ >= _i -> 0 `i 296  ]
-[e $U 297  ]
-"116
-[e :U 296 ]
-[; ;RobotLib.c: 116: lcd_print_char(buff[i]);
+[e $ >= _i -> 0 `i 290  ]
+[e $U 291  ]
+"99
+[e :U 290 ]
+[; ;RobotLib.c: 99: lcd_print_char(buff[i]);
 [e ( _lcd_print_char (1 *U + &U _buff * -> -> _i `ui `ux -> -> # *U &U _buff `ui `ux ]
-"115
+"98
 [e -- _i -> 1 `i ]
-[e $ >= _i -> 0 `i 296  ]
-[e :U 297 ]
-"116
+[e $ >= _i -> 0 `i 290  ]
+[e :U 291 ]
+"99
 }
-[; ;RobotLib.c: 117: }
-"117
-[e :UE 289 ]
+[; ;RobotLib.c: 100: }
+"100
+[e :UE 283 ]
 }
-[; ;RobotLib.c: 119: void lcd_print_float(float entity);
-"121
+[; ;RobotLib.c: 102: void lcd_print_float(float entity);
+"104
 [v _initOutputs `(v ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 121: void initOutputs(){
+[; ;RobotLib.c: 104: void initOutputs(){
 [e :U _initOutputs ]
 [f ]
-[; ;RobotLib.c: 123: for(char i = 0; i<=11; i++)
-"123
+[; ;RobotLib.c: 106: for(char i = 0; i<=11; i++)
+"106
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ <= -> _i `i -> 11 `i 300  ]
-[e $U 301  ]
-"124
-[e :U 300 ]
-[; ;RobotLib.c: 124: pinMode(i, 1);
+[e $ <= -> _i `i -> 11 `i 294  ]
+[e $U 295  ]
+"107
+[e :U 294 ]
+[; ;RobotLib.c: 107: pinMode(i, 1);
 [e ( _pinMode (2 , _i -> -> 1 `i `uc ]
-"123
+"106
 [e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 11 `i 300  ]
-[e :U 301 ]
-"124
+[e $ <= -> _i `i -> 11 `i 294  ]
+[e :U 295 ]
+"107
 }
-[; ;RobotLib.c: 125: for(char i = 19; i<=22; i++){
-"125
+[; ;RobotLib.c: 108: for(char i = 19; i<=22; i++){
+"108
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 19 `i `uc ]
-[e $ <= -> _i `i -> 22 `i 303  ]
-[e $U 304  ]
-[e :U 303 ]
+[e $ <= -> _i `i -> 22 `i 297  ]
+[e $U 298  ]
+[e :U 297 ]
 {
-[; ;RobotLib.c: 126: pinMode(i, 0);
-"126
+[; ;RobotLib.c: 109: pinMode(i, 0);
+"109
 [e ( _pinMode (2 , _i -> -> 0 `i `uc ]
-[; ;RobotLib.c: 127: digitalWrite(i, 0);
-"127
+[; ;RobotLib.c: 110: digitalWrite(i, 0);
+"110
 [e ( _digitalWrite (2 , _i -> -> 0 `i `uc ]
-"128
+"111
 }
-"125
+"108
 [e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 22 `i 303  ]
-[e :U 304 ]
-"128
+[e $ <= -> _i `i -> 22 `i 297  ]
+[e :U 298 ]
+"111
 }
-[; ;RobotLib.c: 128: }
-[; ;RobotLib.c: 129: }
-"129
-[e :UE 299 ]
+[; ;RobotLib.c: 111: }
+[; ;RobotLib.c: 112: }
+"112
+[e :UE 293 ]
 }
-"132
+"115
 [v _pinMode `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;RobotLib.c: 132: void pinMode(char pin,char mode){
+[; ;RobotLib.c: 115: void pinMode(char pin,char mode){
 [e :U _pinMode ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [v _mode `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;RobotLib.c: 133: switch(pin)
-"133
-[e $U 308  ]
-[; ;RobotLib.c: 134: {
-"134
+[; ;RobotLib.c: 116: switch(pin)
+"116
+[e $U 302  ]
+[; ;RobotLib.c: 117: {
+"117
 {
-[; ;RobotLib.c: 135: case 0:
-"135
-[e :U 309 ]
-[; ;RobotLib.c: 136: if(mode)
-"136
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 310  ]
-[; ;RobotLib.c: 137: TRISA0 = 1;
-"137
+[; ;RobotLib.c: 118: case 0:
+"118
+[e :U 303 ]
+[; ;RobotLib.c: 119: if(mode)
+"119
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 304  ]
+[; ;RobotLib.c: 120: TRISA0 = 1;
+"120
 [e = _TRISA0 -> -> 1 `i `b ]
-[e $U 311  ]
-"138
-[e :U 310 ]
-[; ;RobotLib.c: 138: else
-[; ;RobotLib.c: 139: TRISA0 = 0;
-"139
+[e $U 305  ]
+"121
+[e :U 304 ]
+[; ;RobotLib.c: 121: else
+[; ;RobotLib.c: 122: TRISA0 = 0;
+"122
 [e = _TRISA0 -> -> 0 `i `b ]
-[e :U 311 ]
-[; ;RobotLib.c: 140: break;
-"140
-[e $U 307  ]
-[; ;RobotLib.c: 142: case 1:
-"142
-[e :U 312 ]
-[; ;RobotLib.c: 143: if(mode)
-"143
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 313  ]
-[; ;RobotLib.c: 144: TRISA1 = 1;
-"144
+[e :U 305 ]
+[; ;RobotLib.c: 123: break;
+"123
+[e $U 301  ]
+[; ;RobotLib.c: 125: case 1:
+"125
+[e :U 306 ]
+[; ;RobotLib.c: 126: if(mode)
+"126
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 307  ]
+[; ;RobotLib.c: 127: TRISA1 = 1;
+"127
 [e = _TRISA1 -> -> 1 `i `b ]
-[e $U 314  ]
-"145
-[e :U 313 ]
-[; ;RobotLib.c: 145: else
-[; ;RobotLib.c: 146: TRISA1 = 0;
-"146
-[e = _TRISA1 -> -> 0 `i `b ]
-[e :U 314 ]
-[; ;RobotLib.c: 147: break;
-"147
-[e $U 307  ]
-[; ;RobotLib.c: 149: case 2:
-"149
-[e :U 315 ]
-[; ;RobotLib.c: 150: if(mode)
-"150
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 316  ]
-[; ;RobotLib.c: 151: TRISA2 = 1;
-"151
-[e = _TRISA2 -> -> 1 `i `b ]
-[e $U 317  ]
-"152
-[e :U 316 ]
-[; ;RobotLib.c: 152: else
-[; ;RobotLib.c: 153: TRISA2 = 0;
-"153
-[e = _TRISA2 -> -> 0 `i `b ]
-[e :U 317 ]
-[; ;RobotLib.c: 154: break;
-"154
-[e $U 307  ]
-[; ;RobotLib.c: 156: case 3:
-"156
-[e :U 318 ]
-[; ;RobotLib.c: 157: if(mode)
-"157
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 319  ]
-[; ;RobotLib.c: 158: TRISA3 = 1;
-"158
-[e = _TRISA3 -> -> 1 `i `b ]
-[e $U 320  ]
-"159
-[e :U 319 ]
-[; ;RobotLib.c: 159: else
-[; ;RobotLib.c: 160: TRISA3 = 0;
-"160
-[e = _TRISA3 -> -> 0 `i `b ]
-[e :U 320 ]
-[; ;RobotLib.c: 161: break;
-"161
-[e $U 307  ]
-[; ;RobotLib.c: 163: case 4:
-"163
-[e :U 321 ]
-[; ;RobotLib.c: 164: if(mode)
-"164
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 322  ]
-[; ;RobotLib.c: 165: TRISA5 = 1;
-"165
-[e = _TRISA5 -> -> 1 `i `b ]
-[e $U 323  ]
-"166
-[e :U 322 ]
-[; ;RobotLib.c: 166: else
-[; ;RobotLib.c: 167: TRISA5 = 0;
-"167
-[e = _TRISA5 -> -> 0 `i `b ]
-[e :U 323 ]
-[; ;RobotLib.c: 168: break;
-"168
-[e $U 307  ]
-[; ;RobotLib.c: 170: case 5:
-"170
-[e :U 324 ]
-[; ;RobotLib.c: 171: if(mode)
-"171
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 325  ]
-[; ;RobotLib.c: 172: TRISE0 = 1;
-"172
-[e = _TRISE0 -> -> 1 `i `b ]
-[e $U 326  ]
-"173
-[e :U 325 ]
-[; ;RobotLib.c: 173: else
-[; ;RobotLib.c: 174: TRISE0 = 0;
-"174
-[e = _TRISE0 -> -> 0 `i `b ]
-[e :U 326 ]
-[; ;RobotLib.c: 175: break;
-"175
-[e $U 307  ]
-[; ;RobotLib.c: 177: case 6:
-"177
-[e :U 327 ]
-[; ;RobotLib.c: 178: if(mode)
-"178
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 328  ]
-[; ;RobotLib.c: 179: TRISE1 = 1;
-"179
-[e = _TRISE1 -> -> 1 `i `b ]
-[e $U 329  ]
-"180
-[e :U 328 ]
-[; ;RobotLib.c: 180: else
-[; ;RobotLib.c: 181: TRISE1 = 0;
-"181
-[e = _TRISE1 -> -> 0 `i `b ]
-[e :U 329 ]
-[; ;RobotLib.c: 182: break;
-"182
-[e $U 307  ]
-[; ;RobotLib.c: 184: case 7:
-"184
-[e :U 330 ]
-[; ;RobotLib.c: 185: if(mode)
-"185
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 331  ]
-[; ;RobotLib.c: 186: TRISE2 = 1;
-"186
-[e = _TRISE2 -> -> 1 `i `b ]
-[e $U 332  ]
-"187
-[e :U 331 ]
-[; ;RobotLib.c: 187: else
-[; ;RobotLib.c: 188: TRISE2 = 0;
-"188
-[e = _TRISE2 -> -> 0 `i `b ]
-[e :U 332 ]
-[; ;RobotLib.c: 189: break;
-"189
-[e $U 307  ]
-[; ;RobotLib.c: 191: case 8:
-"191
-[e :U 333 ]
-[; ;RobotLib.c: 192: if(mode)
-"192
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 334  ]
-[; ;RobotLib.c: 193: TRISC5 = 1;
-"193
-[e = _TRISC5 -> -> 1 `i `b ]
-[e $U 335  ]
-"194
-[e :U 334 ]
-[; ;RobotLib.c: 194: else
-[; ;RobotLib.c: 195: TRISC5 = 0;
-"195
-[e = _TRISC5 -> -> 0 `i `b ]
-[e :U 335 ]
-[; ;RobotLib.c: 196: break;
-"196
-[e $U 307  ]
-[; ;RobotLib.c: 198: case 9:
-"198
-[e :U 336 ]
-[; ;RobotLib.c: 199: if(mode)
-"199
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 337  ]
-[; ;RobotLib.c: 200: TRISB4 = 1;
-"200
-[e = _TRISB4 -> -> 1 `i `b ]
-[e $U 338  ]
-"201
-[e :U 337 ]
-[; ;RobotLib.c: 201: else
-[; ;RobotLib.c: 202: TRISB4 = 0;
-"202
-[e = _TRISB4 -> -> 0 `i `b ]
-[e :U 338 ]
-[; ;RobotLib.c: 203: break;
-"203
-[e $U 307  ]
-[; ;RobotLib.c: 205: case 10:
-"205
-[e :U 339 ]
-[; ;RobotLib.c: 206: if(mode)
-"206
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 340  ]
-[; ;RobotLib.c: 207: TRISB5 = 1;
-"207
-[e = _TRISB5 -> -> 1 `i `b ]
-[e $U 341  ]
-"208
-[e :U 340 ]
-[; ;RobotLib.c: 208: else
-[; ;RobotLib.c: 209: TRISB5 = 0;
-"209
-[e = _TRISB5 -> -> 0 `i `b ]
-[e :U 341 ]
-[; ;RobotLib.c: 210: break;
-"210
-[e $U 307  ]
-[; ;RobotLib.c: 212: case 11:
-"212
-[e :U 342 ]
-[; ;RobotLib.c: 213: if(mode)
-"213
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 343  ]
-[; ;RobotLib.c: 214: TRISB0 = 1;
-"214
-[e = _TRISB0 -> -> 1 `i `b ]
-[e $U 344  ]
-"215
-[e :U 343 ]
-[; ;RobotLib.c: 215: else
-[; ;RobotLib.c: 216: TRISB0 = 0;
-"216
-[e = _TRISB0 -> -> 0 `i `b ]
-[e :U 344 ]
-[; ;RobotLib.c: 217: break;
-"217
-[e $U 307  ]
-[; ;RobotLib.c: 219: case 12:
-"219
-[e :U 345 ]
-[; ;RobotLib.c: 220: if(mode)
-"220
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 346  ]
-[; ;RobotLib.c: 221: TRISC7 = 1;
-"221
-[e = _TRISC7 -> -> 1 `i `b ]
-[e $U 347  ]
-"222
-[e :U 346 ]
-[; ;RobotLib.c: 222: else
-[; ;RobotLib.c: 223: TRISC7 = 0;
-"223
-[e = _TRISC7 -> -> 0 `i `b ]
-[e :U 347 ]
-[; ;RobotLib.c: 224: break;
-"224
-[e $U 307  ]
-[; ;RobotLib.c: 226: case 13:
-"226
-[e :U 348 ]
-[; ;RobotLib.c: 227: if(mode)
-"227
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 349  ]
-[; ;RobotLib.c: 228: TRISC6 = 1;
-"228
-[e = _TRISC6 -> -> 1 `i `b ]
-[e $U 350  ]
-"229
-[e :U 349 ]
-[; ;RobotLib.c: 229: else
-[; ;RobotLib.c: 230: TRISC6 = 0;
-"230
-[e = _TRISC6 -> -> 0 `i `b ]
-[e :U 350 ]
-[; ;RobotLib.c: 231: break;
-"231
-[e $U 307  ]
-[; ;RobotLib.c: 233: case 14:
-"233
-[e :U 351 ]
-[; ;RobotLib.c: 234: if(mode)
-"234
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 352  ]
-[; ;RobotLib.c: 235: TRISC4 = 1;
-"235
-[e = _TRISC4 -> -> 1 `i `b ]
-[e $U 353  ]
-"236
-[e :U 352 ]
-[; ;RobotLib.c: 236: else
-[; ;RobotLib.c: 237: TRISC4 = 0;
-"237
-[e = _TRISC4 -> -> 0 `i `b ]
-[e :U 353 ]
-[; ;RobotLib.c: 238: break;
-"238
-[e $U 307  ]
-[; ;RobotLib.c: 240: case 15:
-"240
-[e :U 354 ]
-[; ;RobotLib.c: 241: if(mode)
-"241
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 355  ]
-[; ;RobotLib.c: 242: TRISC3 = 1;
-"242
-[e = _TRISC3 -> -> 1 `i `b ]
-[e $U 356  ]
-"243
-[e :U 355 ]
-[; ;RobotLib.c: 243: else
-[; ;RobotLib.c: 244: TRISC3 = 0;
-"244
-[e = _TRISC3 -> -> 0 `i `b ]
-[e :U 356 ]
-[; ;RobotLib.c: 245: break;
-"245
-[e $U 307  ]
-[; ;RobotLib.c: 247: case 16:
-"247
-[e :U 357 ]
-[; ;RobotLib.c: 248: if(mode)
-"248
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 358  ]
-[; ;RobotLib.c: 249: TRISA4 = 1;
-"249
-[e = _TRISA4 -> -> 1 `i `b ]
-[e $U 359  ]
-"250
-[e :U 358 ]
-[; ;RobotLib.c: 250: else
-[; ;RobotLib.c: 251: TRISA4 = 0;
-"251
-[e = _TRISA4 -> -> 0 `i `b ]
-[e :U 359 ]
-[; ;RobotLib.c: 252: break;
-"252
-[e $U 307  ]
-[; ;RobotLib.c: 254: case 17:
-"254
-[e :U 360 ]
-[; ;RobotLib.c: 255: if(mode)
-"255
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 361  ]
-[; ;RobotLib.c: 256: TRISC0 = 1;
-"256
-[e = _TRISC0 -> -> 1 `i `b ]
-[e $U 362  ]
-"257
-[e :U 361 ]
-[; ;RobotLib.c: 257: else
-[; ;RobotLib.c: 258: TRISC0 = 0;
-"258
-[e = _TRISC0 -> -> 0 `i `b ]
-[e :U 362 ]
-[; ;RobotLib.c: 259: break;
-"259
-[e $U 307  ]
-[; ;RobotLib.c: 261: case 18:
-"261
-[e :U 363 ]
-[; ;RobotLib.c: 262: if(mode)
-"262
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 364  ]
-[; ;RobotLib.c: 263: TRISB3 = 1;
-"263
-[e = _TRISB3 -> -> 1 `i `b ]
-[e $U 365  ]
-"264
-[e :U 364 ]
-[; ;RobotLib.c: 264: else
-[; ;RobotLib.c: 265: TRISB3 = 0;
-"265
-[e = _TRISB3 -> -> 0 `i `b ]
-[e :U 365 ]
-[; ;RobotLib.c: 266: break;
-"266
-[e $U 307  ]
-[; ;RobotLib.c: 268: case 19:
-"268
-[e :U 366 ]
-[; ;RobotLib.c: 269: if(mode)
-"269
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 367  ]
-[; ;RobotLib.c: 270: TRISD0 = 1;
-"270
-[e = _TRISD0 -> -> 1 `i `b ]
-[e $U 368  ]
-"271
-[e :U 367 ]
-[; ;RobotLib.c: 271: else
-[; ;RobotLib.c: 272: TRISD0 = 0;
-"272
-[e = _TRISD0 -> -> 0 `i `b ]
-[e :U 368 ]
-[; ;RobotLib.c: 273: break;
-"273
-[e $U 307  ]
-[; ;RobotLib.c: 275: case 20:
-"275
-[e :U 369 ]
-[; ;RobotLib.c: 276: if(mode)
-"276
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 370  ]
-[; ;RobotLib.c: 277: TRISD1 = 1;
-"277
-[e = _TRISD1 -> -> 1 `i `b ]
-[e $U 371  ]
-"278
-[e :U 370 ]
-[; ;RobotLib.c: 278: else
-[; ;RobotLib.c: 279: TRISD1 = 0;
-"279
-[e = _TRISD1 -> -> 0 `i `b ]
-[e :U 371 ]
-[; ;RobotLib.c: 280: break;
-"280
-[e $U 307  ]
-[; ;RobotLib.c: 283: case 21:
-"283
-[e :U 372 ]
-[; ;RobotLib.c: 284: if(mode)
-"284
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 373  ]
-[; ;RobotLib.c: 285: TRISB1 = 1;
-"285
-[e = _TRISB1 -> -> 1 `i `b ]
-[e $U 374  ]
-"286
-[e :U 373 ]
-[; ;RobotLib.c: 286: else
-[; ;RobotLib.c: 287: TRISB1 = 0;
-"287
-[e = _TRISB1 -> -> 0 `i `b ]
-[e :U 374 ]
-[; ;RobotLib.c: 288: break;
-"288
-[e $U 307  ]
-[; ;RobotLib.c: 290: case 22:
-"290
-[e :U 375 ]
-[; ;RobotLib.c: 291: if(mode)
-"291
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 376  ]
-[; ;RobotLib.c: 292: TRISB2 = 1;
-"292
-[e = _TRISB2 -> -> 1 `i `b ]
-[e $U 377  ]
-"293
-[e :U 376 ]
-[; ;RobotLib.c: 293: else
-[; ;RobotLib.c: 294: TRISB2 = 0;
-"294
-[e = _TRISB2 -> -> 0 `i `b ]
-[e :U 377 ]
-[; ;RobotLib.c: 295: break;
-"295
-[e $U 307  ]
-"297
-}
-[; ;RobotLib.c: 297: }
-[e $U 307  ]
-"133
-[e :U 308 ]
-[e [\ _pin , $ -> -> 0 `i `uc 309
- , $ -> -> 1 `i `uc 312
- , $ -> -> 2 `i `uc 315
- , $ -> -> 3 `i `uc 318
- , $ -> -> 4 `i `uc 321
- , $ -> -> 5 `i `uc 324
- , $ -> -> 6 `i `uc 327
- , $ -> -> 7 `i `uc 330
- , $ -> -> 8 `i `uc 333
- , $ -> -> 9 `i `uc 336
- , $ -> -> 10 `i `uc 339
- , $ -> -> 11 `i `uc 342
- , $ -> -> 12 `i `uc 345
- , $ -> -> 13 `i `uc 348
- , $ -> -> 14 `i `uc 351
- , $ -> -> 15 `i `uc 354
- , $ -> -> 16 `i `uc 357
- , $ -> -> 17 `i `uc 360
- , $ -> -> 18 `i `uc 363
- , $ -> -> 19 `i `uc 366
- , $ -> -> 20 `i `uc 369
- , $ -> -> 21 `i `uc 372
- , $ -> -> 22 `i `uc 375
- 307 ]
-"297
+[e $U 308  ]
+"128
 [e :U 307 ]
-[; ;RobotLib.c: 298: }
-"298
-[e :UE 306 ]
+[; ;RobotLib.c: 128: else
+[; ;RobotLib.c: 129: TRISA1 = 0;
+"129
+[e = _TRISA1 -> -> 0 `i `b ]
+[e :U 308 ]
+[; ;RobotLib.c: 130: break;
+"130
+[e $U 301  ]
+[; ;RobotLib.c: 132: case 2:
+"132
+[e :U 309 ]
+[; ;RobotLib.c: 133: if(mode)
+"133
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 310  ]
+[; ;RobotLib.c: 134: TRISA2 = 1;
+"134
+[e = _TRISA2 -> -> 1 `i `b ]
+[e $U 311  ]
+"135
+[e :U 310 ]
+[; ;RobotLib.c: 135: else
+[; ;RobotLib.c: 136: TRISA2 = 0;
+"136
+[e = _TRISA2 -> -> 0 `i `b ]
+[e :U 311 ]
+[; ;RobotLib.c: 137: break;
+"137
+[e $U 301  ]
+[; ;RobotLib.c: 139: case 3:
+"139
+[e :U 312 ]
+[; ;RobotLib.c: 140: if(mode)
+"140
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 313  ]
+[; ;RobotLib.c: 141: TRISA3 = 1;
+"141
+[e = _TRISA3 -> -> 1 `i `b ]
+[e $U 314  ]
+"142
+[e :U 313 ]
+[; ;RobotLib.c: 142: else
+[; ;RobotLib.c: 143: TRISA3 = 0;
+"143
+[e = _TRISA3 -> -> 0 `i `b ]
+[e :U 314 ]
+[; ;RobotLib.c: 144: break;
+"144
+[e $U 301  ]
+[; ;RobotLib.c: 146: case 4:
+"146
+[e :U 315 ]
+[; ;RobotLib.c: 147: if(mode)
+"147
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 316  ]
+[; ;RobotLib.c: 148: TRISA5 = 1;
+"148
+[e = _TRISA5 -> -> 1 `i `b ]
+[e $U 317  ]
+"149
+[e :U 316 ]
+[; ;RobotLib.c: 149: else
+[; ;RobotLib.c: 150: TRISA5 = 0;
+"150
+[e = _TRISA5 -> -> 0 `i `b ]
+[e :U 317 ]
+[; ;RobotLib.c: 151: break;
+"151
+[e $U 301  ]
+[; ;RobotLib.c: 153: case 5:
+"153
+[e :U 318 ]
+[; ;RobotLib.c: 154: if(mode)
+"154
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 319  ]
+[; ;RobotLib.c: 155: TRISE0 = 1;
+"155
+[e = _TRISE0 -> -> 1 `i `b ]
+[e $U 320  ]
+"156
+[e :U 319 ]
+[; ;RobotLib.c: 156: else
+[; ;RobotLib.c: 157: TRISE0 = 0;
+"157
+[e = _TRISE0 -> -> 0 `i `b ]
+[e :U 320 ]
+[; ;RobotLib.c: 158: break;
+"158
+[e $U 301  ]
+[; ;RobotLib.c: 160: case 6:
+"160
+[e :U 321 ]
+[; ;RobotLib.c: 161: if(mode)
+"161
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 322  ]
+[; ;RobotLib.c: 162: TRISE1 = 1;
+"162
+[e = _TRISE1 -> -> 1 `i `b ]
+[e $U 323  ]
+"163
+[e :U 322 ]
+[; ;RobotLib.c: 163: else
+[; ;RobotLib.c: 164: TRISE1 = 0;
+"164
+[e = _TRISE1 -> -> 0 `i `b ]
+[e :U 323 ]
+[; ;RobotLib.c: 165: break;
+"165
+[e $U 301  ]
+[; ;RobotLib.c: 167: case 7:
+"167
+[e :U 324 ]
+[; ;RobotLib.c: 168: if(mode)
+"168
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 325  ]
+[; ;RobotLib.c: 169: TRISE2 = 1;
+"169
+[e = _TRISE2 -> -> 1 `i `b ]
+[e $U 326  ]
+"170
+[e :U 325 ]
+[; ;RobotLib.c: 170: else
+[; ;RobotLib.c: 171: TRISE2 = 0;
+"171
+[e = _TRISE2 -> -> 0 `i `b ]
+[e :U 326 ]
+[; ;RobotLib.c: 172: break;
+"172
+[e $U 301  ]
+[; ;RobotLib.c: 174: case 8:
+"174
+[e :U 327 ]
+[; ;RobotLib.c: 175: if(mode)
+"175
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 328  ]
+[; ;RobotLib.c: 176: TRISC5 = 1;
+"176
+[e = _TRISC5 -> -> 1 `i `b ]
+[e $U 329  ]
+"177
+[e :U 328 ]
+[; ;RobotLib.c: 177: else
+[; ;RobotLib.c: 178: TRISC5 = 0;
+"178
+[e = _TRISC5 -> -> 0 `i `b ]
+[e :U 329 ]
+[; ;RobotLib.c: 179: break;
+"179
+[e $U 301  ]
+[; ;RobotLib.c: 181: case 9:
+"181
+[e :U 330 ]
+[; ;RobotLib.c: 182: if(mode)
+"182
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 331  ]
+[; ;RobotLib.c: 183: TRISB4 = 1;
+"183
+[e = _TRISB4 -> -> 1 `i `b ]
+[e $U 332  ]
+"184
+[e :U 331 ]
+[; ;RobotLib.c: 184: else
+[; ;RobotLib.c: 185: TRISB4 = 0;
+"185
+[e = _TRISB4 -> -> 0 `i `b ]
+[e :U 332 ]
+[; ;RobotLib.c: 186: break;
+"186
+[e $U 301  ]
+[; ;RobotLib.c: 188: case 10:
+"188
+[e :U 333 ]
+[; ;RobotLib.c: 189: if(mode)
+"189
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 334  ]
+[; ;RobotLib.c: 190: TRISB5 = 1;
+"190
+[e = _TRISB5 -> -> 1 `i `b ]
+[e $U 335  ]
+"191
+[e :U 334 ]
+[; ;RobotLib.c: 191: else
+[; ;RobotLib.c: 192: TRISB5 = 0;
+"192
+[e = _TRISB5 -> -> 0 `i `b ]
+[e :U 335 ]
+[; ;RobotLib.c: 193: break;
+"193
+[e $U 301  ]
+[; ;RobotLib.c: 195: case 11:
+"195
+[e :U 336 ]
+[; ;RobotLib.c: 196: if(mode)
+"196
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 337  ]
+[; ;RobotLib.c: 197: TRISB0 = 1;
+"197
+[e = _TRISB0 -> -> 1 `i `b ]
+[e $U 338  ]
+"198
+[e :U 337 ]
+[; ;RobotLib.c: 198: else
+[; ;RobotLib.c: 199: TRISB0 = 0;
+"199
+[e = _TRISB0 -> -> 0 `i `b ]
+[e :U 338 ]
+[; ;RobotLib.c: 200: break;
+"200
+[e $U 301  ]
+[; ;RobotLib.c: 202: case 12:
+"202
+[e :U 339 ]
+[; ;RobotLib.c: 203: if(mode)
+"203
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 340  ]
+[; ;RobotLib.c: 204: TRISC7 = 1;
+"204
+[e = _TRISC7 -> -> 1 `i `b ]
+[e $U 341  ]
+"205
+[e :U 340 ]
+[; ;RobotLib.c: 205: else
+[; ;RobotLib.c: 206: TRISC7 = 0;
+"206
+[e = _TRISC7 -> -> 0 `i `b ]
+[e :U 341 ]
+[; ;RobotLib.c: 207: break;
+"207
+[e $U 301  ]
+[; ;RobotLib.c: 209: case 13:
+"209
+[e :U 342 ]
+[; ;RobotLib.c: 210: if(mode)
+"210
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 343  ]
+[; ;RobotLib.c: 211: TRISC6 = 1;
+"211
+[e = _TRISC6 -> -> 1 `i `b ]
+[e $U 344  ]
+"212
+[e :U 343 ]
+[; ;RobotLib.c: 212: else
+[; ;RobotLib.c: 213: TRISC6 = 0;
+"213
+[e = _TRISC6 -> -> 0 `i `b ]
+[e :U 344 ]
+[; ;RobotLib.c: 214: break;
+"214
+[e $U 301  ]
+[; ;RobotLib.c: 216: case 14:
+"216
+[e :U 345 ]
+[; ;RobotLib.c: 217: if(mode)
+"217
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 346  ]
+[; ;RobotLib.c: 218: TRISC4 = 1;
+"218
+[e = _TRISC4 -> -> 1 `i `b ]
+[e $U 347  ]
+"219
+[e :U 346 ]
+[; ;RobotLib.c: 219: else
+[; ;RobotLib.c: 220: TRISC4 = 0;
+"220
+[e = _TRISC4 -> -> 0 `i `b ]
+[e :U 347 ]
+[; ;RobotLib.c: 221: break;
+"221
+[e $U 301  ]
+[; ;RobotLib.c: 223: case 15:
+"223
+[e :U 348 ]
+[; ;RobotLib.c: 224: if(mode)
+"224
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 349  ]
+[; ;RobotLib.c: 225: TRISC3 = 1;
+"225
+[e = _TRISC3 -> -> 1 `i `b ]
+[e $U 350  ]
+"226
+[e :U 349 ]
+[; ;RobotLib.c: 226: else
+[; ;RobotLib.c: 227: TRISC3 = 0;
+"227
+[e = _TRISC3 -> -> 0 `i `b ]
+[e :U 350 ]
+[; ;RobotLib.c: 228: break;
+"228
+[e $U 301  ]
+[; ;RobotLib.c: 230: case 16:
+"230
+[e :U 351 ]
+[; ;RobotLib.c: 231: if(mode)
+"231
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 352  ]
+[; ;RobotLib.c: 232: TRISA4 = 1;
+"232
+[e = _TRISA4 -> -> 1 `i `b ]
+[e $U 353  ]
+"233
+[e :U 352 ]
+[; ;RobotLib.c: 233: else
+[; ;RobotLib.c: 234: TRISA4 = 0;
+"234
+[e = _TRISA4 -> -> 0 `i `b ]
+[e :U 353 ]
+[; ;RobotLib.c: 235: break;
+"235
+[e $U 301  ]
+[; ;RobotLib.c: 237: case 17:
+"237
+[e :U 354 ]
+[; ;RobotLib.c: 238: if(mode)
+"238
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 355  ]
+[; ;RobotLib.c: 239: TRISC0 = 1;
+"239
+[e = _TRISC0 -> -> 1 `i `b ]
+[e $U 356  ]
+"240
+[e :U 355 ]
+[; ;RobotLib.c: 240: else
+[; ;RobotLib.c: 241: TRISC0 = 0;
+"241
+[e = _TRISC0 -> -> 0 `i `b ]
+[e :U 356 ]
+[; ;RobotLib.c: 242: break;
+"242
+[e $U 301  ]
+[; ;RobotLib.c: 244: case 18:
+"244
+[e :U 357 ]
+[; ;RobotLib.c: 245: if(mode)
+"245
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 358  ]
+[; ;RobotLib.c: 246: TRISB3 = 1;
+"246
+[e = _TRISB3 -> -> 1 `i `b ]
+[e $U 359  ]
+"247
+[e :U 358 ]
+[; ;RobotLib.c: 247: else
+[; ;RobotLib.c: 248: TRISB3 = 0;
+"248
+[e = _TRISB3 -> -> 0 `i `b ]
+[e :U 359 ]
+[; ;RobotLib.c: 249: break;
+"249
+[e $U 301  ]
+[; ;RobotLib.c: 251: case 19:
+"251
+[e :U 360 ]
+[; ;RobotLib.c: 252: if(mode)
+"252
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 361  ]
+[; ;RobotLib.c: 253: TRISD0 = 1;
+"253
+[e = _TRISD0 -> -> 1 `i `b ]
+[e $U 362  ]
+"254
+[e :U 361 ]
+[; ;RobotLib.c: 254: else
+[; ;RobotLib.c: 255: TRISD0 = 0;
+"255
+[e = _TRISD0 -> -> 0 `i `b ]
+[e :U 362 ]
+[; ;RobotLib.c: 256: break;
+"256
+[e $U 301  ]
+[; ;RobotLib.c: 258: case 20:
+"258
+[e :U 363 ]
+[; ;RobotLib.c: 259: if(mode)
+"259
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 364  ]
+[; ;RobotLib.c: 260: TRISD1 = 1;
+"260
+[e = _TRISD1 -> -> 1 `i `b ]
+[e $U 365  ]
+"261
+[e :U 364 ]
+[; ;RobotLib.c: 261: else
+[; ;RobotLib.c: 262: TRISD1 = 0;
+"262
+[e = _TRISD1 -> -> 0 `i `b ]
+[e :U 365 ]
+[; ;RobotLib.c: 263: break;
+"263
+[e $U 301  ]
+[; ;RobotLib.c: 266: case 21:
+"266
+[e :U 366 ]
+[; ;RobotLib.c: 267: if(mode)
+"267
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 367  ]
+[; ;RobotLib.c: 268: TRISB1 = 1;
+"268
+[e = _TRISB1 -> -> 1 `i `b ]
+[e $U 368  ]
+"269
+[e :U 367 ]
+[; ;RobotLib.c: 269: else
+[; ;RobotLib.c: 270: TRISB1 = 0;
+"270
+[e = _TRISB1 -> -> 0 `i `b ]
+[e :U 368 ]
+[; ;RobotLib.c: 271: break;
+"271
+[e $U 301  ]
+[; ;RobotLib.c: 273: case 22:
+"273
+[e :U 369 ]
+[; ;RobotLib.c: 274: if(mode)
+"274
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 370  ]
+[; ;RobotLib.c: 275: TRISB2 = 1;
+"275
+[e = _TRISB2 -> -> 1 `i `b ]
+[e $U 371  ]
+"276
+[e :U 370 ]
+[; ;RobotLib.c: 276: else
+[; ;RobotLib.c: 277: TRISB2 = 0;
+"277
+[e = _TRISB2 -> -> 0 `i `b ]
+[e :U 371 ]
+[; ;RobotLib.c: 278: break;
+"278
+[e $U 301  ]
+"280
 }
-"300
+[; ;RobotLib.c: 280: }
+[e $U 301  ]
+"116
+[e :U 302 ]
+[e [\ _pin , $ -> -> 0 `i `uc 303
+ , $ -> -> 1 `i `uc 306
+ , $ -> -> 2 `i `uc 309
+ , $ -> -> 3 `i `uc 312
+ , $ -> -> 4 `i `uc 315
+ , $ -> -> 5 `i `uc 318
+ , $ -> -> 6 `i `uc 321
+ , $ -> -> 7 `i `uc 324
+ , $ -> -> 8 `i `uc 327
+ , $ -> -> 9 `i `uc 330
+ , $ -> -> 10 `i `uc 333
+ , $ -> -> 11 `i `uc 336
+ , $ -> -> 12 `i `uc 339
+ , $ -> -> 13 `i `uc 342
+ , $ -> -> 14 `i `uc 345
+ , $ -> -> 15 `i `uc 348
+ , $ -> -> 16 `i `uc 351
+ , $ -> -> 17 `i `uc 354
+ , $ -> -> 18 `i `uc 357
+ , $ -> -> 19 `i `uc 360
+ , $ -> -> 20 `i `uc 363
+ , $ -> -> 21 `i `uc 366
+ , $ -> -> 22 `i `uc 369
+ 301 ]
+"280
+[e :U 301 ]
+[; ;RobotLib.c: 281: }
+"281
+[e :UE 300 ]
+}
+"283
 [v _digitalWrite `(v ~T0 @X0 1 ef2`uc`uc ]
 {
-[; ;RobotLib.c: 300: void digitalWrite(char pin, char mode){
+[; ;RobotLib.c: 283: void digitalWrite(char pin, char mode){
 [e :U _digitalWrite ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [v _mode `uc ~T0 @X0 1 r2 ]
 [f ]
-[; ;RobotLib.c: 301: switch(pin)
-"301
-[e $U 380  ]
-[; ;RobotLib.c: 302: {
-"302
+[; ;RobotLib.c: 284: switch(pin)
+"284
+[e $U 374  ]
+[; ;RobotLib.c: 285: {
+"285
 {
-[; ;RobotLib.c: 303: case 0:
-"303
-[e :U 381 ]
-[; ;RobotLib.c: 304: if(mode)
-"304
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 382  ]
-[; ;RobotLib.c: 305: LATAbits.LATA0 = 1;
-"305
+[; ;RobotLib.c: 286: case 0:
+"286
+[e :U 375 ]
+[; ;RobotLib.c: 287: if(mode)
+"287
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 376  ]
+[; ;RobotLib.c: 288: LATAbits.LATA0 = 1;
+"288
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-[e $U 383  ]
-"306
-[e :U 382 ]
-[; ;RobotLib.c: 306: else
-[; ;RobotLib.c: 307: LATAbits.LATA0 = 0;
-"307
+[e $U 377  ]
+"289
+[e :U 376 ]
+[; ;RobotLib.c: 289: else
+[; ;RobotLib.c: 290: LATAbits.LATA0 = 0;
+"290
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[e :U 383 ]
-[; ;RobotLib.c: 308: break;
-"308
-[e $U 379  ]
-[; ;RobotLib.c: 310: case 1:
-"310
-[e :U 384 ]
-[; ;RobotLib.c: 311: if(mode)
-"311
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 385  ]
-[; ;RobotLib.c: 312: LATAbits.LATA1 = 1;
-"312
+[e :U 377 ]
+[; ;RobotLib.c: 291: break;
+"291
+[e $U 373  ]
+[; ;RobotLib.c: 293: case 1:
+"293
+[e :U 378 ]
+[; ;RobotLib.c: 294: if(mode)
+"294
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 379  ]
+[; ;RobotLib.c: 295: LATAbits.LATA1 = 1;
+"295
 [e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
-[e $U 386  ]
-"313
-[e :U 385 ]
-[; ;RobotLib.c: 313: else
-[; ;RobotLib.c: 314: LATAbits.LATA1 = 0;
-"314
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-[e :U 386 ]
-[; ;RobotLib.c: 315: break;
-"315
-[e $U 379  ]
-[; ;RobotLib.c: 317: case 2:
-"317
-[e :U 387 ]
-[; ;RobotLib.c: 318: if(mode)
-"318
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 388  ]
-[; ;RobotLib.c: 319: LATAbits.LATA2 = 1;
-"319
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-[e $U 389  ]
-"320
-[e :U 388 ]
-[; ;RobotLib.c: 320: else
-[; ;RobotLib.c: 321: LATAbits.LATA2 = 0;
-"321
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[e :U 389 ]
-[; ;RobotLib.c: 322: break;
-"322
-[e $U 379  ]
-[; ;RobotLib.c: 324: case 3:
-"324
-[e :U 390 ]
-[; ;RobotLib.c: 325: if(mode)
-"325
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 391  ]
-[; ;RobotLib.c: 326: LATAbits.LATA3 = 1;
-"326
-[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
-[e $U 392  ]
-"327
-[e :U 391 ]
-[; ;RobotLib.c: 327: else
-[; ;RobotLib.c: 328: LATAbits.LATA3 = 0;
-"328
-[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-[e :U 392 ]
-[; ;RobotLib.c: 329: break;
-"329
-[e $U 379  ]
-[; ;RobotLib.c: 331: case 4:
-"331
-[e :U 393 ]
-[; ;RobotLib.c: 332: if(mode)
-"332
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 394  ]
-[; ;RobotLib.c: 333: LATAbits.LATA5 = 1;
-"333
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
-[e $U 395  ]
-"334
-[e :U 394 ]
-[; ;RobotLib.c: 334: else
-[; ;RobotLib.c: 335: LATAbits.LATA5 = 0;
-"335
-[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
-[e :U 395 ]
-[; ;RobotLib.c: 336: break;
-"336
-[e $U 379  ]
-[; ;RobotLib.c: 338: case 5:
-"338
-[e :U 396 ]
-[; ;RobotLib.c: 339: if(mode)
-"339
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 397  ]
-[; ;RobotLib.c: 340: LATEbits.LATE0 = 1;
-"340
-[e = . . _LATEbits 0 0 -> -> 1 `i `uc ]
-[e $U 398  ]
-"341
-[e :U 397 ]
-[; ;RobotLib.c: 341: else
-[; ;RobotLib.c: 342: LATEbits.LATE0 = 0;
-"342
-[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-[e :U 398 ]
-[; ;RobotLib.c: 343: break;
-"343
-[e $U 379  ]
-[; ;RobotLib.c: 345: case 6:
-"345
-[e :U 399 ]
-[; ;RobotLib.c: 346: if(mode)
-"346
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 400  ]
-[; ;RobotLib.c: 347: LATEbits.LATE1 = 1;
-"347
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[e $U 401  ]
-"348
-[e :U 400 ]
-[; ;RobotLib.c: 348: else
-[; ;RobotLib.c: 349: LATEbits.LATE1 = 0;
-"349
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[e :U 401 ]
-[; ;RobotLib.c: 350: break;
-"350
-[e $U 379  ]
-[; ;RobotLib.c: 352: case 7:
-"352
-[e :U 402 ]
-[; ;RobotLib.c: 353: if(mode)
-"353
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 403  ]
-[; ;RobotLib.c: 354: LATEbits.LATE2 = 1;
-"354
-[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
-[e $U 404  ]
-"355
-[e :U 403 ]
-[; ;RobotLib.c: 355: else
-[; ;RobotLib.c: 356: LATEbits.LATE2 = 0;
-"356
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-[e :U 404 ]
-[; ;RobotLib.c: 357: break;
-"357
-[e $U 379  ]
-[; ;RobotLib.c: 359: case 8:
-"359
-[e :U 405 ]
-[; ;RobotLib.c: 360: if(mode)
-"360
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 406  ]
-[; ;RobotLib.c: 361: LATCbits.LATC5 = 1;
-"361
-[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
-[e $U 407  ]
-"362
-[e :U 406 ]
-[; ;RobotLib.c: 362: else
-[; ;RobotLib.c: 363: LATCbits.LATC5 = 0;
-"363
-[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
-[e :U 407 ]
-[; ;RobotLib.c: 364: break;
-"364
-[e $U 379  ]
-[; ;RobotLib.c: 366: case 9:
-"366
-[e :U 408 ]
-[; ;RobotLib.c: 367: if(mode)
-"367
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 409  ]
-[; ;RobotLib.c: 368: LATBbits.LATB4 = 1;
-"368
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-[e $U 410  ]
-"369
-[e :U 409 ]
-[; ;RobotLib.c: 369: else
-[; ;RobotLib.c: 370: LATBbits.LATB4 = 0;
-"370
-[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[e :U 410 ]
-[; ;RobotLib.c: 371: break;
-"371
-[e $U 379  ]
-[; ;RobotLib.c: 373: case 10:
-"373
-[e :U 411 ]
-[; ;RobotLib.c: 374: if(mode)
-"374
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 412  ]
-[; ;RobotLib.c: 375: LATBbits.LATB5 = 1;
-"375
-[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
-[e $U 413  ]
-"376
-[e :U 412 ]
-[; ;RobotLib.c: 376: else
-[; ;RobotLib.c: 377: LATBbits.LATB5 = 0;
-"377
-[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
-[e :U 413 ]
-[; ;RobotLib.c: 378: break;
-"378
-[e $U 379  ]
-[; ;RobotLib.c: 380: case 11:
-"380
-[e :U 414 ]
-[; ;RobotLib.c: 381: if(mode)
-"381
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 415  ]
-[; ;RobotLib.c: 382: LATBbits.LATB0 = 1;
-"382
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-[e $U 416  ]
-"383
-[e :U 415 ]
-[; ;RobotLib.c: 383: else
-[; ;RobotLib.c: 384: LATBbits.LATB0 = 0;
-"384
-[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-[e :U 416 ]
-[; ;RobotLib.c: 385: break;
-"385
-[e $U 379  ]
-[; ;RobotLib.c: 387: case 12:
-"387
-[e :U 417 ]
-[; ;RobotLib.c: 388: if(mode)
-"388
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 418  ]
-[; ;RobotLib.c: 389: LATCbits.LATC7 = 1;
-"389
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-[e $U 419  ]
-"390
-[e :U 418 ]
-[; ;RobotLib.c: 390: else
-[; ;RobotLib.c: 391: LATCbits.LATC7 = 0;
-"391
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-[e :U 419 ]
-[; ;RobotLib.c: 392: break;
-"392
-[e $U 379  ]
-[; ;RobotLib.c: 394: case 13:
-"394
-[e :U 420 ]
-[; ;RobotLib.c: 395: if(mode)
-"395
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 421  ]
-[; ;RobotLib.c: 396: LATCbits.LATC6 = 1;
-"396
-[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
-[e $U 422  ]
-"397
-[e :U 421 ]
-[; ;RobotLib.c: 397: else
-[; ;RobotLib.c: 398: LATCbits.LATC6 = 0;
-"398
-[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
-[e :U 422 ]
-[; ;RobotLib.c: 399: break;
-"399
-[e $U 379  ]
-[; ;RobotLib.c: 401: case 14:
-"401
-[e :U 423 ]
-[; ;RobotLib.c: 402: if(mode)
-"402
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 424  ]
-[; ;RobotLib.c: 403: LATCbits.LATC4 = 1;
-"403
-[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
-[e $U 425  ]
-"404
-[e :U 424 ]
-[; ;RobotLib.c: 404: else
-[; ;RobotLib.c: 405: LATCbits.LATC4 = 0;
-"405
-[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
-[e :U 425 ]
-[; ;RobotLib.c: 406: break;
-"406
-[e $U 379  ]
-[; ;RobotLib.c: 408: case 15:
-"408
-[e :U 426 ]
-[; ;RobotLib.c: 409: if(mode)
-"409
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 427  ]
-[; ;RobotLib.c: 410: LATCbits.LATC3 = 1;
-"410
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-[e $U 428  ]
-"411
-[e :U 427 ]
-[; ;RobotLib.c: 411: else
-[; ;RobotLib.c: 412: LATCbits.LATC3 = 0;
-"412
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-[e :U 428 ]
-[; ;RobotLib.c: 413: break;
-"413
-[e $U 379  ]
-[; ;RobotLib.c: 415: case 16:
-"415
-[e :U 429 ]
-[; ;RobotLib.c: 416: if(mode)
-"416
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 430  ]
-[; ;RobotLib.c: 417: LATAbits.LATA4 = 1;
-"417
-[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
-[e $U 431  ]
-"418
-[e :U 430 ]
-[; ;RobotLib.c: 418: else
-[; ;RobotLib.c: 419: LATAbits.LATA4 = 0;
-"419
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-[e :U 431 ]
-[; ;RobotLib.c: 420: break;
-"420
-[e $U 379  ]
-[; ;RobotLib.c: 422: case 17:
-"422
-[e :U 432 ]
-[; ;RobotLib.c: 423: if(mode)
-"423
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 433  ]
-[; ;RobotLib.c: 424: LATCbits.LATC0 = 1;
-"424
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-[e $U 434  ]
-"425
-[e :U 433 ]
-[; ;RobotLib.c: 425: else
-[; ;RobotLib.c: 426: LATCbits.LATC0 = 0;
-"426
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[e :U 434 ]
-[; ;RobotLib.c: 427: break;
-"427
-[e $U 379  ]
-[; ;RobotLib.c: 429: case 18:
-"429
-[e :U 435 ]
-[; ;RobotLib.c: 430: if(mode)
-"430
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 436  ]
-[; ;RobotLib.c: 431: LATBbits.LATB3 = 1;
-"431
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-[e $U 437  ]
-"432
-[e :U 436 ]
-[; ;RobotLib.c: 432: else
-[; ;RobotLib.c: 433: LATBbits.LATB3 = 0;
-"433
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-[e :U 437 ]
-[; ;RobotLib.c: 434: break;
-"434
-[e $U 379  ]
-[; ;RobotLib.c: 436: case 19:
-"436
-[e :U 438 ]
-[; ;RobotLib.c: 437: if(mode)
-"437
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 439  ]
-[; ;RobotLib.c: 438: LATDbits.LATD0 = 1;
-"438
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-[e $U 440  ]
-"439
-[e :U 439 ]
-[; ;RobotLib.c: 439: else
-[; ;RobotLib.c: 440: LATDbits.LATD0 = 0;
-"440
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-[e :U 440 ]
-[; ;RobotLib.c: 441: break;
-"441
-[e $U 379  ]
-[; ;RobotLib.c: 443: case 20:
-"443
-[e :U 441 ]
-[; ;RobotLib.c: 444: if(mode)
-"444
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 442  ]
-[; ;RobotLib.c: 445: LATDbits.LATD1 = 1;
-"445
-[e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-[e $U 443  ]
-"446
-[e :U 442 ]
-[; ;RobotLib.c: 446: else
-[; ;RobotLib.c: 447: LATDbits.LATD1 = 0;
-"447
-[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-[e :U 443 ]
-[; ;RobotLib.c: 448: break;
-"448
-[e $U 379  ]
-[; ;RobotLib.c: 451: case 21:
-"451
-[e :U 444 ]
-[; ;RobotLib.c: 452: if(mode)
-"452
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 445  ]
-[; ;RobotLib.c: 453: LATBbits.LATB1 = 1;
-"453
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
-[e $U 446  ]
-"454
-[e :U 445 ]
-[; ;RobotLib.c: 454: else
-[; ;RobotLib.c: 455: LATBbits.LATB1 = 0;
-"455
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-[e :U 446 ]
-[; ;RobotLib.c: 456: break;
-"456
-[e $U 379  ]
-[; ;RobotLib.c: 458: case 22:
-"458
-[e :U 447 ]
-[; ;RobotLib.c: 459: if(mode)
-"459
-[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 448  ]
-[; ;RobotLib.c: 460: LATBbits.LATB2 = 1;
-"460
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
-[e $U 449  ]
-"461
-[e :U 448 ]
-[; ;RobotLib.c: 461: else
-[; ;RobotLib.c: 462: LATBbits.LATB2 = 0;
-"462
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-[e :U 449 ]
-[; ;RobotLib.c: 463: break;
-"463
-[e $U 379  ]
-"465
-}
-[; ;RobotLib.c: 465: }
-[e $U 379  ]
-"301
-[e :U 380 ]
-[e [\ _pin , $ -> -> 0 `i `uc 381
- , $ -> -> 1 `i `uc 384
- , $ -> -> 2 `i `uc 387
- , $ -> -> 3 `i `uc 390
- , $ -> -> 4 `i `uc 393
- , $ -> -> 5 `i `uc 396
- , $ -> -> 6 `i `uc 399
- , $ -> -> 7 `i `uc 402
- , $ -> -> 8 `i `uc 405
- , $ -> -> 9 `i `uc 408
- , $ -> -> 10 `i `uc 411
- , $ -> -> 11 `i `uc 414
- , $ -> -> 12 `i `uc 417
- , $ -> -> 13 `i `uc 420
- , $ -> -> 14 `i `uc 423
- , $ -> -> 15 `i `uc 426
- , $ -> -> 16 `i `uc 429
- , $ -> -> 17 `i `uc 432
- , $ -> -> 18 `i `uc 435
- , $ -> -> 19 `i `uc 438
- , $ -> -> 20 `i `uc 441
- , $ -> -> 21 `i `uc 444
- , $ -> -> 22 `i `uc 447
- 379 ]
-"465
+[e $U 380  ]
+"296
 [e :U 379 ]
-[; ;RobotLib.c: 466: }
-"466
-[e :UE 378 ]
+[; ;RobotLib.c: 296: else
+[; ;RobotLib.c: 297: LATAbits.LATA1 = 0;
+"297
+[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
+[e :U 380 ]
+[; ;RobotLib.c: 298: break;
+"298
+[e $U 373  ]
+[; ;RobotLib.c: 300: case 2:
+"300
+[e :U 381 ]
+[; ;RobotLib.c: 301: if(mode)
+"301
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 382  ]
+[; ;RobotLib.c: 302: LATAbits.LATA2 = 1;
+"302
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+[e $U 383  ]
+"303
+[e :U 382 ]
+[; ;RobotLib.c: 303: else
+[; ;RobotLib.c: 304: LATAbits.LATA2 = 0;
+"304
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[e :U 383 ]
+[; ;RobotLib.c: 305: break;
+"305
+[e $U 373  ]
+[; ;RobotLib.c: 307: case 3:
+"307
+[e :U 384 ]
+[; ;RobotLib.c: 308: if(mode)
+"308
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 385  ]
+[; ;RobotLib.c: 309: LATAbits.LATA3 = 1;
+"309
+[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
+[e $U 386  ]
+"310
+[e :U 385 ]
+[; ;RobotLib.c: 310: else
+[; ;RobotLib.c: 311: LATAbits.LATA3 = 0;
+"311
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
+[e :U 386 ]
+[; ;RobotLib.c: 312: break;
+"312
+[e $U 373  ]
+[; ;RobotLib.c: 314: case 4:
+"314
+[e :U 387 ]
+[; ;RobotLib.c: 315: if(mode)
+"315
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 388  ]
+[; ;RobotLib.c: 316: LATAbits.LATA5 = 1;
+"316
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+[e $U 389  ]
+"317
+[e :U 388 ]
+[; ;RobotLib.c: 317: else
+[; ;RobotLib.c: 318: LATAbits.LATA5 = 0;
+"318
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+[e :U 389 ]
+[; ;RobotLib.c: 319: break;
+"319
+[e $U 373  ]
+[; ;RobotLib.c: 321: case 5:
+"321
+[e :U 390 ]
+[; ;RobotLib.c: 322: if(mode)
+"322
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 391  ]
+[; ;RobotLib.c: 323: LATEbits.LATE0 = 1;
+"323
+[e = . . _LATEbits 0 0 -> -> 1 `i `uc ]
+[e $U 392  ]
+"324
+[e :U 391 ]
+[; ;RobotLib.c: 324: else
+[; ;RobotLib.c: 325: LATEbits.LATE0 = 0;
+"325
+[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
+[e :U 392 ]
+[; ;RobotLib.c: 326: break;
+"326
+[e $U 373  ]
+[; ;RobotLib.c: 328: case 6:
+"328
+[e :U 393 ]
+[; ;RobotLib.c: 329: if(mode)
+"329
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 394  ]
+[; ;RobotLib.c: 330: LATEbits.LATE1 = 1;
+"330
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[e $U 395  ]
+"331
+[e :U 394 ]
+[; ;RobotLib.c: 331: else
+[; ;RobotLib.c: 332: LATEbits.LATE1 = 0;
+"332
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[e :U 395 ]
+[; ;RobotLib.c: 333: break;
+"333
+[e $U 373  ]
+[; ;RobotLib.c: 335: case 7:
+"335
+[e :U 396 ]
+[; ;RobotLib.c: 336: if(mode)
+"336
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 397  ]
+[; ;RobotLib.c: 337: LATEbits.LATE2 = 1;
+"337
+[e = . . _LATEbits 0 2 -> -> 1 `i `uc ]
+[e $U 398  ]
+"338
+[e :U 397 ]
+[; ;RobotLib.c: 338: else
+[; ;RobotLib.c: 339: LATEbits.LATE2 = 0;
+"339
+[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
+[e :U 398 ]
+[; ;RobotLib.c: 340: break;
+"340
+[e $U 373  ]
+[; ;RobotLib.c: 342: case 8:
+"342
+[e :U 399 ]
+[; ;RobotLib.c: 343: if(mode)
+"343
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 400  ]
+[; ;RobotLib.c: 344: LATCbits.LATC5 = 1;
+"344
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+[e $U 401  ]
+"345
+[e :U 400 ]
+[; ;RobotLib.c: 345: else
+[; ;RobotLib.c: 346: LATCbits.LATC5 = 0;
+"346
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
+[e :U 401 ]
+[; ;RobotLib.c: 347: break;
+"347
+[e $U 373  ]
+[; ;RobotLib.c: 349: case 9:
+"349
+[e :U 402 ]
+[; ;RobotLib.c: 350: if(mode)
+"350
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 403  ]
+[; ;RobotLib.c: 351: LATBbits.LATB4 = 1;
+"351
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+[e $U 404  ]
+"352
+[e :U 403 ]
+[; ;RobotLib.c: 352: else
+[; ;RobotLib.c: 353: LATBbits.LATB4 = 0;
+"353
+[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+[e :U 404 ]
+[; ;RobotLib.c: 354: break;
+"354
+[e $U 373  ]
+[; ;RobotLib.c: 356: case 10:
+"356
+[e :U 405 ]
+[; ;RobotLib.c: 357: if(mode)
+"357
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 406  ]
+[; ;RobotLib.c: 358: LATBbits.LATB5 = 1;
+"358
+[e = . . _LATBbits 0 5 -> -> 1 `i `uc ]
+[e $U 407  ]
+"359
+[e :U 406 ]
+[; ;RobotLib.c: 359: else
+[; ;RobotLib.c: 360: LATBbits.LATB5 = 0;
+"360
+[e = . . _LATBbits 0 5 -> -> 0 `i `uc ]
+[e :U 407 ]
+[; ;RobotLib.c: 361: break;
+"361
+[e $U 373  ]
+[; ;RobotLib.c: 363: case 11:
+"363
+[e :U 408 ]
+[; ;RobotLib.c: 364: if(mode)
+"364
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 409  ]
+[; ;RobotLib.c: 365: LATBbits.LATB0 = 1;
+"365
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+[e $U 410  ]
+"366
+[e :U 409 ]
+[; ;RobotLib.c: 366: else
+[; ;RobotLib.c: 367: LATBbits.LATB0 = 0;
+"367
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[e :U 410 ]
+[; ;RobotLib.c: 368: break;
+"368
+[e $U 373  ]
+[; ;RobotLib.c: 370: case 12:
+"370
+[e :U 411 ]
+[; ;RobotLib.c: 371: if(mode)
+"371
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 412  ]
+[; ;RobotLib.c: 372: LATCbits.LATC7 = 1;
+"372
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+[e $U 413  ]
+"373
+[e :U 412 ]
+[; ;RobotLib.c: 373: else
+[; ;RobotLib.c: 374: LATCbits.LATC7 = 0;
+"374
+[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+[e :U 413 ]
+[; ;RobotLib.c: 375: break;
+"375
+[e $U 373  ]
+[; ;RobotLib.c: 377: case 13:
+"377
+[e :U 414 ]
+[; ;RobotLib.c: 378: if(mode)
+"378
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 415  ]
+[; ;RobotLib.c: 379: LATCbits.LATC6 = 1;
+"379
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+[e $U 416  ]
+"380
+[e :U 415 ]
+[; ;RobotLib.c: 380: else
+[; ;RobotLib.c: 381: LATCbits.LATC6 = 0;
+"381
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+[e :U 416 ]
+[; ;RobotLib.c: 382: break;
+"382
+[e $U 373  ]
+[; ;RobotLib.c: 384: case 14:
+"384
+[e :U 417 ]
+[; ;RobotLib.c: 385: if(mode)
+"385
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 418  ]
+[; ;RobotLib.c: 386: LATCbits.LATC4 = 1;
+"386
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+[e $U 419  ]
+"387
+[e :U 418 ]
+[; ;RobotLib.c: 387: else
+[; ;RobotLib.c: 388: LATCbits.LATC4 = 0;
+"388
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+[e :U 419 ]
+[; ;RobotLib.c: 389: break;
+"389
+[e $U 373  ]
+[; ;RobotLib.c: 391: case 15:
+"391
+[e :U 420 ]
+[; ;RobotLib.c: 392: if(mode)
+"392
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 421  ]
+[; ;RobotLib.c: 393: LATCbits.LATC3 = 1;
+"393
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+[e $U 422  ]
+"394
+[e :U 421 ]
+[; ;RobotLib.c: 394: else
+[; ;RobotLib.c: 395: LATCbits.LATC3 = 0;
+"395
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+[e :U 422 ]
+[; ;RobotLib.c: 396: break;
+"396
+[e $U 373  ]
+[; ;RobotLib.c: 398: case 16:
+"398
+[e :U 423 ]
+[; ;RobotLib.c: 399: if(mode)
+"399
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 424  ]
+[; ;RobotLib.c: 400: LATAbits.LATA4 = 1;
+"400
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+[e $U 425  ]
+"401
+[e :U 424 ]
+[; ;RobotLib.c: 401: else
+[; ;RobotLib.c: 402: LATAbits.LATA4 = 0;
+"402
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+[e :U 425 ]
+[; ;RobotLib.c: 403: break;
+"403
+[e $U 373  ]
+[; ;RobotLib.c: 405: case 17:
+"405
+[e :U 426 ]
+[; ;RobotLib.c: 406: if(mode)
+"406
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 427  ]
+[; ;RobotLib.c: 407: LATCbits.LATC0 = 1;
+"407
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+[e $U 428  ]
+"408
+[e :U 427 ]
+[; ;RobotLib.c: 408: else
+[; ;RobotLib.c: 409: LATCbits.LATC0 = 0;
+"409
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[e :U 428 ]
+[; ;RobotLib.c: 410: break;
+"410
+[e $U 373  ]
+[; ;RobotLib.c: 412: case 18:
+"412
+[e :U 429 ]
+[; ;RobotLib.c: 413: if(mode)
+"413
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 430  ]
+[; ;RobotLib.c: 414: LATBbits.LATB3 = 1;
+"414
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+[e $U 431  ]
+"415
+[e :U 430 ]
+[; ;RobotLib.c: 415: else
+[; ;RobotLib.c: 416: LATBbits.LATB3 = 0;
+"416
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+[e :U 431 ]
+[; ;RobotLib.c: 417: break;
+"417
+[e $U 373  ]
+[; ;RobotLib.c: 419: case 19:
+"419
+[e :U 432 ]
+[; ;RobotLib.c: 420: if(mode)
+"420
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 433  ]
+[; ;RobotLib.c: 421: LATDbits.LATD0 = 1;
+"421
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+[e $U 434  ]
+"422
+[e :U 433 ]
+[; ;RobotLib.c: 422: else
+[; ;RobotLib.c: 423: LATDbits.LATD0 = 0;
+"423
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+[e :U 434 ]
+[; ;RobotLib.c: 424: break;
+"424
+[e $U 373  ]
+[; ;RobotLib.c: 426: case 20:
+"426
+[e :U 435 ]
+[; ;RobotLib.c: 427: if(mode)
+"427
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 436  ]
+[; ;RobotLib.c: 428: LATDbits.LATD1 = 1;
+"428
+[e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
+[e $U 437  ]
+"429
+[e :U 436 ]
+[; ;RobotLib.c: 429: else
+[; ;RobotLib.c: 430: LATDbits.LATD1 = 0;
+"430
+[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
+[e :U 437 ]
+[; ;RobotLib.c: 431: break;
+"431
+[e $U 373  ]
+[; ;RobotLib.c: 434: case 21:
+"434
+[e :U 438 ]
+[; ;RobotLib.c: 435: if(mode)
+"435
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 439  ]
+[; ;RobotLib.c: 436: LATBbits.LATB1 = 1;
+"436
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+[e $U 440  ]
+"437
+[e :U 439 ]
+[; ;RobotLib.c: 437: else
+[; ;RobotLib.c: 438: LATBbits.LATB1 = 0;
+"438
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+[e :U 440 ]
+[; ;RobotLib.c: 439: break;
+"439
+[e $U 373  ]
+[; ;RobotLib.c: 441: case 22:
+"441
+[e :U 441 ]
+[; ;RobotLib.c: 442: if(mode)
+"442
+[e $ ! != -> _mode `i -> -> -> 0 `i `uc `i 442  ]
+[; ;RobotLib.c: 443: LATBbits.LATB2 = 1;
+"443
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+[e $U 443  ]
+"444
+[e :U 442 ]
+[; ;RobotLib.c: 444: else
+[; ;RobotLib.c: 445: LATBbits.LATB2 = 0;
+"445
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+[e :U 443 ]
+[; ;RobotLib.c: 446: break;
+"446
+[e $U 373  ]
+"448
 }
-"468
+[; ;RobotLib.c: 448: }
+[e $U 373  ]
+"284
+[e :U 374 ]
+[e [\ _pin , $ -> -> 0 `i `uc 375
+ , $ -> -> 1 `i `uc 378
+ , $ -> -> 2 `i `uc 381
+ , $ -> -> 3 `i `uc 384
+ , $ -> -> 4 `i `uc 387
+ , $ -> -> 5 `i `uc 390
+ , $ -> -> 6 `i `uc 393
+ , $ -> -> 7 `i `uc 396
+ , $ -> -> 8 `i `uc 399
+ , $ -> -> 9 `i `uc 402
+ , $ -> -> 10 `i `uc 405
+ , $ -> -> 11 `i `uc 408
+ , $ -> -> 12 `i `uc 411
+ , $ -> -> 13 `i `uc 414
+ , $ -> -> 14 `i `uc 417
+ , $ -> -> 15 `i `uc 420
+ , $ -> -> 16 `i `uc 423
+ , $ -> -> 17 `i `uc 426
+ , $ -> -> 18 `i `uc 429
+ , $ -> -> 19 `i `uc 432
+ , $ -> -> 20 `i `uc 435
+ , $ -> -> 21 `i `uc 438
+ , $ -> -> 22 `i `uc 441
+ 373 ]
+"448
+[e :U 373 ]
+[; ;RobotLib.c: 449: }
+"449
+[e :UE 372 ]
+}
+"451
 [v _digitalRead `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;RobotLib.c: 468: char digitalRead(char pin){
+[; ;RobotLib.c: 451: char digitalRead(char pin){
 [e :U _digitalRead ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;RobotLib.c: 469: switch(pin)
-"469
-[e $U 452  ]
-[; ;RobotLib.c: 470: {
-"470
+[; ;RobotLib.c: 452: switch(pin)
+"452
+[e $U 446  ]
+[; ;RobotLib.c: 453: {
+"453
 {
-[; ;RobotLib.c: 471: case 0: return PORTAbits.RA0;
-"471
-[e :U 453 ]
+[; ;RobotLib.c: 454: case 0: return PORTAbits.RA0;
+"454
+[e :U 447 ]
 [e ) . . _PORTAbits 0 0 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 472: case 1: return PORTAbits.RA1;
-"472
-[e :U 454 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 455: case 1: return PORTAbits.RA1;
+"455
+[e :U 448 ]
 [e ) . . _PORTAbits 0 1 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 473: case 2: return PORTAbits.RA2;
-"473
-[e :U 455 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 456: case 2: return PORTAbits.RA2;
+"456
+[e :U 449 ]
 [e ) . . _PORTAbits 0 2 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 474: case 3: return PORTAbits.RA3;
-"474
-[e :U 456 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 457: case 3: return PORTAbits.RA3;
+"457
+[e :U 450 ]
 [e ) . . _PORTAbits 0 3 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 475: case 4: return PORTAbits.RA5;
-"475
-[e :U 457 ]
-[e ) . . _PORTAbits 0 5 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 476: case 5: return PORTEbits.RE0;
-"476
-[e :U 458 ]
-[e ) . . _PORTEbits 0 0 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 477: case 6: return PORTEbits.RE1;
-"477
-[e :U 459 ]
-[e ) . . _PORTEbits 0 1 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 478: case 7: return PORTEbits.RE2;
-"478
-[e :U 460 ]
-[e ) . . _PORTEbits 0 2 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 479: case 8: return PORTCbits.RC5;
-"479
-[e :U 461 ]
-[e ) . . _PORTCbits 0 5 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 480: case 9: return PORTBbits.RB4;
-"480
-[e :U 462 ]
-[e ) . . _PORTBbits 0 4 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 481: case 10: return PORTBbits.RB5;
-"481
-[e :U 463 ]
-[e ) . . _PORTBbits 0 5 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 482: case 11: return PORTBbits.RB0;
-"482
-[e :U 464 ]
-[e ) . . _PORTBbits 0 0 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 483: case 12: return PORTCbits.RC7;
-"483
-[e :U 465 ]
-[e ) . . _PORTCbits 0 7 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 484: case 13: return PORTCbits.RC6;
-"484
-[e :U 466 ]
-[e ) . . _PORTCbits 0 6 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 485: case 14: return PORTCbits.RC4;
-"485
-[e :U 467 ]
-[e ) . . _PORTCbits 0 4 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 486: case 15: return PORTCbits.RC3;
-"486
-[e :U 468 ]
-[e ) . . _PORTCbits 0 3 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 487: case 16: return PORTAbits.RA4;
-"487
-[e :U 469 ]
-[e ) . . _PORTAbits 0 4 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 488: case 17: return PORTCbits.RC0;
-"488
-[e :U 470 ]
-[e ) . . _PORTCbits 0 0 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 489: case 18: return PORTBbits.RB3;
-"489
-[e :U 471 ]
-[e ) . . _PORTBbits 0 3 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 490: case 19: return PORTDbits.RD0;
-"490
-[e :U 472 ]
-[e ) . . _PORTDbits 0 0 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 491: case 20: return PORTDbits.RD1;
-"491
-[e :U 473 ]
-[e ) . . _PORTDbits 0 1 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 492: case 21: return PORTBbits.RB1;
-"492
-[e :U 474 ]
-[e ) . . _PORTBbits 0 1 ]
-[e $UE 450  ]
-[; ;RobotLib.c: 493: case 22: return PORTBbits.RB2;
-"493
-[e :U 475 ]
-[e ) . . _PORTBbits 0 2 ]
-[e $UE 450  ]
-"494
-}
-[; ;RobotLib.c: 494: }
-[e $U 451  ]
-"469
-[e :U 452 ]
-[e [\ _pin , $ -> -> 0 `i `uc 453
- , $ -> -> 1 `i `uc 454
- , $ -> -> 2 `i `uc 455
- , $ -> -> 3 `i `uc 456
- , $ -> -> 4 `i `uc 457
- , $ -> -> 5 `i `uc 458
- , $ -> -> 6 `i `uc 459
- , $ -> -> 7 `i `uc 460
- , $ -> -> 8 `i `uc 461
- , $ -> -> 9 `i `uc 462
- , $ -> -> 10 `i `uc 463
- , $ -> -> 11 `i `uc 464
- , $ -> -> 12 `i `uc 465
- , $ -> -> 13 `i `uc 466
- , $ -> -> 14 `i `uc 467
- , $ -> -> 15 `i `uc 468
- , $ -> -> 16 `i `uc 469
- , $ -> -> 17 `i `uc 470
- , $ -> -> 18 `i `uc 471
- , $ -> -> 19 `i `uc 472
- , $ -> -> 20 `i `uc 473
- , $ -> -> 21 `i `uc 474
- , $ -> -> 22 `i `uc 475
- 451 ]
-"494
+[e $UE 444  ]
+[; ;RobotLib.c: 458: case 4: return PORTAbits.RA5;
+"458
 [e :U 451 ]
-[; ;RobotLib.c: 495: return '0';
-"495
-[e ) -> -> 48 `ui `uc ]
-[e $UE 450  ]
-[; ;RobotLib.c: 496: }
-"496
-[e :UE 450 ]
+[e ) . . _PORTAbits 0 5 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 459: case 5: return PORTEbits.RE0;
+"459
+[e :U 452 ]
+[e ) . . _PORTEbits 0 0 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 460: case 6: return PORTEbits.RE1;
+"460
+[e :U 453 ]
+[e ) . . _PORTEbits 0 1 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 461: case 7: return PORTEbits.RE2;
+"461
+[e :U 454 ]
+[e ) . . _PORTEbits 0 2 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 462: case 8: return PORTCbits.RC5;
+"462
+[e :U 455 ]
+[e ) . . _PORTCbits 0 5 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 463: case 9: return PORTBbits.RB4;
+"463
+[e :U 456 ]
+[e ) . . _PORTBbits 0 4 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 464: case 10: return PORTBbits.RB5;
+"464
+[e :U 457 ]
+[e ) . . _PORTBbits 0 5 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 465: case 11: return PORTBbits.RB0;
+"465
+[e :U 458 ]
+[e ) . . _PORTBbits 0 0 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 466: case 12: return PORTCbits.RC7;
+"466
+[e :U 459 ]
+[e ) . . _PORTCbits 0 7 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 467: case 13: return PORTCbits.RC6;
+"467
+[e :U 460 ]
+[e ) . . _PORTCbits 0 6 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 468: case 14: return PORTCbits.RC4;
+"468
+[e :U 461 ]
+[e ) . . _PORTCbits 0 4 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 469: case 15: return PORTCbits.RC3;
+"469
+[e :U 462 ]
+[e ) . . _PORTCbits 0 3 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 470: case 16: return PORTAbits.RA4;
+"470
+[e :U 463 ]
+[e ) . . _PORTAbits 0 4 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 471: case 17: return PORTCbits.RC0;
+"471
+[e :U 464 ]
+[e ) . . _PORTCbits 0 0 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 472: case 18: return PORTBbits.RB3;
+"472
+[e :U 465 ]
+[e ) . . _PORTBbits 0 3 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 473: case 19: return PORTDbits.RD0;
+"473
+[e :U 466 ]
+[e ) . . _PORTDbits 0 0 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 474: case 20: return PORTDbits.RD1;
+"474
+[e :U 467 ]
+[e ) . . _PORTDbits 0 1 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 475: case 21: return PORTBbits.RB1;
+"475
+[e :U 468 ]
+[e ) . . _PORTBbits 0 1 ]
+[e $UE 444  ]
+[; ;RobotLib.c: 476: case 22: return PORTBbits.RB2;
+"476
+[e :U 469 ]
+[e ) . . _PORTBbits 0 2 ]
+[e $UE 444  ]
+"477
 }
-"499
+[; ;RobotLib.c: 477: }
+[e $U 445  ]
+"452
+[e :U 446 ]
+[e [\ _pin , $ -> -> 0 `i `uc 447
+ , $ -> -> 1 `i `uc 448
+ , $ -> -> 2 `i `uc 449
+ , $ -> -> 3 `i `uc 450
+ , $ -> -> 4 `i `uc 451
+ , $ -> -> 5 `i `uc 452
+ , $ -> -> 6 `i `uc 453
+ , $ -> -> 7 `i `uc 454
+ , $ -> -> 8 `i `uc 455
+ , $ -> -> 9 `i `uc 456
+ , $ -> -> 10 `i `uc 457
+ , $ -> -> 11 `i `uc 458
+ , $ -> -> 12 `i `uc 459
+ , $ -> -> 13 `i `uc 460
+ , $ -> -> 14 `i `uc 461
+ , $ -> -> 15 `i `uc 462
+ , $ -> -> 16 `i `uc 463
+ , $ -> -> 17 `i `uc 464
+ , $ -> -> 18 `i `uc 465
+ , $ -> -> 19 `i `uc 466
+ , $ -> -> 20 `i `uc 467
+ , $ -> -> 21 `i `uc 468
+ , $ -> -> 22 `i `uc 469
+ 445 ]
+"477
+[e :U 445 ]
+[; ;RobotLib.c: 478: return '0';
+"478
+[e ) -> -> 48 `ui `uc ]
+[e $UE 444  ]
+[; ;RobotLib.c: 479: }
+"479
+[e :UE 444 ]
+}
+"482
 [v _initADC `(v ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 499: void initADC(){
+[; ;RobotLib.c: 482: void initADC(){
 [e :U _initADC ]
 [f ]
-[; ;RobotLib.c: 501: ADCON1bits.PCFG=0b1111;
-"501
+[; ;RobotLib.c: 484: ADCON1bits.PCFG=0b1111;
+"484
 [e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
-[; ;RobotLib.c: 502: ADCON1bits.VCFG=0b00;
-"502
+[; ;RobotLib.c: 485: ADCON1bits.VCFG=0b00;
+"485
 [e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 503: ADCON2bits.ACQT=0b111;
-"503
+[; ;RobotLib.c: 486: ADCON2bits.ACQT=0b111;
+"486
 [e = . . _ADCON2bits 0 1 -> -> 7 `i `uc ]
-[; ;RobotLib.c: 504: ADCON2bits.ADCS=0b110;
-"504
+[; ;RobotLib.c: 487: ADCON2bits.ADCS=0b110;
+"487
 [e = . . _ADCON2bits 0 0 -> -> 6 `i `uc ]
-[; ;RobotLib.c: 505: ADCON2bits.ADFM=0;
-"505
+[; ;RobotLib.c: 488: ADCON2bits.ADFM=0;
+"488
 [e = . . _ADCON2bits 0 3 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 506: }
-"506
-[e :UE 476 ]
+[; ;RobotLib.c: 489: }
+"489
+[e :UE 470 ]
 }
-"508
+"491
 [v _analogRead `(i ~T0 @X0 1 ef1`uc ]
 {
-[; ;RobotLib.c: 508: int analogRead(char pin){
+[; ;RobotLib.c: 491: int analogRead(char pin){
 [e :U _analogRead ]
 [v _pin `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;RobotLib.c: 509: ADCON1bits.PCFG=0b0000;
-"509
+[; ;RobotLib.c: 492: ADCON1bits.PCFG=0b0000;
+"492
 [e = . . _ADCON1bits 0 0 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 510: ADCON0bits.ADON=1;
-"510
+[; ;RobotLib.c: 493: ADCON0bits.ADON=1;
+"493
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 513: switch(pin){
-"513
-[e $U 479  ]
+[; ;RobotLib.c: 496: switch(pin){
+"496
+[e $U 473  ]
 {
-[; ;RobotLib.c: 514: case 0:
-"514
-[e :U 480 ]
-[; ;RobotLib.c: 515: ADCON0bits.CHS=0;
-"515
+[; ;RobotLib.c: 497: case 0:
+"497
+[e :U 474 ]
+[; ;RobotLib.c: 498: ADCON0bits.CHS=0;
+"498
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 516: break;
-"516
-[e $U 478  ]
-[; ;RobotLib.c: 518: case 1:
-"518
-[e :U 481 ]
-[; ;RobotLib.c: 519: ADCON0bits.CHS=1;
-"519
+[; ;RobotLib.c: 499: break;
+"499
+[e $U 472  ]
+[; ;RobotLib.c: 501: case 1:
+"501
+[e :U 475 ]
+[; ;RobotLib.c: 502: ADCON0bits.CHS=1;
+"502
 [e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 520: break;
-"520
-[e $U 478  ]
-[; ;RobotLib.c: 522: case 2:
-"522
-[e :U 482 ]
-[; ;RobotLib.c: 523: ADCON0bits.CHS=2;
-"523
+[; ;RobotLib.c: 503: break;
+"503
+[e $U 472  ]
+[; ;RobotLib.c: 505: case 2:
+"505
+[e :U 476 ]
+[; ;RobotLib.c: 506: ADCON0bits.CHS=2;
+"506
 [e = . . _ADCON0bits 1 2 -> -> 2 `i `uc ]
-[; ;RobotLib.c: 524: break;
-"524
-[e $U 478  ]
-[; ;RobotLib.c: 526: case 3:
-"526
-[e :U 483 ]
-[; ;RobotLib.c: 527: ADCON0bits.CHS=3;
-"527
+[; ;RobotLib.c: 507: break;
+"507
+[e $U 472  ]
+[; ;RobotLib.c: 509: case 3:
+"509
+[e :U 477 ]
+[; ;RobotLib.c: 510: ADCON0bits.CHS=3;
+"510
 [e = . . _ADCON0bits 1 2 -> -> 3 `i `uc ]
-[; ;RobotLib.c: 528: break;
-"528
-[e $U 478  ]
-[; ;RobotLib.c: 530: case 4:
-"530
-[e :U 484 ]
-[; ;RobotLib.c: 531: ADCON0bits.CHS=4;
-"531
-[e = . . _ADCON0bits 1 2 -> -> 4 `i `uc ]
-[; ;RobotLib.c: 532: break;
-"532
-[e $U 478  ]
-[; ;RobotLib.c: 534: case 5:
-"534
-[e :U 485 ]
-[; ;RobotLib.c: 535: ADCON0bits.CHS=5;
-"535
-[e = . . _ADCON0bits 1 2 -> -> 5 `i `uc ]
-[; ;RobotLib.c: 536: break;
-"536
-[e $U 478  ]
-[; ;RobotLib.c: 538: case 6:
-"538
-[e :U 486 ]
-[; ;RobotLib.c: 539: ADCON0bits.CHS=6;
-"539
-[e = . . _ADCON0bits 1 2 -> -> 6 `i `uc ]
-[; ;RobotLib.c: 540: break;
-"540
-[e $U 478  ]
-[; ;RobotLib.c: 542: case 7:
-"542
-[e :U 487 ]
-[; ;RobotLib.c: 543: ADCON0bits.CHS=7;
-"543
-[e = . . _ADCON0bits 1 2 -> -> 7 `i `uc ]
-[; ;RobotLib.c: 544: break;
-"544
-[e $U 478  ]
-[; ;RobotLib.c: 546: case 9:
-"546
-[e :U 488 ]
-[; ;RobotLib.c: 547: ADCON0bits.CHS=11;
-"547
-[e = . . _ADCON0bits 1 2 -> -> 11 `i `uc ]
-[; ;RobotLib.c: 548: break;
-"548
-[e $U 478  ]
-[; ;RobotLib.c: 550: case 11:
-"550
-[e :U 489 ]
-[; ;RobotLib.c: 551: ADCON0bits.CHS=12;
-"551
-[e = . . _ADCON0bits 1 2 -> -> 12 `i `uc ]
-[; ;RobotLib.c: 552: break;
-"552
-[e $U 478  ]
-"553
-}
-[; ;RobotLib.c: 553: }
-[e $U 478  ]
+[; ;RobotLib.c: 511: break;
+"511
+[e $U 472  ]
+[; ;RobotLib.c: 513: case 4:
 "513
-[e :U 479 ]
-[e [\ _pin , $ -> -> 0 `i `uc 480
- , $ -> -> 1 `i `uc 481
- , $ -> -> 2 `i `uc 482
- , $ -> -> 3 `i `uc 483
- , $ -> -> 4 `i `uc 484
- , $ -> -> 5 `i `uc 485
- , $ -> -> 6 `i `uc 486
- , $ -> -> 7 `i `uc 487
- , $ -> -> 9 `i `uc 488
- , $ -> -> 11 `i `uc 489
- 478 ]
-"553
 [e :U 478 ]
-[; ;RobotLib.c: 555: ADCON0bits.GO_DONE=1;
-"555
-[e = . . _ADCON0bits 6 1 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 556: while(ADCON0bits.GO_DONE);
-"556
-[e $U 490  ]
-[e :U 491 ]
-[e :U 490 ]
-[e $ != -> . . _ADCON0bits 6 1 `i -> -> -> 0 `i `Vuc `i 491  ]
-[e :U 492 ]
-[; ;RobotLib.c: 557: ADCON1bits.PCFG=0b1111;
-"557
-[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
-[; ;RobotLib.c: 558: ADCON0bits.ADON=0;
-"558
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 559: return (ADRESH<<2)+(ADRESL>>6);
-"559
-[e ) + << -> _ADRESH `i -> 2 `i >> -> _ADRESL `i -> 6 `i ]
-[e $UE 477  ]
-[; ;RobotLib.c: 560: }
-"560
-[e :UE 477 ]
+[; ;RobotLib.c: 514: ADCON0bits.CHS=4;
+"514
+[e = . . _ADCON0bits 1 2 -> -> 4 `i `uc ]
+[; ;RobotLib.c: 515: break;
+"515
+[e $U 472  ]
+[; ;RobotLib.c: 517: case 5:
+"517
+[e :U 479 ]
+[; ;RobotLib.c: 518: ADCON0bits.CHS=5;
+"518
+[e = . . _ADCON0bits 1 2 -> -> 5 `i `uc ]
+[; ;RobotLib.c: 519: break;
+"519
+[e $U 472  ]
+[; ;RobotLib.c: 521: case 6:
+"521
+[e :U 480 ]
+[; ;RobotLib.c: 522: ADCON0bits.CHS=6;
+"522
+[e = . . _ADCON0bits 1 2 -> -> 6 `i `uc ]
+[; ;RobotLib.c: 523: break;
+"523
+[e $U 472  ]
+[; ;RobotLib.c: 525: case 7:
+"525
+[e :U 481 ]
+[; ;RobotLib.c: 526: ADCON0bits.CHS=7;
+"526
+[e = . . _ADCON0bits 1 2 -> -> 7 `i `uc ]
+[; ;RobotLib.c: 527: break;
+"527
+[e $U 472  ]
+[; ;RobotLib.c: 529: case 9:
+"529
+[e :U 482 ]
+[; ;RobotLib.c: 530: ADCON0bits.CHS=11;
+"530
+[e = . . _ADCON0bits 1 2 -> -> 11 `i `uc ]
+[; ;RobotLib.c: 531: break;
+"531
+[e $U 472  ]
+[; ;RobotLib.c: 533: case 11:
+"533
+[e :U 483 ]
+[; ;RobotLib.c: 534: ADCON0bits.CHS=12;
+"534
+[e = . . _ADCON0bits 1 2 -> -> 12 `i `uc ]
+[; ;RobotLib.c: 535: break;
+"535
+[e $U 472  ]
+"536
 }
-"563
+[; ;RobotLib.c: 536: }
+[e $U 472  ]
+"496
+[e :U 473 ]
+[e [\ _pin , $ -> -> 0 `i `uc 474
+ , $ -> -> 1 `i `uc 475
+ , $ -> -> 2 `i `uc 476
+ , $ -> -> 3 `i `uc 477
+ , $ -> -> 4 `i `uc 478
+ , $ -> -> 5 `i `uc 479
+ , $ -> -> 6 `i `uc 480
+ , $ -> -> 7 `i `uc 481
+ , $ -> -> 9 `i `uc 482
+ , $ -> -> 11 `i `uc 483
+ 472 ]
+"536
+[e :U 472 ]
+[; ;RobotLib.c: 538: ADCON0bits.GO_DONE=1;
+"538
+[e = . . _ADCON0bits 6 1 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 539: while(ADCON0bits.GO_DONE);
+"539
+[e $U 484  ]
+[e :U 485 ]
+[e :U 484 ]
+[e $ != -> . . _ADCON0bits 6 1 `i -> -> -> 0 `i `Vuc `i 485  ]
+[e :U 486 ]
+[; ;RobotLib.c: 540: ADCON1bits.PCFG=0b1111;
+"540
+[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
+[; ;RobotLib.c: 541: ADCON0bits.ADON=0;
+"541
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 542: return (ADRESH<<2)+(ADRESL>>6);
+"542
+[e ) + << -> _ADRESH `i -> 2 `i >> -> _ADRESL `i -> 6 `i ]
+[e $UE 471  ]
+[; ;RobotLib.c: 543: }
+"543
+[e :UE 471 ]
+}
+"546
 [v _init_timer `(v ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 563: void init_timer(){
+[; ;RobotLib.c: 546: void init_timer(){
 [e :U _init_timer ]
 [f ]
-[; ;RobotLib.c: 565: }
-"565
-[e :UE 493 ]
+[; ;RobotLib.c: 547: INTCON2bits.TMR0IP = 1;
+"547
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 548: T0CONbits.T0PS = 0b001;
+"548
+[e = . . _T0CONbits 0 0 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 549: T0CONbits.PSA = 1;
+"549
+[e = . . _T0CONbits 0 1 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 550: T0CONbits.T08BIT=1;
+"550
+[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 551: INTCONbits.TMR0IE = 1;
+"551
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 552: T0CONbits.T0CS=0;
+"552
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 553: T0CONbits.TMR0ON=1;
+"553
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 554: }
+"554
+[e :UE 487 ]
 }
-"567
+"556
 [v _millis `(ul ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 567: unsigned long int millis(){
+[; ;RobotLib.c: 556: unsigned long long millis(){
 [e :U _millis ]
 [f ]
-[; ;RobotLib.c: 568: return milliSeconds;
-"568
+[; ;RobotLib.c: 557: return milliSeconds;
+"557
 [e ) _milliSeconds ]
-[e $UE 494  ]
-[; ;RobotLib.c: 569: }
-"569
-[e :UE 494 ]
+[e $UE 488  ]
+[; ;RobotLib.c: 558: }
+"558
+[e :UE 488 ]
 }
-"571
+"559
 [v _micros `(ul ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 571: unsigned long int micros(){
+[; ;RobotLib.c: 559: unsigned long long micros(){
 [e :U _micros ]
 [f ]
-[; ;RobotLib.c: 572: return microSeconds;
-"572
+[; ;RobotLib.c: 560: return microSeconds;
+"560
 [e ) _microSeconds ]
-[e $UE 495  ]
-[; ;RobotLib.c: 573: }
-"573
-[e :UE 495 ]
+[e $UE 489  ]
+[; ;RobotLib.c: 561: }
+"561
+[e :UE 489 ]
 }
-"576
+"563
+[v _high_isr `(v ~T0 @X0 1 ef ]
+{
+[; ;RobotLib.c: 563: void high_isr(void){
+[e :U _high_isr ]
+[f ]
+[; ;RobotLib.c: 564: if(INTCONbits.TMR0IF){
+"564
+[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 491  ]
+{
+[; ;RobotLib.c: 565: microSeconds += 256*1000000/40000000;
+"565
+[e =+ _microSeconds -> / * -> -> 256 `i `l -> 1000000 `l -> 40000000 `l `ul ]
+[; ;RobotLib.c: 566: milliSeconds = microSeconds/1000;
+"566
+[e = _milliSeconds / _microSeconds -> -> -> 1000 `i `l `ul ]
+[; ;RobotLib.c: 567: INTCONbits.TMR0IF = 0;
+"567
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"568
+}
+[e :U 491 ]
+[; ;RobotLib.c: 568: }
+[; ;RobotLib.c: 570: if(INTCONbits.INT0IF){
+"570
+[e $ ! != -> . . _INTCONbits 0 1 `i -> -> -> 0 `i `Vuc `i 492  ]
+{
+[; ;RobotLib.c: 571: int0func();
+"571
+[e ( *U _int0func ..  ]
+[; ;RobotLib.c: 572: INTCONbits.INT0IF = 0;
+"572
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"573
+}
+[e :U 492 ]
+[; ;RobotLib.c: 573: }
+[; ;RobotLib.c: 574: }
+"574
+[e :UE 490 ]
+}
+"575
+[v _low_isr `(v ~T0 @X0 1 ef ]
+{
+[; ;RobotLib.c: 575: void low_isr(void){
+[e :U _low_isr ]
+[f ]
+[; ;RobotLib.c: 577: }
+"577
+[e :UE 493 ]
+}
+"578
 [v _attachInterrupt `(v ~T0 @X0 1 ef3`uc`uc`*F2952 ]
 {
-[; ;RobotLib.c: 576: void attachInterrupt(char num, char mode, void (*func)()){
+[; ;RobotLib.c: 578: void attachInterrupt(char num, char mode, void (*func)()){
 [e :U _attachInterrupt ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [v _mode `uc ~T0 @X0 1 r2 ]
-[v F3008 `(v ~T0 @X0 0 tf ]
-[v _func `*F3008 ~T0 @X0 1 r3 ]
+[v F3009 `(v ~T0 @X0 0 tf ]
+[v _func `*F3009 ~T0 @X0 1 r3 ]
 [f ]
-[; ;RobotLib.c: 577: switch (num){
-"577
-[e $U 498  ]
-{
-[; ;RobotLib.c: 578: case 0:
-"578
-[e :U 499 ]
-[; ;RobotLib.c: 579: int0func = func;
+[; ;RobotLib.c: 579: switch (num){
 "579
-[e = _int0func _func ]
-[; ;RobotLib.c: 580: switch(mode){
-"580
-[e $U 501  ]
+[e $U 496  ]
 {
-[; ;RobotLib.c: 581: case 0:
-"581
-[e :U 502 ]
-[; ;RobotLib.c: 582: INTCON2bits.INTEDG0 = 1;
-"582
-[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 583: break;
-"583
-[e $U 500  ]
-[; ;RobotLib.c: 585: case 1:
-"585
-[e :U 503 ]
-[; ;RobotLib.c: 586: INTCON2bits.INTEDG0 = 0;
-"586
-[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 587: break;
-"587
-[e $U 500  ]
-"588
-}
-[; ;RobotLib.c: 588: }
-[e $U 500  ]
+[; ;RobotLib.c: 580: case 0:
 "580
-[e :U 501 ]
-[e [\ _mode , $ -> -> 0 `i `uc 502
- , $ -> -> 1 `i `uc 503
- 500 ]
-"588
-[e :U 500 ]
-[; ;RobotLib.c: 589: INTCONbits.INT0IF = 0;
-"589
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 590: INTCONbits.INT0IE = 1;
-"590
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 592: break;
-"592
-[e $U 497  ]
-"593
-}
-[; ;RobotLib.c: 593: }
-[e $U 497  ]
-"577
-[e :U 498 ]
-[e [\ _num , $ -> -> 0 `i `uc 499
- 497 ]
-"593
 [e :U 497 ]
-[; ;RobotLib.c: 595: }
-"595
-[e :UE 496 ]
+[; ;RobotLib.c: 581: int0func = func;
+"581
+[e = _int0func _func ]
+[; ;RobotLib.c: 582: switch(mode){
+"582
+[e $U 499  ]
+{
+[; ;RobotLib.c: 583: case 0:
+"583
+[e :U 500 ]
+[; ;RobotLib.c: 584: INTCON2bits.INTEDG0 = 1;
+"584
+[e = . . _INTCON2bits 1 6 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 585: break;
+"585
+[e $U 498  ]
+[; ;RobotLib.c: 587: case 1:
+"587
+[e :U 501 ]
+[; ;RobotLib.c: 588: INTCON2bits.INTEDG0 = 0;
+"588
+[e = . . _INTCON2bits 1 6 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 589: break;
+"589
+[e $U 498  ]
+"590
 }
+[; ;RobotLib.c: 590: }
+[e $U 498  ]
+"582
+[e :U 499 ]
+[e [\ _mode , $ -> -> 0 `i `uc 500
+ , $ -> -> 1 `i `uc 501
+ 498 ]
+"590
+[e :U 498 ]
+[; ;RobotLib.c: 591: INTCONbits.INT0IF = 0;
+"591
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 592: INTCONbits.INT0IE = 1;
+"592
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 594: break;
+"594
+[e $U 495  ]
+"595
+}
+[; ;RobotLib.c: 595: }
+[e $U 495  ]
+"579
+[e :U 496 ]
+[e [\ _num , $ -> -> 0 `i `uc 497
+ 495 ]
+"595
+[e :U 495 ]
+[; ;RobotLib.c: 596: }
 "596
+[e :UE 494 ]
+}
+"597
 [v _detachInterrupt `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;RobotLib.c: 596: void detachInterrupt(char num){
+[; ;RobotLib.c: 597: void detachInterrupt(char num){
 [e :U _detachInterrupt ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;RobotLib.c: 597: switch(num){
-"597
-[e $U 506  ]
-{
-[; ;RobotLib.c: 598: case 0:
+[; ;RobotLib.c: 598: switch(num){
 "598
-[e :U 507 ]
-[; ;RobotLib.c: 599: INTCONbits.INT0IF = 0;
+[e $U 504  ]
+{
+[; ;RobotLib.c: 599: case 0:
 "599
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 600: INTCONbits.INT0IE = 0;
-"600
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 601: break;
-"601
-[e $U 505  ]
-"602
-}
-[; ;RobotLib.c: 602: }
-[e $U 505  ]
-"597
-[e :U 506 ]
-[e [\ _num , $ -> -> 0 `i `uc 507
- 505 ]
-"602
 [e :U 505 ]
-[; ;RobotLib.c: 603: }
+[; ;RobotLib.c: 600: INTCONbits.INT0IF = 0;
+"600
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 601: INTCONbits.INT0IE = 0;
+"601
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 602: break;
+"602
+[e $U 503  ]
 "603
-[e :UE 504 ]
 }
+[; ;RobotLib.c: 603: }
+[e $U 503  ]
+"598
+[e :U 504 ]
+[e [\ _num , $ -> -> 0 `i `uc 505
+ 503 ]
+"603
+[e :U 503 ]
+[; ;RobotLib.c: 604: }
 "604
+[e :UE 502 ]
+}
+"605
 [v _initInterrupts `(v ~T0 @X0 1 ef ]
 {
-[; ;RobotLib.c: 604: void initInterrupts(){
+[; ;RobotLib.c: 605: void initInterrupts(){
 [e :U _initInterrupts ]
 [f ]
-[; ;RobotLib.c: 605: RCONbits.IPEN=1;
-"605
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 606: INTCONbits.GIEH = 1;
+[; ;RobotLib.c: 606: RCONbits.IPEN=1;
 "606
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 607: INTCONbits.GIEL = 1;
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 607: INTCONbits.GIEH = 1;
 "607
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-[; ;RobotLib.c: 608: INTCONbits.INT0IE = 0;
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 608: INTCONbits.GIEL = 1;
 "608
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 609: INTCON3bits.INT2IE = 0;
-"609
-[e = . . _INTCON3bits 0 4 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 610: INTCON3bits.INT1IE = 0;
+[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
+[; ;RobotLib.c: 610: INTCONbits.INT0IE = 0;
 "610
-[e = . . _INTCON3bits 0 3 -> -> 0 `i `uc ]
-[; ;RobotLib.c: 611: }
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 611: INTCON3bits.INT2IE = 0;
 "611
-[e :UE 508 ]
+[e = . . _INTCON3bits 0 4 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 612: INTCON3bits.INT1IE = 0;
+"612
+[e = . . _INTCON3bits 0 3 -> -> 0 `i `uc ]
+[; ;RobotLib.c: 613: }
+"613
+[e :UE 506 ]
 }

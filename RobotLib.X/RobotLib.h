@@ -117,11 +117,10 @@
 //interrupt functions
 #pragma interrupt high_isr
 void  high_isr(void);
-
 #pragma interruptlow low_isr
 void low_isr(void);
 
-
+//intialization of RobotLib
 void init();
 
 //Digital pins controls
@@ -160,11 +159,11 @@ void lcd_print_string(char *entity);
     )(X)
 
 //Timer functions for counting time since start 
-unsigned long int microSeconds = 0;
-unsigned long int milliSeconds = 0;
+unsigned long long microSeconds = 0;
+unsigned long long milliSeconds = 0;
 void init_timer();
-unsigned long int micros();
-unsigned long int millis();
+unsigned long long micros();
+unsigned long long millis();
 
 void delay_ms();
 void delayMicroseconds();

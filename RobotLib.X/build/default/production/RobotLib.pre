@@ -3804,7 +3804,6 @@ extern __nonreentrant void _delay3(unsigned char);
 # 118 "RobotLib.h"
 #pragma interrupt high_isr
 void high_isr(void);
-
 #pragma interruptlow low_isr
 void low_isr(void);
 
@@ -3837,35 +3836,17 @@ void lcd_print_char(char entity);
 void lcd_print_float(float entity);
 void lcd_print_string(char *entity);
 
-# 163
-unsigned long int microSeconds = 0;
-unsigned long int milliSeconds = 0;
+# 162
+unsigned long long microSeconds = 0;
+unsigned long long milliSeconds = 0;
 void init_timer();
-unsigned long int micros();
-unsigned long int millis();
+unsigned long long micros();
+unsigned long long millis();
 
 void delay_ms();
 void delayMicroseconds();
 
-# 5 "RobotLib.c"
-void high_isr(void){
-if(1){
-
-}
-if(INTCONbits.INT0IF){
-int0func();
-INTCONbits.INT0IF = 0;
-}
-}
-void low_isr(){
-if(1){
-
-}
-if(INTCONbits.INT0IF){
-int0func ();
-INTCONbits.INT0IF = 0;
-}
-}
+# 6 "RobotLib.c"
 void init(){
 initOutputs();
 initADC();
@@ -4407,18 +4388,37 @@ return (ADRESH<<2)+(ADRESL>>6);
 
 
 void init_timer(){
-
+INTCON2bits.TMR0IP = 1;
+T0CONbits.T0PS = 0b001;
+T0CONbits.PSA = 1;
+T0CONbits.T08BIT=1;
+INTCONbits.TMR0IE = 1;
+T0CONbits.T0CS=0;
+T0CONbits.TMR0ON=1;
 }
 
-unsigned long int millis(){
+unsigned long long millis(){
 return milliSeconds;
 }
-
-unsigned long int micros(){
+unsigned long long micros(){
 return microSeconds;
 }
 
+void high_isr(void){
+if(INTCONbits.TMR0IF){
+microSeconds += 256*1000000/40000000;
+milliSeconds = microSeconds/1000;
+INTCONbits.TMR0IF = 0;
+}
 
+if(INTCONbits.INT0IF){
+int0func();
+INTCONbits.INT0IF = 0;
+}
+}
+void low_isr(void){
+
+}
 void attachInterrupt(char num, char mode, void (*func)()){
 switch (num){
 case 0:
@@ -4437,7 +4437,6 @@ INTCONbits.INT0IE = 1;
 
 break;
 }
-
 }
 void detachInterrupt(char num){
 switch(num){
@@ -4451,6 +4450,7 @@ void initInterrupts(){
 RCONbits.IPEN=1;
 INTCONbits.GIEH = 1;
 INTCONbits.GIEL = 1;
+
 INTCONbits.INT0IE = 0;
 INTCON3bits.INT2IE = 0;
 INTCON3bits.INT1IE = 0;

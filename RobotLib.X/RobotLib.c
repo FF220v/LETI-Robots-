@@ -544,36 +544,36 @@ int analogRead(char pin){
 
 //timer fcns
 void init_timer(){
-
+INTCON2bits.TMR0IP = 1;
+T0CONbits.T0PS = 0b001; //pre-divider = 4 
+T0CONbits.PSA = 1; //disable pre-divider
+T0CONbits.T08BIT=1; //8 bit mode
+INTCONbits.TMR0IE = 1; 
+T0CONbits.T0CS=0;
+T0CONbits.TMR0ON=1; 
 }
 
-unsigned long int millis(){
+unsigned long long millis(){
     return milliSeconds;
 }
-
-unsigned long int micros(){
+unsigned long long micros(){
     return microSeconds;
 }
-
 //interrupts handling fcns
-
 void high_isr(void){
-    if(1){
-    
+    if(INTCONbits.TMR0IF){
+       microSeconds += 256*1000000/_XTAL_FREQ;
+       milliSeconds = microSeconds/1000;
+       INTCONbits.TMR0IF = 0;
     }
+    
     if(INTCONbits.INT0IF){
         int0func();
         INTCONbits.INT0IF = 0;
     } 
 }
 void low_isr(void){
-    if(1){
     
-    }
-    if(INTCONbits.INT0IF){
-        int0func ();
-        INTCONbits.INT0IF = 0;
-    } 
 }
 void attachInterrupt(char num, char mode, void (*func)()){
     switch (num){
@@ -592,8 +592,7 @@ void attachInterrupt(char num, char mode, void (*func)()){
             INTCONbits.INT0IE = 1; //alowing interrupts 
             
         break;
-    }
-        
+    }     
 }
 void detachInterrupt(char num){
     switch(num){
@@ -607,6 +606,7 @@ void initInterrupts(){
     RCONbits.IPEN=1; //Allow 2-level interurpts
     INTCONbits.GIEH = 1; //Allow high - level interrupts
     INTCONbits.GIEL = 1; //Allow low - level interrupts 
+    
     INTCONbits.INT0IE = 0;//turning off interrupt flags
     INTCON3bits.INT2IE = 0;
     INTCON3bits.INT1IE = 0;
